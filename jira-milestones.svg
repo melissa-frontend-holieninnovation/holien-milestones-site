@@ -310,11 +310,11 @@
 <text x="739" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Kit and combo</text>
 </g>
 </a>
-<a class="feat-link" href="https://app.notion.com/p/Purchase-orders-3c489adbb34d810ea29dd58687dd4146" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Purchase orders&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/12–11/11&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/12–10/14&quot;], [&quot;Review fields plan&quot;, &quot;10/12–10/14&quot;], [&quot;UX mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/11&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://app.notion.com/p/Purchase-orders-3c489adbb34d810ea29dd58687dd4146&quot;}" data-url="https://app.notion.com/p/Purchase-orders-3c489adbb34d810ea29dd58687dd4146">
+<a class="feat-link" href="https://app.notion.com/p/Sales-orders-claims-3c489adbb34d81bb81fbd7f255202b28" target="_blank" rel="noopener">
+<g class="feat" data-tip="{&quot;name&quot;: &quot;Sales orders + claims&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/12–11/11&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/12–10/14&quot;], [&quot;Review fields plan&quot;, &quot;10/12–10/14&quot;], [&quot;UX mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/11&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://app.notion.com/p/Sales-orders-claims-3c489adbb34d81bb81fbd7f255202b28&quot;}" data-url="https://app.notion.com/p/Sales-orders-claims-3c489adbb34d81bb81fbd7f255202b28">
 <rect class="hit" x="958" y="734" width="345" height="32" rx="8" fill="transparent"/>
 <rect class="work" x="960" y="736" width="341" height="28" rx="8" fill="#92400E"/>
-<text x="970" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Purchase orders</text>
+<text x="970" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Sales orders + claims</text>
 </g>
 </a>
 <a class="feat-link" href="https://app.notion.com/p/System-FX-permissions-3c489adbb34d81cdaefcd7956a27460a" target="_blank" rel="noopener">
@@ -340,11 +340,11 @@
 <text x="816" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Product category</text>
 </g>
 </a>
-<a class="feat-link" href="https://app.notion.com/p/Sales-orders-claims-3c489adbb34d81bb81fbd7f255202b28" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Sales orders + claims&quot;, &quot;ver&quot;: &quot;11/17&quot;, &quot;span&quot;: &quot;10/26–11/18&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/26–10/28&quot;], [&quot;Review fields plan&quot;, &quot;10/26–10/28&quot;], [&quot;UX mocks&quot;, &quot;10/26–10/28&quot;], [&quot;UI&quot;, &quot;11/09–11/11&quot;], [&quot;API&quot;, &quot;11/09–11/11&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/16–11/18&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://app.notion.com/p/Sales-orders-claims-3c489adbb34d81bb81fbd7f255202b28&quot;}" data-url="https://app.notion.com/p/Sales-orders-claims-3c489adbb34d81bb81fbd7f255202b28">
-<rect class="hit" x="1112" y="768" width="268" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1114" y="770" width="264" height="28" rx="8" fill="#92400E"/>
-<text x="1124" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Sales orders + claims</text>
+<a class="feat-link" href="https://app.notion.com/p/Purchase-orders-3c489adbb34d810ea29dd58687dd4146" target="_blank" rel="noopener">
+<g class="feat" data-tip="{&quot;name&quot;: &quot;Purchase orders&quot;, &quot;ver&quot;: &quot;11/17&quot;, &quot;span&quot;: &quot;10/19–11/18&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/19–10/21&quot;], [&quot;Review fields plan&quot;, &quot;10/19–10/21&quot;], [&quot;UX mocks&quot;, &quot;10/19–10/21&quot;], [&quot;UI&quot;, &quot;11/09–11/11&quot;], [&quot;API&quot;, &quot;11/09–11/11&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/16–11/18&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://app.notion.com/p/Purchase-orders-3c489adbb34d810ea29dd58687dd4146&quot;}" data-url="https://app.notion.com/p/Purchase-orders-3c489adbb34d810ea29dd58687dd4146">
+<rect class="hit" x="1035" y="768" width="345" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1037" y="770" width="341" height="28" rx="8" fill="#92400E"/>
+<text x="1047" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Purchase orders</text>
 </g>
 </a>
 <a class="feat-link" href="https://app.notion.com/p/Accounting-AR-AP-GL-3c489adbb34d81a1b10cd7512b999918" target="_blank" rel="noopener">
