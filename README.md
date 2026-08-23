@@ -2,7 +2,7 @@
 
 Public visual of the Holien product gantt (SenditGo · SenditSell · Sterling).
 
-**Source of truth is Notion.** This HTML is a hoverable snapshot of weekly trains, Review/Test splits, and the Taiwan year-end working-day gap.
+**Source of truth is Notion.** This HTML is a hoverable snapshot of weekly trains, Review/Test splits, Taiwan holidays skipped: 行憲, 元旦, 春節, 228.
 
 ## Live
 
