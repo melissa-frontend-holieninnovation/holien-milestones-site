@@ -429,17 +429,17 @@
 </g>
 </a>
 <rect x="0" y="998" width="2837" height="52" fill="#FFF7ED"/>
-<rect x="0" y="998" width="8" height="52" fill="#F97316"/>
-<text x="20" y="1028.0" font-size="12" font-weight="700" fill="#F97316">Sterling UI</text>
+<rect x="0" y="998" width="8" height="52" fill="#EA580C"/>
+<text x="20" y="1028.0" font-size="12" font-weight="700" fill="#EA580C">Sterling UI</text>
 <line x1="0" y1="1050" x2="2837" y2="1050" stroke="#E5E7EB" stroke-width="1"/>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Homepage weight + SEO&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;LV-01 h1 · LV-03 8.1MB · LV-05 mobile hero · LV-09 extra h1 · LV-13 OG · same week as Homepage SEO config API · no Notion yet&quot;}" data-url="">
 <rect class="hit" x="804" y="1008" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="1010" width="187" height="28" rx="8" fill="#F97316"/>
+<rect class="work" x="806" y="1010" width="187" height="28" rx="8" fill="#EA580C"/>
 <text x="816" y="1028" font-size="11" font-weight="600" fill="#FFFFFF">Homepage weight + SEO</text>
 </g>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Theme hygiene&quot;, &quot;ver&quot;: &quot;12/01&quot;, &quot;span&quot;: &quot;11/16–12/02&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/16&quot;], [&quot;UI&quot;, &quot;11/23–11/25&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/01–12/02&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;FE-01 escape · FE-02 inline script · FE-03 onclick · FE-06 href# · FE-08 !important · LV-04 CSS bundles · LV-10 jQuery UI · garage stays on Find My Garage · no Notion yet&quot;}" data-url="">
 <rect class="hit" x="1343" y="1008" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1345" y="1010" width="187" height="28" rx="8" fill="#F97316"/>
+<rect class="work" x="1345" y="1010" width="187" height="28" rx="8" fill="#EA580C"/>
 <text x="1355" y="1028" font-size="11" font-weight="600" fill="#FFFFFF">Theme hygiene</text>
 </g>
 <rect x="0" y="1050" width="2837" height="52" fill="#FFEDD5"/>
@@ -571,7 +571,7 @@
 <text x="554" y="1173" font-size="11" fill="#111827">SenditSell</text>
 <rect x="704" y="1162" width="14" height="14" rx="3" fill="#E74725"/>
 <text x="724" y="1173" font-size="11" fill="#111827">Sterling</text>
-<rect x="874" y="1162" width="14" height="14" rx="3" fill="#F97316"/>
+<rect x="874" y="1162" width="14" height="14" rx="3" fill="#EA580C"/>
 <text x="894" y="1173" font-size="11" fill="#111827">Sterling UI</text>
 <rect x="1044" y="1162" width="14" height="14" rx="3" fill="#C2410C"/>
 <text x="1064" y="1173" font-size="11" fill="#111827">Sterling API</text>
