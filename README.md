@@ -6,11 +6,12 @@ Public visual of the Holien product gantt (SenditGo · SenditSell · Sterling).
 
 ## Live
 
-GitHub Pages serves `index.html` from `main`.
+- **v3 (test chart):** https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/v3/
+- Root is the same v3 chart: https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/
 
-**Click a bar to open the Notion ticket.** Hover: UX reviewing flow (OEM / SO-PO) · mocks · UI/API · ticket Status Reviewing / Testing. Code review and test are Status on the work tickets, not extra Review/Test tickets.
+v3 uses the test generator: brand lanes + Sterling UI / Sterling API Magento overlay. Click a bar to open the Notion Feature.
 
 ## Files
 
-- `index.html` — interactive gantt
+- `index.html` / `v3/index.html` — interactive gantt v3
 - `jira-milestones.svg` — same chart as SVG
