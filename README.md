@@ -8,8 +8,8 @@ This HTML is a hoverable snapshot of weekly trains, Review/Test splits, Taiwan h
 
 ## Live
 
-- **Current — v1.4:** https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/
-  (also at `/v1.4/`)
+- **Current — v1.5:** https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/
+  (also at `/v1.5/`)
 - `/v3/` — legacy alias, kept so existing links do not 404. Frozen at the pre-v1.4 build.
 
 ## Version archive
@@ -20,7 +20,8 @@ an archive.
 
 | Version | Built from | Header reads | Today marker | Notes |
 |---|---|---|---|---|
-| `v1.4` | this publish | `v1.4` | 3 Sep 2026 | adds QR auto-print · paperless, Delivery run sheet, Roster attribute |
+| `v1.5` | this publish | `v1.5` | 3 Sep 2026 | pulls `Algo / route optimization` from the 10/13 train to **09/22**, so Algorithm and Paperless share the 09/07 start week |
+| `v1.4` | earlier today | `v1.4` | 3 Sep 2026 | adds QR auto-print · paperless, Delivery run sheet, Roster attribute |
 | `v1.3` | commit `1eb0047` | `v3` | 27 Aug 2026 | the chart that was live until v1.4 |
 | `v1.2` | commit `8cc4a12` | `live` | 27 Aug 2026 | ⚠ the `holien-gantt-publish` skill records this deploy as the **stale v2-old amber chart**. Kept as honest history, not as a good prior state. |
 
@@ -31,4 +32,4 @@ published bytes would falsify the archive.
 
 - `index.html` — current chart (= `v1.4/index.html`)
 - `jira-milestones.svg` — same chart as SVG
-- `v1.4/` `v1.3/` `v1.2/` `v3/` — frozen snapshots
+- `v1.5/` `v1.4/` `v1.3/` `v1.2/` `v3/` — frozen snapshots
