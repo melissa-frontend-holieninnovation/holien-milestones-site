@@ -1,81 +1,44 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Holien milestones · v1.4</title>
-<style>
-  html,body { margin:0; padding:16px; background:#fff; }
-  svg { display:block; }
-  a.feat-link { cursor: pointer; text-decoration: none; }
-  .feat { cursor: pointer; }
-  .feat:hover .work { filter: brightness(1.12); }
-  .feat:hover .rev, .feat:hover .tst { filter: brightness(1.05); }
-  #tip {
-    position: fixed;
-    display: none;
-    min-width: 220px;
-    max-width: 320px;
-    background: #111827;
-    color: #F9FAFB;
-    padding: 10px 12px 12px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.22);
-    font: 12px/1.45 ui-sans-serif, Inter, Helvetica, Arial, sans-serif;
-    z-index: 20;
-    pointer-events: none;
-  }
-  #tip h4 { margin:0 0 6px; font-size:13px; font-weight:700; }
-  #tip .meta { color:#9CA3AF; font-size:11px; margin-bottom:8px; }
-  #tip .row { display:flex; justify-content:space-between; gap:16px; padding:2px 0; border-top:1px solid #374151; }
-  #tip .row:first-of-type { border-top:0; }
-  #tip .k { color:#D1D5DB; }
-  #tip .v { font-variant-numeric: tabular-nums; font-weight:600; }
-  #tip .sell { color:#FDBA74; font-size:11px; margin-top:6px; }
-  #tip .open { color:#93C5FD; font-size:11px; margin-top:8px; }
-</style>
-</head>
-<body>
-<svg xmlns="http://www.w3.org/2000/svg" width="2837" height="1226" viewBox="0 0 2837 1226" font-family="ui-sans-serif, Inter, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="2837" height="1192" viewBox="0 0 2837 1192" font-family="ui-sans-serif, Inter, Helvetica, Arial, sans-serif">
 <rect width="100%" height="100%" fill="#FFFFFF"/>
-<text x="24" y="36" font-size="22" font-weight="700" fill="#111827">Holien milestones · v1.4</text>
+<text x="24" y="36" font-size="22" font-weight="700" fill="#111827">Holien milestones · v3</text>
 <text x="24" y="58" font-size="12" fill="#6B7280">Click a product bar to open Notion · hover: reviewing flow (OEM/SO-PO) · mocks · UI/API · ticket Status Reviewing/Testing · Magento UI/API bars have no ticket yet</text>
-<text x="2813" y="36" font-size="11" fill="#9CA3AF" text-anchor="end">SoT: Notion · week as unit · v1.4</text>
-<rect x="1774" y="128" width="33" height="1018" fill="#F3F4F6"/>
+<text x="2813" y="36" font-size="11" fill="#9CA3AF" text-anchor="end">SoT: Notion · week as unit · v3</text>
+<rect x="1774" y="128" width="33" height="984" fill="#F3F4F6"/>
 <text x="1790.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">行憲</text>
-<rect x="1851" y="128" width="33" height="1018" fill="#F3F4F6"/>
+<rect x="1851" y="128" width="33" height="984" fill="#F3F4F6"/>
 <text x="1867.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">元旦</text>
-<rect x="2225" y="128" width="77" height="1018" fill="#F3F4F6"/>
+<rect x="2225" y="128" width="77" height="984" fill="#F3F4F6"/>
 <text x="2263.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">春節</text>
-<rect x="2478" y="128" width="33" height="1018" fill="#F3F4F6"/>
+<rect x="2478" y="128" width="33" height="984" fill="#F3F4F6"/>
 <text x="2494.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">228</text>
 <rect x="168" y="128" width="2645" height="56" fill="#F8FAFC"/>
-<line x1="168" y1="128" x2="168" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="168" y1="128" x2="168" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="176" y="150" font-size="12" font-weight="600" fill="#374151">Aug 2026</text>
-<line x1="509" y1="128" x2="509" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="509" y1="128" x2="509" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="517" y="150" font-size="12" font-weight="600" fill="#374151">Sep 2026</text>
-<line x1="839" y1="128" x2="839" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="839" y1="128" x2="839" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="847" y="150" font-size="12" font-weight="600" fill="#374151">Oct 2026</text>
-<line x1="1180" y1="128" x2="1180" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="1180" y1="128" x2="1180" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="1188" y="150" font-size="12" font-weight="600" fill="#374151">Nov 2026</text>
-<line x1="1510" y1="128" x2="1510" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="1510" y1="128" x2="1510" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="1518" y="150" font-size="12" font-weight="600" fill="#374151">Dec 2026</text>
-<line x1="1851" y1="128" x2="1851" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="1851" y1="128" x2="1851" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="1859" y="150" font-size="12" font-weight="600" fill="#374151">Jan 2027</text>
-<line x1="2192" y1="128" x2="2192" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="2192" y1="128" x2="2192" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="2200" y="150" font-size="12" font-weight="600" fill="#374151">Feb 2027</text>
-<line x1="2500" y1="128" x2="2500" y2="1146" stroke="#E5E7EB" stroke-width="1"/>
+<line x1="2500" y1="128" x2="2500" y2="1112" stroke="#E5E7EB" stroke-width="1"/>
 <text x="2508" y="150" font-size="12" font-weight="600" fill="#374151">Mar 2027</text>
-<line x1="531" y1="128" x2="531" y2="1146" stroke="#F97316" stroke-width="2"/>
-<circle cx="531" cy="136" r="5" fill="#F97316"/>
-<text x="539" y="140" font-size="10" font-weight="600" fill="#EA580C">Today 3 Sep</text>
+<line x1="454" y1="128" x2="454" y2="1112" stroke="#F97316" stroke-width="2"/>
+<circle cx="454" cy="136" r="5" fill="#F97316"/>
+<text x="462" y="140" font-size="10" font-weight="600" fill="#EA580C">Today 27 Aug</text>
 <rect x="0" y="184" width="2837" height="44" fill="#F9FAFB"/>
 <rect x="0" y="184" width="8" height="44" fill="#111827"/>
 <text x="20" y="210.0" font-size="12" font-weight="700" fill="#111827">◆ Releases</text>
 <line x1="0" y1="228" x2="2837" y2="228" stroke="#E5E7EB" stroke-width="1"/>
-<rect x="0" y="228" width="2837" height="256" fill="#DCECFF"/>
-<rect x="0" y="228" width="8" height="256" fill="#007FFF"/>
-<text x="20" y="360.0" font-size="12" font-weight="700" fill="#007FFF">Carrier</text>
-<line x1="0" y1="484" x2="2837" y2="484" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="0" y="228" width="2837" height="222" fill="#DCECFF"/>
+<rect x="0" y="228" width="8" height="222" fill="#007FFF"/>
+<text x="20" y="343.0" font-size="12" font-weight="700" fill="#007FFF">Carrier</text>
+<line x1="0" y1="450" x2="2837" y2="450" stroke="#E5E7EB" stroke-width="1"/>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8124ac5bc50d648f7fb2" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Roster public holidays · web&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/12–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/12&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/12–08/14&quot;], [&quot;UI&quot;, &quot;08/19–08/21&quot;], [&quot;API&quot;, &quot;08/19–08/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8124ac5bc50d648f7fb2&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8124ac5bc50d648f7fb2">
 <rect class="hit" x="287" y="238" width="158" height="32" rx="8" fill="transparent"/>
@@ -146,11 +109,11 @@
 <text x="453" y="326" font-size="11" font-weight="600" fill="#FFFFFF">Driver scan UX</text>
 </g>
 </a>
-<a class="feat-link" href="https://www.notion.so/83631c4dcc9c4497823eb3eb1c97bec1" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Roster attribute&quot;, &quot;ver&quot;: &quot;10/06&quot;, &quot;span&quot;: &quot;09/21–10/07&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/21&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/21–09/23&quot;], [&quot;UI&quot;, &quot;09/28–09/30&quot;], [&quot;API&quot;, &quot;09/28–09/30&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/05–10/06&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/83631c4dcc9c4497823eb3eb1c97bec1&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/83631c4dcc9c4497823eb3eb1c97bec1">
-<rect class="hit" x="727" y="306" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="729" y="308" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="739" y="326" font-size="11" font-weight="600" fill="#FFFFFF">Roster attribute</text>
+<a class="feat-link" href="https://www.notion.so/3c489adbb34d8115b665d680a3315a31" target="_blank" rel="noopener">
+<g class="feat" data-tip="{&quot;name&quot;: &quot;Driver reporting · app&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8115b665d680a3315a31&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8115b665d680a3315a31">
+<rect class="hit" x="881" y="306" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="883" y="308" width="187" height="28" rx="8" fill="#007FFF"/>
+<text x="893" y="326" font-size="11" font-weight="600" fill="#FFFFFF">Driver reporting · app</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81989759e9e91aa5224a" target="_blank" rel="noopener">
@@ -167,18 +130,18 @@
 <text x="508" y="360" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle regist…</text>
 </g>
 </a>
-<a class="feat-link" href="https://www.notion.so/c6d2c619be594ee1b50d90beb47d92fb" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Delivery run sheet&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/14&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/21–09/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/29&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/c6d2c619be594ee1b50d90beb47d92fb&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/c6d2c619be594ee1b50d90beb47d92fb">
+<a class="feat-link" href="https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891" target="_blank" rel="noopener">
+<g class="feat" data-tip="{&quot;name&quot;: &quot;Vehicle insurance dashboard&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/14&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/21–09/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/29&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891">
 <rect class="hit" x="650" y="340" width="191" height="32" rx="8" fill="transparent"/>
 <rect class="work" x="652" y="342" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="662" y="360" font-size="11" font-weight="600" fill="#FFFFFF">Delivery run sheet</text>
+<text x="662" y="360" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle insurance dashbo…</text>
 </g>
 </a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8115b665d680a3315a31" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Driver reporting · app&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8115b665d680a3315a31&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8115b665d680a3315a31">
+<a class="feat-link" href="https://www.notion.so/3c489adbb34d81669921dd9685626fa8" target="_blank" rel="noopener">
+<g class="feat" data-tip="{&quot;name&quot;: &quot;WEB Insight · Customer Review&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81669921dd9685626fa8&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81669921dd9685626fa8">
 <rect class="hit" x="881" y="340" width="191" height="32" rx="8" fill="transparent"/>
 <rect class="work" x="883" y="342" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="893" y="360" font-size="11" font-weight="600" fill="#FFFFFF">Driver reporting · app</text>
+<text x="893" y="360" font-size="11" font-weight="600" fill="#FFFFFF">WEB Insight · Customer R…</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81239a7bf7f0975c48ed" target="_blank" rel="noopener">
@@ -188,503 +151,435 @@
 <text x="530" y="394" font-size="11" font-weight="600" fill="#FFFFFF">Notificatio…</text>
 </g>
 </a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Vehicle insurance dashboard&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/14&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/21–09/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/29&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891">
-<rect class="hit" x="650" y="374" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="652" y="376" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="662" y="394" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle insurance dashbo…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81669921dd9685626fa8" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;WEB Insight · Customer Review&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81669921dd9685626fa8&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81669921dd9685626fa8">
-<rect class="hit" x="881" y="374" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="883" y="376" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="893" y="394" font-size="11" font-weight="600" fill="#FFFFFF">WEB Insight · Customer R…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/c9aed4839cb64b6da7953f7ad9cfdd0d" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;QR auto-print · paperless&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/07–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/07&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/07–09/09&quot;], [&quot;UI&quot;, &quot;09/14–09/16&quot;], [&quot;API&quot;, &quot;09/14–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/c9aed4839cb64b6da7953f7ad9cfdd0d&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/c9aed4839cb64b6da7953f7ad9cfdd0d">
-<rect class="hit" x="573" y="408" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="575" y="410" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="585" y="428" font-size="11" font-weight="600" fill="#FFFFFF">QR auto-print · paperless</text>
-</g>
-</a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81d89ef5f2d9c14e602d" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Report comment gate · app&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/07–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/07&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/07–09/09&quot;], [&quot;UI&quot;, &quot;09/14–09/16&quot;], [&quot;API&quot;, &quot;09/14–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d89ef5f2d9c14e602d&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d89ef5f2d9c14e602d">
-<rect class="hit" x="573" y="442" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="575" y="444" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="585" y="462" font-size="11" font-weight="600" fill="#FFFFFF">Report comment gate · app</text>
+<rect class="hit" x="573" y="408" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="575" y="410" width="187" height="28" rx="8" fill="#007FFF"/>
+<text x="585" y="428" font-size="11" font-weight="600" fill="#FFFFFF">Report comment gate · app</text>
 </g>
 </a>
-<rect x="0" y="484" width="2837" height="86" fill="#E8F4FF"/>
-<rect x="0" y="484" width="8" height="86" fill="#1A8CFF"/>
-<text x="20" y="531.0" font-size="12" font-weight="700" fill="#1A8CFF">Consignee</text>
-<line x1="0" y1="570" x2="2837" y2="570" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="0" y="450" width="2837" height="86" fill="#E8F4FF"/>
+<rect x="0" y="450" width="8" height="86" fill="#1A8CFF"/>
+<text x="20" y="497.0" font-size="12" font-weight="700" fill="#1A8CFF">Consignee</text>
+<line x1="0" y1="536" x2="2837" y2="536" stroke="#E5E7EB" stroke-width="1"/>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d819fb73ff59802472aaf" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Login · WEB&quot;, &quot;ver&quot;: &quot;09/15&quot;, &quot;span&quot;: &quot;08/26–09/16&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26–08/28&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/27–09/01&quot;], [&quot;UI&quot;, &quot;09/09–09/11&quot;], [&quot;API&quot;, &quot;09/03–09/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/07–09/15&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d819fb73ff59802472aaf&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d819fb73ff59802472aaf">
-<rect class="hit" x="441" y="494" width="246" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="496" width="242" height="28" rx="8" fill="#1A8CFF"/>
-<text x="453" y="514" font-size="11" font-weight="600" fill="#FFFFFF">Login · WEB</text>
+<rect class="hit" x="441" y="460" width="246" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="443" y="462" width="242" height="28" rx="8" fill="#1A8CFF"/>
+<text x="453" y="480" font-size="11" font-weight="600" fill="#FFFFFF">Login · WEB</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81acb9bbd5d75f842971" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Receiver MVP · WEB&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;09/16–10/21&quot;, &quot;rows&quot;: [], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81acb9bbd5d75f842971&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81acb9bbd5d75f842971">
-<rect class="hit" x="672" y="528" width="400" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="674" y="530" width="396" height="28" rx="8" fill="#1A8CFF"/>
-<text x="684" y="548" font-size="11" font-weight="600" fill="#FFFFFF">Receiver MVP · WEB</text>
+<rect class="hit" x="672" y="494" width="400" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="674" y="496" width="396" height="28" rx="8" fill="#1A8CFF"/>
+<text x="684" y="514" font-size="11" font-weight="600" fill="#FFFFFF">Receiver MVP · WEB</text>
 </g>
 </a>
-<rect x="0" y="570" width="2837" height="154" fill="#D6E4FF"/>
-<rect x="0" y="570" width="8" height="154" fill="#003DF2"/>
-<text x="20" y="651.0" font-size="12" font-weight="700" fill="#003DF2">Official website</text>
-<line x1="0" y1="724" x2="2837" y2="724" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="0" y="536" width="2837" height="154" fill="#D6E4FF"/>
+<rect x="0" y="536" width="8" height="154" fill="#003DF2"/>
+<text x="20" y="617.0" font-size="12" font-weight="700" fill="#003DF2">Official website</text>
+<line x1="0" y1="690" x2="2837" y2="690" stroke="#E5E7EB" stroke-width="1"/>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81a9bd1fd3aaf97377a5" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Portal login&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/16–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/16&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/16–09/18&quot;], [&quot;UI&quot;, &quot;09/17–09/18&quot;], [&quot;API&quot;, &quot;09/17–09/18&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81a9bd1fd3aaf97377a5&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81a9bd1fd3aaf97377a5">
-<rect class="hit" x="672" y="580" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="674" y="582" width="88" height="28" rx="8" fill="#003DF2"/>
-<text x="684" y="600" font-size="11" font-weight="600" fill="#FFFFFF">Portal login</text>
+<rect class="hit" x="672" y="546" width="92" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="674" y="548" width="88" height="28" rx="8" fill="#003DF2"/>
+<text x="684" y="566" font-size="11" font-weight="600" fill="#FFFFFF">Portal login</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8132bbb0da41d1c3c84f" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Orders list tabs&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/28–09/30&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8132bbb0da41d1c3c84f&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8132bbb0da41d1c3c84f">
-<rect class="hit" x="804" y="580" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="582" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="816" y="600" font-size="11" font-weight="600" fill="#FFFFFF">Orders list tabs</text>
+<rect class="hit" x="804" y="546" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="806" y="548" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="816" y="566" font-size="11" font-weight="600" fill="#FFFFFF">Orders list tabs</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d812486e9e10a320770b2" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Claim to my orders&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;10/19–11/04&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/19&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/19–10/21&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/02–11/03&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812486e9e10a320770b2&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812486e9e10a320770b2">
-<rect class="hit" x="1035" y="580" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1037" y="582" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1047" y="600" font-size="11" font-weight="600" fill="#FFFFFF">Claim to my orders</text>
+<rect class="hit" x="1035" y="546" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1037" y="548" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="1047" y="566" font-size="11" font-weight="600" fill="#FFFFFF">Claim to my orders</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d814e9128f4fc1d054a80" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Role presets&quot;, &quot;ver&quot;: &quot;11/24&quot;, &quot;span&quot;: &quot;11/09–11/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/09&quot;], [&quot;UX userflows + mocks&quot;, &quot;11/09–11/11&quot;], [&quot;UI&quot;, &quot;11/16–11/18&quot;], [&quot;API&quot;, &quot;11/16–11/18&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/23–11/24&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d814e9128f4fc1d054a80&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d814e9128f4fc1d054a80">
-<rect class="hit" x="1266" y="580" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1268" y="582" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1278" y="600" font-size="11" font-weight="600" fill="#FFFFFF">Role presets</text>
+<rect class="hit" x="1266" y="546" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1268" y="548" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="1278" y="566" font-size="11" font-weight="600" fill="#FFFFFF">Role presets</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81d58f45e070c83dbfcd" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Official /track · lookup T1 not-found&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;09/16–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/16&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/16–09/23&quot;], [&quot;UI&quot;, &quot;09/28–10/14&quot;], [&quot;API&quot;, &quot;09/28–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d58f45e070c83dbfcd&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d58f45e070c83dbfcd">
-<rect class="hit" x="672" y="614" width="400" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="674" y="616" width="396" height="28" rx="8" fill="#003DF2"/>
-<text x="684" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Official /track · lookup T1 not-found</text>
+<rect class="hit" x="672" y="580" width="400" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="674" y="582" width="396" height="28" rx="8" fill="#003DF2"/>
+<text x="684" y="600" font-size="11" font-weight="600" fill="#FFFFFF">Official /track · lookup T1 not-found</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8193911ccaf82bf885e9" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Order detail shared view&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/26–11/11&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/26–10/28&quot;], [&quot;UI&quot;, &quot;11/02–11/04&quot;], [&quot;API&quot;, &quot;11/02–11/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/10&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8193911ccaf82bf885e9&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8193911ccaf82bf885e9">
-<rect class="hit" x="1112" y="614" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1114" y="616" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1124" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Order detail shared view</text>
+<rect class="hit" x="1112" y="580" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1114" y="582" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="1124" y="600" font-size="11" font-weight="600" fill="#FFFFFF">Order detail shared view</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81d1b0a3e2d50532e40c" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Custom role builder&quot;, &quot;ver&quot;: &quot;12/01&quot;, &quot;span&quot;: &quot;11/16–12/02&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/16&quot;], [&quot;UX userflows + mocks&quot;, &quot;11/16–11/18&quot;], [&quot;UI&quot;, &quot;11/23–11/25&quot;], [&quot;API&quot;, &quot;11/23–11/25&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/30–12/01&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d1b0a3e2d50532e40c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d1b0a3e2d50532e40c">
-<rect class="hit" x="1343" y="614" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1345" y="616" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1355" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Custom role builder</text>
+<rect class="hit" x="1343" y="580" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1345" y="582" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="1355" y="600" font-size="11" font-weight="600" fill="#FFFFFF">Custom role builder</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8104bd78c2e1d376cb37" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Create order&quot;, &quot;ver&quot;: &quot;10/27&quot;, &quot;span&quot;: &quot;10/12–10/28&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/12&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/19–10/21&quot;], [&quot;API&quot;, &quot;10/19–10/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/26–10/27&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8104bd78c2e1d376cb37&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8104bd78c2e1d376cb37">
-<rect class="hit" x="958" y="648" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="960" y="650" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="970" y="668" font-size="11" font-weight="600" fill="#FFFFFF">Create order</text>
+<rect class="hit" x="958" y="614" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="960" y="616" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="970" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Create order</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d812d8d0fd41de7d24041" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Billing&quot;, &quot;ver&quot;: &quot;11/17&quot;, &quot;span&quot;: &quot;11/02–11/18&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/02&quot;], [&quot;UX userflows + mocks&quot;, &quot;11/02–11/04&quot;], [&quot;UI&quot;, &quot;11/09–11/11&quot;], [&quot;API&quot;, &quot;11/09–11/11&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/16–11/17&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812d8d0fd41de7d24041&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812d8d0fd41de7d24041">
-<rect class="hit" x="1189" y="648" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1191" y="650" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1201" y="668" font-size="11" font-weight="600" fill="#FFFFFF">Billing</text>
+<rect class="hit" x="1189" y="614" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1191" y="616" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="1201" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Billing</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81fa930cfa5c1d672197" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Import orders CSV&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;10/19–11/04&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/19&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/19–10/21&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/02–11/03&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81fa930cfa5c1d672197&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81fa930cfa5c1d672197">
-<rect class="hit" x="1035" y="682" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1037" y="684" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1047" y="702" font-size="11" font-weight="600" fill="#FFFFFF">Import orders CSV</text>
+<rect class="hit" x="1035" y="648" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1037" y="650" width="187" height="28" rx="8" fill="#003DF2"/>
+<text x="1047" y="668" font-size="11" font-weight="600" fill="#FFFFFF">Import orders CSV</text>
 </g>
 </a>
-<rect x="0" y="724" width="2837" height="154" fill="#F3EEFA"/>
-<rect x="0" y="724" width="8" height="154" fill="#6A4FA3"/>
-<text x="20" y="805.0" font-size="12" font-weight="700" fill="#6A4FA3">SenditSell</text>
-<line x1="0" y1="878" x2="2837" y2="878" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="0" y="690" width="2837" height="154" fill="#F3EEFA"/>
+<rect x="0" y="690" width="8" height="154" fill="#6A4FA3"/>
+<text x="20" y="771.0" font-size="12" font-weight="700" fill="#6A4FA3">SenditSell</text>
+<line x1="0" y1="844" x2="2837" y2="844" stroke="#E5E7EB" stroke-width="1"/>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81b79aecf9e84f153f5e" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Sales + purchase&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/18–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/18&quot;], [&quot;Review userflows&quot;, &quot;08/18–08/20&quot;], [&quot;UI&quot;, &quot;08/19–08/20&quot;], [&quot;API&quot;, &quot;08/19–08/20&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81b79aecf9e84f153f5e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81b79aecf9e84f153f5e">
-<rect class="hit" x="353" y="734" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="355" y="736" width="88" height="28" rx="8" fill="#6A4FA3"/>
-<text x="365" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Sales + pur…</text>
+<rect class="hit" x="353" y="700" width="92" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="355" y="702" width="88" height="28" rx="8" fill="#6A4FA3"/>
+<text x="365" y="720" font-size="11" font-weight="600" fill="#FFFFFF">Sales + pur…</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/9117500426fc433598798630cf606560" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Master data move · 主檔遷移&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;08/27–09/09&quot;, &quot;rows&quot;: [[&quot;API&quot;, &quot;08/27–09/09&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/9117500426fc433598798630cf606560&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/9117500426fc433598798630cf606560">
-<rect class="hit" x="452" y="734" width="158" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="454" y="736" width="154" height="28" rx="8" fill="#6A4FA3"/>
-<text x="464" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Master data move · 主…</text>
+<rect class="hit" x="452" y="700" width="158" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="454" y="702" width="154" height="28" rx="8" fill="#6A4FA3"/>
+<text x="464" y="720" font-size="11" font-weight="600" fill="#FFFFFF">Master data move · 主…</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d810381b6c9024a8af581" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Product master fields&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/14–09/16&quot;], [&quot;Review fields plan&quot;, &quot;09/14–09/16&quot;], [&quot;UX mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/09–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/30&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d810381b6c9024a8af581&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d810381b6c9024a8af581">
-<rect class="hit" x="650" y="734" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="652" y="736" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="662" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Product master fields</text>
+<rect class="hit" x="650" y="700" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="652" y="702" width="187" height="28" rx="8" fill="#6A4FA3"/>
+<text x="662" y="720" font-size="11" font-weight="600" fill="#FFFFFF">Product master fields</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81a39beaee82fed2680e" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Pricing &amp; costing&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;10/07–11/04&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/05–10/07&quot;], [&quot;Review fields plan&quot;, &quot;10/05–10/07&quot;], [&quot;UX mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;11/02–11/04&quot;], [&quot;API&quot;, &quot;10/19–10/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/02–11/04&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81a39beaee82fed2680e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81a39beaee82fed2680e">
-<rect class="hit" x="903" y="734" width="323" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="905" y="736" width="319" height="28" rx="8" fill="#6A4FA3"/>
-<text x="915" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Pricing &amp; costing</text>
+<rect class="hit" x="903" y="700" width="323" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="905" y="702" width="319" height="28" rx="8" fill="#6A4FA3"/>
+<text x="915" y="720" font-size="11" font-weight="600" fill="#FFFFFF">Pricing &amp; costing</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81459971fb57e83562eb" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Shipping notice + execution&quot;, &quot;ver&quot;: &quot;12/01&quot;, &quot;span&quot;: &quot;11/16–12/02&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/16–11/18&quot;], [&quot;Review fields plan&quot;, &quot;11/16–11/18&quot;], [&quot;UX mocks&quot;, &quot;11/16–11/18&quot;], [&quot;UI&quot;, &quot;11/23–11/25&quot;], [&quot;API&quot;, &quot;11/23–11/25&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/30–12/02&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81459971fb57e83562eb&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81459971fb57e83562eb">
-<rect class="hit" x="1343" y="734" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1345" y="736" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1355" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Shipping notice + execut…</text>
+<rect class="hit" x="1343" y="700" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1345" y="702" width="187" height="28" rx="8" fill="#6A4FA3"/>
+<text x="1355" y="720" font-size="11" font-weight="600" fill="#FFFFFF">Shipping notice + execut…</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d814facc8fbf297d74f79" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Order status + exceptions&quot;, &quot;ver&quot;: &quot;12/22&quot;, &quot;span&quot;: &quot;12/07–12/23&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;12/07–12/09&quot;], [&quot;Review fields plan&quot;, &quot;12/07–12/09&quot;], [&quot;UX mocks&quot;, &quot;12/07–12/09&quot;], [&quot;UI&quot;, &quot;12/14–12/16&quot;], [&quot;API&quot;, &quot;12/14–12/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/21–12/23&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d814facc8fbf297d74f79&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d814facc8fbf297d74f79">
-<rect class="hit" x="1574" y="734" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1576" y="736" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1586" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Order status + exceptions</text>
+<rect class="hit" x="1574" y="700" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1576" y="702" width="187" height="28" rx="8" fill="#6A4FA3"/>
+<text x="1586" y="720" font-size="11" font-weight="600" fill="#FFFFFF">Order status + exceptions</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81c4b681d96a4751e0a7" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;SO to PO review&quot;, &quot;ver&quot;: &quot;09/01&quot;, &quot;span&quot;: &quot;08/31–09/02&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;08/31–09/02&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81c4b681d96a4751e0a7&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81c4b681d96a4751e0a7">
-<rect class="hit" x="496" y="768" width="40" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="498" y="770" width="36" height="28" rx="8" fill="#6A4FA3"/>
-<text x="508" y="788" font-size="11" font-weight="600" fill="#FFFFFF">SO to…</text>
+<rect class="hit" x="496" y="734" width="40" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="498" y="736" width="36" height="28" rx="8" fill="#6A4FA3"/>
+<text x="508" y="754" font-size="11" font-weight="600" fill="#FFFFFF">SO to…</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81cd8ffac7d52f2da08c" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Kit and combo&quot;, &quot;ver&quot;: &quot;10/06&quot;, &quot;span&quot;: &quot;09/21–10/07&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/21–09/23&quot;], [&quot;Review fields plan&quot;, &quot;09/21–09/23&quot;], [&quot;UX mocks&quot;, &quot;09/21–09/23&quot;], [&quot;UI&quot;, &quot;09/28–09/30&quot;], [&quot;API&quot;, &quot;09/28–09/30&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/05–10/07&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81cd8ffac7d52f2da08c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81cd8ffac7d52f2da08c">
-<rect class="hit" x="727" y="768" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="729" y="770" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="739" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Kit and combo</text>
+<rect class="hit" x="727" y="734" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="729" y="736" width="187" height="28" rx="8" fill="#6A4FA3"/>
+<text x="739" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Kit and combo</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81bb81fbd7f255202b28" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Sales orders + claims&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/12–11/11&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/12–10/14&quot;], [&quot;Review fields plan&quot;, &quot;10/12–10/14&quot;], [&quot;UX mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/11&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81bb81fbd7f255202b28&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81bb81fbd7f255202b28">
-<rect class="hit" x="958" y="768" width="345" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="960" y="770" width="341" height="28" rx="8" fill="#6A4FA3"/>
-<text x="970" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Sales orders + claims</text>
+<rect class="hit" x="958" y="734" width="345" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="960" y="736" width="341" height="28" rx="8" fill="#6A4FA3"/>
+<text x="970" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Sales orders + claims</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81cdaefcd7956a27460a" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;System FX + permissions&quot;, &quot;ver&quot;: &quot;12/08&quot;, &quot;span&quot;: &quot;11/23–12/09&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/23–11/25&quot;], [&quot;Review fields plan&quot;, &quot;11/23–11/25&quot;], [&quot;UX mocks&quot;, &quot;11/23–11/25&quot;], [&quot;UI&quot;, &quot;11/30–12/02&quot;], [&quot;API&quot;, &quot;11/30–12/02&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/07–12/09&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81cdaefcd7956a27460a&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81cdaefcd7956a27460a">
-<rect class="hit" x="1420" y="768" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1422" y="770" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1432" y="788" font-size="11" font-weight="600" fill="#FFFFFF">System FX + permissions</text>
+<rect class="hit" x="1420" y="734" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1422" y="736" width="187" height="28" rx="8" fill="#6A4FA3"/>
+<text x="1432" y="754" font-size="11" font-weight="600" fill="#FFFFFF">System FX + permissions</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d810a925edc87c6884992" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Ops reports&quot;, &quot;ver&quot;: &quot;12/29&quot;, &quot;span&quot;: &quot;12/14–12/30&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;12/14–12/16&quot;], [&quot;Review fields plan&quot;, &quot;12/14–12/16&quot;], [&quot;UX mocks&quot;, &quot;12/14–12/16&quot;], [&quot;UI&quot;, &quot;12/21–12/23&quot;], [&quot;API&quot;, &quot;12/21–12/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/28–12/30&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d810a925edc87c6884992&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d810a925edc87c6884992">
-<rect class="hit" x="1651" y="768" width="125" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1653" y="770" width="121" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1663" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Ops reports</text>
-<rect class="hit" x="1805" y="768" width="40" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1807" y="770" width="36" height="28" rx="8" fill="#6A4FA3"/>
+<rect class="hit" x="1651" y="734" width="125" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1653" y="736" width="121" height="28" rx="8" fill="#6A4FA3"/>
+<text x="1663" y="754" font-size="11" font-weight="600" fill="#FFFFFF">Ops reports</text>
+<rect class="hit" x="1805" y="734" width="40" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1807" y="736" width="36" height="28" rx="8" fill="#6A4FA3"/>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81b59faaf3475f8d0f4e" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Pricing engine UX&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;09/02–09/09&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/07–09/09&quot;], [&quot;UX mocks&quot;, &quot;09/07–09/09&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81b59faaf3475f8d0f4e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81b59faaf3475f8d0f4e">
-<rect class="hit" x="518" y="802" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="520" y="804" width="88" height="28" rx="8" fill="#6A4FA3"/>
-<text x="530" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Pricing eng…</text>
+<rect class="hit" x="518" y="768" width="92" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="520" y="770" width="88" height="28" rx="8" fill="#6A4FA3"/>
+<text x="530" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Pricing eng…</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d812faae0fa6f8cc6aa7b" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Product category&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/28–09/30&quot;], [&quot;Review fields plan&quot;, &quot;09/28–09/30&quot;], [&quot;UX mocks&quot;, &quot;09/28–09/30&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/14&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812faae0fa6f8cc6aa7b&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812faae0fa6f8cc6aa7b">
-<rect class="hit" x="804" y="802" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="804" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="816" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Product category</text>
+<rect class="hit" x="804" y="768" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="806" y="770" width="187" height="28" rx="8" fill="#6A4FA3"/>
+<text x="816" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Product category</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d810ea29dd58687dd4146" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Purchase orders&quot;, &quot;ver&quot;: &quot;11/17&quot;, &quot;span&quot;: &quot;10/19–11/18&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/19–10/21&quot;], [&quot;Review fields plan&quot;, &quot;10/19–10/21&quot;], [&quot;UX mocks&quot;, &quot;10/19–10/21&quot;], [&quot;UI&quot;, &quot;11/09–11/11&quot;], [&quot;API&quot;, &quot;11/09–11/11&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/16–11/18&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d810ea29dd58687dd4146&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d810ea29dd58687dd4146">
-<rect class="hit" x="1035" y="802" width="345" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1037" y="804" width="341" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1047" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Purchase orders</text>
+<rect class="hit" x="1035" y="768" width="345" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1037" y="770" width="341" height="28" rx="8" fill="#6A4FA3"/>
+<text x="1047" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Purchase orders</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81a1b10cd7512b999918" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Accounting AR AP GL&quot;, &quot;ver&quot;: &quot;12/15&quot;, &quot;span&quot;: &quot;11/30–12/16&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/30–12/02&quot;], [&quot;Review fields plan&quot;, &quot;11/30–12/02&quot;], [&quot;UX mocks&quot;, &quot;11/30–12/02&quot;], [&quot;UI&quot;, &quot;12/07–12/09&quot;], [&quot;API&quot;, &quot;12/07–12/09&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/14–12/16&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81a1b10cd7512b999918&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81a1b10cd7512b999918">
-<rect class="hit" x="1497" y="802" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1499" y="804" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1509" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Accounting AR AP GL</text>
+<rect class="hit" x="1497" y="768" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1499" y="770" width="187" height="28" rx="8" fill="#6A4FA3"/>
+<text x="1509" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Accounting AR AP GL</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8102983dcbdb5ad751a5" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Order Control Center · 訂單控管中心&quot;, &quot;ver&quot;: &quot;11/24&quot;, &quot;span&quot;: &quot;11/02–11/25&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/02–11/04&quot;], [&quot;Review fields plan&quot;, &quot;11/02–11/04&quot;], [&quot;UX mocks&quot;, &quot;11/02–11/04&quot;], [&quot;UI&quot;, &quot;11/16–11/18&quot;], [&quot;API&quot;, &quot;11/16–11/18&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/23–11/25&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8102983dcbdb5ad751a5&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8102983dcbdb5ad751a5">
-<rect class="hit" x="1189" y="836" width="268" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1191" y="838" width="264" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1201" y="856" font-size="11" font-weight="600" fill="#FFFFFF">Order Control Center · 訂單控管中心</text>
+<rect class="hit" x="1189" y="802" width="268" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1191" y="804" width="264" height="28" rx="8" fill="#6A4FA3"/>
+<text x="1201" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Order Control Center · 訂單控管中心</text>
 </g>
 </a>
-<rect x="0" y="878" width="2837" height="154" fill="#FFEDD5"/>
-<rect x="0" y="878" width="8" height="154" fill="#E74725"/>
-<text x="20" y="959.0" font-size="12" font-weight="700" fill="#E74725">Sterling</text>
-<line x1="0" y1="1032" x2="2837" y2="1032" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="0" y="844" width="2837" height="154" fill="#FFEDD5"/>
+<rect x="0" y="844" width="8" height="154" fill="#E74725"/>
+<text x="20" y="925.0" font-size="12" font-weight="700" fill="#E74725">Sterling</text>
+<line x1="0" y1="998" x2="2837" y2="998" stroke="#E5E7EB" stroke-width="1"/>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81b29926e00f7811d172" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Checkout redesign&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/11–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/11&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/11–08/13&quot;], [&quot;UI&quot;, &quot;08/18–08/20&quot;], [&quot;API&quot;, &quot;08/18–08/20&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81b29926e00f7811d172&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81b29926e00f7811d172">
-<rect class="hit" x="276" y="888" width="169" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="278" y="890" width="165" height="28" rx="8" fill="#E74725"/>
-<text x="288" y="908" font-size="11" font-weight="600" fill="#FFFFFF">Checkout redesign</text>
+<rect class="hit" x="276" y="854" width="169" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="278" y="856" width="165" height="28" rx="8" fill="#E74725"/>
+<text x="288" y="874" font-size="11" font-weight="600" fill="#FFFFFF">Checkout redesign</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8145a149ce26630ad2ed" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Shop banner&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;08/26–09/09&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/26–08/28&quot;], [&quot;UI&quot;, &quot;09/02–09/04&quot;], [&quot;API&quot;, &quot;09/02–09/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/08–09/09&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8145a149ce26630ad2ed&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8145a149ce26630ad2ed">
-<rect class="hit" x="441" y="888" width="169" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="890" width="165" height="28" rx="8" fill="#E74725"/>
-<text x="453" y="908" font-size="11" font-weight="600" fill="#FFFFFF">Shop banner</text>
+<rect class="hit" x="441" y="854" width="169" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="443" y="856" width="165" height="28" rx="8" fill="#E74725"/>
+<text x="453" y="874" font-size="11" font-weight="600" fill="#FFFFFF">Shop banner</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81018b0af7318bb0258b" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;GA4 / store sales tracking&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/14&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/21–09/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/29&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81018b0af7318bb0258b&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81018b0af7318bb0258b">
-<rect class="hit" x="650" y="888" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="652" y="890" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="662" y="908" font-size="11" font-weight="600" fill="#FFFFFF">GA4 / store sales tracki…</text>
+<rect class="hit" x="650" y="854" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="652" y="856" width="187" height="28" rx="8" fill="#E74725"/>
+<text x="662" y="874" font-size="11" font-weight="600" fill="#FFFFFF">GA4 / store sales tracki…</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d817d906ae3a4ff54798f" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Vehicle rego lookup&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d817d906ae3a4ff54798f&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d817d906ae3a4ff54798f">
-<rect class="hit" x="881" y="888" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="883" y="890" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="893" y="908" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle rego lookup</text>
+<rect class="hit" x="881" y="854" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="883" y="856" width="187" height="28" rx="8" fill="#E74725"/>
+<text x="893" y="874" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle rego lookup</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d816d979cc9486f7b0e9c" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Pay on account&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/26–11/11&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/26–10/28&quot;], [&quot;UI&quot;, &quot;11/02–11/04&quot;], [&quot;API&quot;, &quot;11/02–11/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/10&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d816d979cc9486f7b0e9c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d816d979cc9486f7b0e9c">
-<rect class="hit" x="1112" y="888" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1114" y="890" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="1124" y="908" font-size="11" font-weight="600" fill="#FFFFFF">Pay on account</text>
+<rect class="hit" x="1112" y="854" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1114" y="856" width="187" height="28" rx="8" fill="#E74725"/>
+<text x="1124" y="874" font-size="11" font-weight="600" fill="#FFFFFF">Pay on account</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8149b835dad26087214c" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Adobe security&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;08/19–11/03&quot;, &quot;rows&quot;: [], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8149b835dad26087214c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8149b835dad26087214c">
-<rect class="hit" x="364" y="922" width="851" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="366" y="924" width="847" height="28" rx="8" fill="#E74725"/>
-<text x="376" y="942" font-size="11" font-weight="600" fill="#FFFFFF">Adobe security</text>
+<rect class="hit" x="364" y="888" width="851" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="366" y="890" width="847" height="28" rx="8" fill="#E74725"/>
+<text x="376" y="908" font-size="11" font-weight="600" fill="#FFFFFF">Adobe security</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d811fa31beaafb22ed608" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Track with SenditGo&quot;, &quot;ver&quot;: &quot;09/15&quot;, &quot;span&quot;: &quot;08/26–09/16&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/26–09/01&quot;], [&quot;UI&quot;, &quot;09/02–09/08&quot;], [&quot;API&quot;, &quot;09/02–09/08&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/15–09/16&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d811fa31beaafb22ed608&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d811fa31beaafb22ed608">
-<rect class="hit" x="441" y="956" width="246" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="958" width="242" height="28" rx="8" fill="#E74725"/>
-<text x="453" y="976" font-size="11" font-weight="600" fill="#FFFFFF">Track with SenditGo</text>
+<rect class="hit" x="441" y="922" width="246" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="443" y="924" width="242" height="28" rx="8" fill="#E74725"/>
+<text x="453" y="942" font-size="11" font-weight="600" fill="#FFFFFF">Track with SenditGo</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d81d598f7d1675303b6a2" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Trade price match&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/28–09/30&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d598f7d1675303b6a2&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d598f7d1675303b6a2">
-<rect class="hit" x="804" y="956" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="958" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="816" y="976" font-size="11" font-weight="600" fill="#FFFFFF">Trade price match</text>
+<rect class="hit" x="804" y="922" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="806" y="924" width="187" height="28" rx="8" fill="#E74725"/>
+<text x="816" y="942" font-size="11" font-weight="600" fill="#FFFFFF">Trade price match</text>
 </g>
 </a>
 <a class="feat-link" href="https://www.notion.so/3c489adbb34d8142a48bc3ca03c6cda3" target="_blank" rel="noopener">
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Find My Garage&quot;, &quot;ver&quot;: &quot;10/27&quot;, &quot;span&quot;: &quot;10/12–10/28&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/12&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/19–10/21&quot;], [&quot;API&quot;, &quot;10/19–10/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/26–10/27&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8142a48bc3ca03c6cda3&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8142a48bc3ca03c6cda3">
-<rect class="hit" x="958" y="990" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="960" y="992" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="970" y="1010" font-size="11" font-weight="600" fill="#FFFFFF">Find My Garage</text>
+<rect class="hit" x="958" y="956" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="960" y="958" width="187" height="28" rx="8" fill="#E74725"/>
+<text x="970" y="976" font-size="11" font-weight="600" fill="#FFFFFF">Find My Garage</text>
 </g>
 </a>
-<rect x="0" y="1032" width="2837" height="52" fill="#FFF1EC"/>
-<rect x="0" y="1032" width="8" height="52" fill="#F05A3A"/>
-<text x="20" y="1062.0" font-size="12" font-weight="700" fill="#F05A3A">Sterling UI</text>
-<line x1="0" y1="1084" x2="2837" y2="1084" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="0" y="998" width="2837" height="52" fill="#FFF1EC"/>
+<rect x="0" y="998" width="8" height="52" fill="#F05A3A"/>
+<text x="20" y="1028.0" font-size="12" font-weight="700" fill="#F05A3A">Sterling UI</text>
+<line x1="0" y1="1050" x2="2837" y2="1050" stroke="#E5E7EB" stroke-width="1"/>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Homepage weight + SEO&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;LV-01 h1 · LV-03 8.1MB · LV-05 mobile hero · LV-09 extra h1 · LV-13 OG · same week as Homepage SEO config API · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="804" y="1042" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="1044" width="187" height="28" rx="8" fill="#F05A3A"/>
-<text x="816" y="1062" font-size="11" font-weight="600" fill="#FFFFFF">Homepage weight + SEO</text>
+<rect class="hit" x="804" y="1008" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="806" y="1010" width="187" height="28" rx="8" fill="#F05A3A"/>
+<text x="816" y="1028" font-size="11" font-weight="600" fill="#FFFFFF">Homepage weight + SEO</text>
 </g>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Theme hygiene&quot;, &quot;ver&quot;: &quot;12/01&quot;, &quot;span&quot;: &quot;11/16–12/02&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/16&quot;], [&quot;UI&quot;, &quot;11/23–11/25&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/01–12/02&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;FE-01 escape · FE-02 inline script · FE-03 onclick · FE-06 href# · FE-08 !important · LV-04 CSS bundles · LV-10 jQuery UI · garage stays on Find My Garage · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="1343" y="1042" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1345" y="1044" width="187" height="28" rx="8" fill="#F05A3A"/>
-<text x="1355" y="1062" font-size="11" font-weight="600" fill="#FFFFFF">Theme hygiene</text>
+<rect class="hit" x="1343" y="1008" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="1345" y="1010" width="187" height="28" rx="8" fill="#F05A3A"/>
+<text x="1355" y="1028" font-size="11" font-weight="600" fill="#FFFFFF">Theme hygiene</text>
 </g>
-<rect x="0" y="1084" width="2837" height="52" fill="#FFE8E1"/>
-<rect x="0" y="1084" width="8" height="52" fill="#C43C1F"/>
-<text x="20" y="1114.0" font-size="12" font-weight="700" fill="#C43C1F">Sterling API</text>
-<line x1="0" y1="1136" x2="2837" y2="1136" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="0" y="1050" width="2837" height="52" fill="#FFE8E1"/>
+<rect x="0" y="1050" width="8" height="52" fill="#C43C1F"/>
+<text x="20" y="1080.0" font-size="12" font-weight="700" fill="#C43C1F">Sterling API</text>
+<line x1="0" y1="1102" x2="2837" y2="1102" stroke="#E5E7EB" stroke-width="1"/>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Credential rotate&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/19–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/19&quot;], [&quot;API&quot;, &quot;08/19–08/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;F-01 rotate Adobe + Amasty keys · git untrack is not enough · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="364" y="1094" width="81" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="366" y="1096" width="77" height="28" rx="8" fill="#C43C1F"/>
-<text x="376" y="1114" font-size="11" font-weight="600" fill="#FFFFFF">Credentia…</text>
+<rect class="hit" x="364" y="1060" width="81" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="366" y="1062" width="77" height="28" rx="8" fill="#C43C1F"/>
+<text x="376" y="1080" font-size="11" font-weight="600" fill="#FFFFFF">Credentia…</text>
 </g>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Admin trust&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;08/26–09/09&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;API&quot;, &quot;09/02–09/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/08–09/09&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;F-02 anonymous webapi · F-04 2FA · F-06 F-07 zombie modules · LV-06 CSP · LV-11 autocomplete · LV-12 security.txt · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="441" y="1094" width="169" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="1096" width="165" height="28" rx="8" fill="#C43C1F"/>
-<text x="453" y="1114" font-size="11" font-weight="600" fill="#FFFFFF">Admin trust</text>
+<rect class="hit" x="441" y="1060" width="169" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="443" y="1062" width="165" height="28" rx="8" fill="#C43C1F"/>
+<text x="453" y="1080" font-size="11" font-weight="600" fill="#FFFFFF">Admin trust</text>
 </g>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;Homepage SEO config&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;LV-02 canonical · LV-07 JSON-LD later · Magento admin / API · same week as Homepage weight UI · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="804" y="1094" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="1096" width="187" height="28" rx="8" fill="#C43C1F"/>
-<text x="816" y="1114" font-size="11" font-weight="600" fill="#FFFFFF">Homepage SEO config</text>
+<rect class="hit" x="804" y="1060" width="191" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="806" y="1062" width="187" height="28" rx="8" fill="#C43C1F"/>
+<text x="816" y="1080" font-size="11" font-weight="600" fill="#FFFFFF">Homepage SEO config</text>
 </g>
 <g class="feat" data-tip="{&quot;name&quot;: &quot;NetSuite rewrite&quot;, &quot;ver&quot;: &quot;02/02&quot;, &quot;span&quot;: &quot;01/19–02/03&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;01/19&quot;], [&quot;API&quot;, &quot;01/26–01/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;02/02–02/03&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;F-03 R1–R4 R6 R11 · do not module:enable until qty is real and SQL is bound · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="2047" y="1094" width="180" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="2049" y="1096" width="176" height="28" rx="8" fill="#C43C1F"/>
-<text x="2059" y="1114" font-size="11" font-weight="600" fill="#FFFFFF">NetSuite rewrite</text>
+<rect class="hit" x="2047" y="1060" width="180" height="32" rx="8" fill="transparent"/>
+<rect class="work" x="2049" y="1062" width="176" height="28" rx="8" fill="#C43C1F"/>
+<text x="2059" y="1080" font-size="11" font-weight="600" fill="#FFFFFF">NetSuite rewrite</text>
 </g>
-<line x1="432" y1="206.0" x2="432" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="432" y1="206.0" x2="432" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="432,199.0 439,206.0 432,213.0 425,206.0" fill="#F43F5E"/>
 <text x="432" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">08/25</text>
-<line x1="520" y1="206.0" x2="520" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="520" y1="206.0" x2="520" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="520,199.0 527,206.0 520,213.0 513,206.0" fill="#F43F5E"/>
 <text x="520" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/01</text>
-<line x1="597" y1="206.0" x2="597" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="597" y1="206.0" x2="597" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="597,199.0 604,206.0 597,213.0 590,206.0" fill="#F43F5E"/>
 <text x="597" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/08</text>
-<line x1="674" y1="206.0" x2="674" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="674" y1="206.0" x2="674" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="674,199.0 681,206.0 674,213.0 667,206.0" fill="#F43F5E"/>
 <text x="674" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/15</text>
-<line x1="751" y1="206.0" x2="751" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="751" y1="206.0" x2="751" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="751,199.0 758,206.0 751,213.0 744,206.0" fill="#F43F5E"/>
 <text x="751" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/22</text>
-<line x1="828" y1="206.0" x2="828" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="828" y1="206.0" x2="828" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="828,199.0 835,206.0 828,213.0 821,206.0" fill="#F43F5E"/>
 <text x="828" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/29</text>
-<line x1="905" y1="206.0" x2="905" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="905" y1="206.0" x2="905" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="905,199.0 912,206.0 905,213.0 898,206.0" fill="#F43F5E"/>
 <text x="905" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/06</text>
-<line x1="982" y1="206.0" x2="982" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="982" y1="206.0" x2="982" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="982,199.0 989,206.0 982,213.0 975,206.0" fill="#F43F5E"/>
 <text x="982" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/13</text>
-<line x1="1059" y1="206.0" x2="1059" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1059" y1="206.0" x2="1059" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1059,199.0 1066,206.0 1059,213.0 1052,206.0" fill="#F43F5E"/>
 <text x="1059" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/20</text>
-<line x1="1136" y1="206.0" x2="1136" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1136" y1="206.0" x2="1136" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1136,199.0 1143,206.0 1136,213.0 1129,206.0" fill="#F43F5E"/>
 <text x="1136" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/27</text>
-<line x1="1213" y1="206.0" x2="1213" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1213" y1="206.0" x2="1213" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1213,199.0 1220,206.0 1213,213.0 1206,206.0" fill="#F43F5E"/>
 <text x="1213" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/03</text>
-<line x1="1290" y1="206.0" x2="1290" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1290" y1="206.0" x2="1290" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1290,199.0 1297,206.0 1290,213.0 1283,206.0" fill="#F43F5E"/>
 <text x="1290" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/10</text>
-<line x1="1367" y1="206.0" x2="1367" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1367" y1="206.0" x2="1367" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1367,199.0 1374,206.0 1367,213.0 1360,206.0" fill="#F43F5E"/>
 <text x="1367" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/17</text>
-<line x1="1444" y1="206.0" x2="1444" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1444" y1="206.0" x2="1444" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1444,199.0 1451,206.0 1444,213.0 1437,206.0" fill="#F43F5E"/>
 <text x="1444" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/24</text>
-<line x1="1521" y1="206.0" x2="1521" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1521" y1="206.0" x2="1521" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1521,199.0 1528,206.0 1521,213.0 1514,206.0" fill="#F43F5E"/>
 <text x="1521" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/01</text>
-<line x1="1598" y1="206.0" x2="1598" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1598" y1="206.0" x2="1598" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1598,199.0 1605,206.0 1598,213.0 1591,206.0" fill="#F43F5E"/>
 <text x="1598" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/08</text>
-<line x1="1675" y1="206.0" x2="1675" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1675" y1="206.0" x2="1675" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1675,199.0 1682,206.0 1675,213.0 1668,206.0" fill="#F43F5E"/>
 <text x="1675" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/15</text>
-<line x1="1752" y1="206.0" x2="1752" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1752" y1="206.0" x2="1752" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1752,199.0 1759,206.0 1752,213.0 1745,206.0" fill="#F43F5E"/>
 <text x="1752" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/22</text>
-<line x1="1829" y1="206.0" x2="1829" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1829" y1="206.0" x2="1829" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1829,199.0 1836,206.0 1829,213.0 1822,206.0" fill="#F43F5E"/>
 <text x="1829" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/29</text>
-<line x1="1906" y1="206.0" x2="1906" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1906" y1="206.0" x2="1906" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1906,199.0 1913,206.0 1906,213.0 1899,206.0" fill="#F43F5E"/>
 <text x="1906" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/05</text>
-<line x1="1983" y1="206.0" x2="1983" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="1983" y1="206.0" x2="1983" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="1983,199.0 1990,206.0 1983,213.0 1976,206.0" fill="#F43F5E"/>
 <text x="1983" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/12</text>
-<line x1="2060" y1="206.0" x2="2060" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2060" y1="206.0" x2="2060" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2060,199.0 2067,206.0 2060,213.0 2053,206.0" fill="#F43F5E"/>
 <text x="2060" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/19</text>
-<line x1="2137" y1="206.0" x2="2137" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2137" y1="206.0" x2="2137" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2137,199.0 2144,206.0 2137,213.0 2130,206.0" fill="#F43F5E"/>
 <text x="2137" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/26</text>
-<line x1="2214" y1="206.0" x2="2214" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2214" y1="206.0" x2="2214" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2214,199.0 2221,206.0 2214,213.0 2207,206.0" fill="#F43F5E"/>
 <text x="2214" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/02</text>
-<line x1="2291" y1="206.0" x2="2291" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2291" y1="206.0" x2="2291" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2291,199.0 2298,206.0 2291,213.0 2284,206.0" fill="#F43F5E"/>
 <text x="2291" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/09</text>
-<line x1="2368" y1="206.0" x2="2368" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2368" y1="206.0" x2="2368" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2368,199.0 2375,206.0 2368,213.0 2361,206.0" fill="#F43F5E"/>
 <text x="2368" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/16</text>
-<line x1="2445" y1="206.0" x2="2445" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2445" y1="206.0" x2="2445" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2445,199.0 2452,206.0 2445,213.0 2438,206.0" fill="#F43F5E"/>
 <text x="2445" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/23</text>
-<line x1="2522" y1="206.0" x2="2522" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2522" y1="206.0" x2="2522" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2522,199.0 2529,206.0 2522,213.0 2515,206.0" fill="#F43F5E"/>
 <text x="2522" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/02</text>
-<line x1="2599" y1="206.0" x2="2599" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2599" y1="206.0" x2="2599" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2599,199.0 2606,206.0 2599,213.0 2592,206.0" fill="#F43F5E"/>
 <text x="2599" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/09</text>
-<line x1="2676" y1="206.0" x2="2676" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2676" y1="206.0" x2="2676" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2676,199.0 2683,206.0 2676,213.0 2669,206.0" fill="#F43F5E"/>
 <text x="2676" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/16</text>
-<line x1="2753" y1="206.0" x2="2753" y2="1146" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
+<line x1="2753" y1="206.0" x2="2753" y2="1112" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
 <polygon points="2753,199.0 2760,206.0 2753,213.0 2746,206.0" fill="#F43F5E"/>
 <text x="2753" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/23</text>
-<text x="24" y="1168" font-size="11" font-weight="700" fill="#111827">Click a product block → Notion ticket</text>
-<text x="24" y="1186" font-size="11" fill="#4B5563">Reviewing flow = UX audit like OEM / SO-PO. Code review and test = ticket Status Reviewing then Testing — not extra tickets. Sterling UI / API = Magento audit overlay (disk), no Notion yet.</text>
-<rect x="24" y="1196" width="14" height="14" rx="3" fill="#007FFF"/>
-<text x="44" y="1207" font-size="11" fill="#111827">Carrier</text>
-<rect x="194" y="1196" width="14" height="14" rx="3" fill="#1A8CFF"/>
-<text x="214" y="1207" font-size="11" fill="#111827">Consignee</text>
-<rect x="364" y="1196" width="14" height="14" rx="3" fill="#003DF2"/>
-<text x="384" y="1207" font-size="11" fill="#111827">Official website</text>
-<rect x="534" y="1196" width="14" height="14" rx="3" fill="#6A4FA3"/>
-<text x="554" y="1207" font-size="11" fill="#111827">SenditSell</text>
-<rect x="704" y="1196" width="14" height="14" rx="3" fill="#E74725"/>
-<text x="724" y="1207" font-size="11" fill="#111827">Sterling</text>
-<rect x="874" y="1196" width="14" height="14" rx="3" fill="#F05A3A"/>
-<text x="894" y="1207" font-size="11" fill="#111827">Sterling UI</text>
-<rect x="1044" y="1196" width="14" height="14" rx="3" fill="#C43C1F"/>
-<text x="1064" y="1207" font-size="11" fill="#111827">Sterling API</text>
+<text x="24" y="1134" font-size="11" font-weight="700" fill="#111827">Click a product block → Notion ticket</text>
+<text x="24" y="1152" font-size="11" fill="#4B5563">Reviewing flow = UX audit like OEM / SO-PO. Code review and test = ticket Status Reviewing then Testing — not extra tickets. Sterling UI / API = Magento audit overlay (disk), no Notion yet.</text>
+<rect x="24" y="1162" width="14" height="14" rx="3" fill="#007FFF"/>
+<text x="44" y="1173" font-size="11" fill="#111827">Carrier</text>
+<rect x="194" y="1162" width="14" height="14" rx="3" fill="#1A8CFF"/>
+<text x="214" y="1173" font-size="11" fill="#111827">Consignee</text>
+<rect x="364" y="1162" width="14" height="14" rx="3" fill="#003DF2"/>
+<text x="384" y="1173" font-size="11" fill="#111827">Official website</text>
+<rect x="534" y="1162" width="14" height="14" rx="3" fill="#6A4FA3"/>
+<text x="554" y="1173" font-size="11" fill="#111827">SenditSell</text>
+<rect x="704" y="1162" width="14" height="14" rx="3" fill="#E74725"/>
+<text x="724" y="1173" font-size="11" fill="#111827">Sterling</text>
+<rect x="874" y="1162" width="14" height="14" rx="3" fill="#F05A3A"/>
+<text x="894" y="1173" font-size="11" fill="#111827">Sterling UI</text>
+<rect x="1044" y="1162" width="14" height="14" rx="3" fill="#C43C1F"/>
+<text x="1064" y="1173" font-size="11" fill="#111827">Sterling API</text>
 </svg>
-<div id="tip"></div>
-<script>
-const tip = document.getElementById('tip');
-function show(ev, raw) {
-  let d;
-  try { d = JSON.parse(raw); } catch (e) { return; }
-  const rows = (d.rows || []).map(r =>
-    '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' + r[1] + '</span></div>'
-  ).join('');
-  const sell = d.sell ? '<div class="sell">Reviewing flow = OEM / SO-PO UX audit · code review/test = ticket Status</div>' : '';
-  const note = d.note ? '<div class="sell">' + d.note + '</div>' : '';
-  const open = d.url ? '<div class="open">Click to open Notion ticket</div>' : '<div class="open">No Notion ticket yet</div>';
-  tip.innerHTML = '<h4>' + (d.name || '') + '</h4>'
-    + '<div class="meta">check ' + (d.ver || '') + ' · ' + (d.span || '') + '</div>'
-    + (rows || '<div class="meta">No stage days on this bar</div>')
-    + sell
-    + note
-    + open;
-  tip.style.display = 'block';
-  move(ev);
-}
-function move(ev) {
-  const pad = 14;
-  let x = ev.clientX + pad;
-  let y = ev.clientY + pad;
-  const r = tip.getBoundingClientRect();
-  if (x + r.width > window.innerWidth - 8) x = ev.clientX - r.width - pad;
-  if (y + r.height > window.innerHeight - 8) y = ev.clientY - r.height - pad;
-  tip.style.left = Math.max(8, x) + 'px';
-  tip.style.top = Math.max(8, y) + 'px';
-}
-function hide() { tip.style.display = 'none'; }
-document.querySelectorAll('.feat').forEach(g => {
-  g.addEventListener('mouseenter', ev => show(ev, g.getAttribute('data-tip')));
-  g.addEventListener('mousemove', move);
-  g.addEventListener('mouseleave', hide);
-  g.addEventListener('click', ev => {
-    const url = g.getAttribute('data-url');
-    if (!url) return;
-    ev.preventDefault();
-    ev.stopPropagation();
-    window.open(url, '_blank', 'noopener');
-  });
-});
-</script>
-</body>
-</html>
