@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#12324b">
-<title>SenditGo delivery roadmap · Holien milestones v1.6</title>
+<title>SenditGo delivery roadmap · Holien milestones v1.7</title>
 <style>
 *{box-sizing:border-box}
 :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172f45;background:#f6f8fa;font-variant-numeric:tabular-nums}
@@ -35,16 +35,27 @@ details>summary{list-style:none;cursor:pointer}summary::-webkit-details-marker{d
 footer{margin-top:23px;font-size:12px;color:#536777}footer a{margin-left:4px}
 @media(max-width:870px){.wrap{width:calc(100% - 36px)}.hero{align-items:start;flex-direction:column}.gates{grid-template-columns:repeat(2,1fr)}.gates article,.gates article:first-child{border:1px solid #e1e8ed}.head,.package>summary{grid-template-columns:36px minmax(160px,1fr) 108px minmax(120px,.8fr);gap:8px}.period{font-size:15px}}
 @media(max-width:620px){.wrap{width:calc(100% - 28px)}nav{font-size:12px}.hero{padding:25px 0;gap:16px}.gates{display:block}.gates article,.gates article:first-child{display:grid;grid-template-columns:55px 1fr;column-gap:8px;padding:12px;border:0;border-bottom:1px solid #e1e8ed}.gates h3{margin:0}.gates p{grid-column:2;font-size:13px}.gates time{padding-top:3px}.section-title{align-items:center}h2{font-size:21px}.section-title a{font-size:12px}.head{display:none}.package>summary{grid-template-columns:30px 1fr;gap:3px 8px;padding:9px 12px}.dates{grid-column:2}.track{display:none}.stream>summary{grid-template-columns:4px 1fr auto 13px;gap:8px;padding:12px}.subtitle{font-size:12px}.count{font-size:11px}.detail{padding:2px 14px 13px}.notes,.expansion{padding:14px}.period{white-space:normal}}
+.jump{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:16px;font-size:13px}.table-note{margin:12px 0}.table-scroll{overflow-x:auto;background:white;border:1px solid #cfdbe3;border-radius:9px}.weeks{width:100%;min-width:740px;border-collapse:collapse;font-size:13px;line-height:1.45}.weeks th,.weeks td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #e1e8ed}.weeks thead{background:#e8f2f3}.weeks tbody th{min-width:103px;color:#2e5663}.weeks tbody tr:nth-child(even){background:#f7fafb}.register{margin:6px 0;border:1px solid #cfdbe3;background:white;border-radius:8px;padding:10px 14px}.register summary{font-weight:650}.register summary::before{content:'▸ ';color:#21737a}.register[open] summary::before{content:'▾ '}.register>ul{padding-left:20px}.register>ul>li{margin:8px 0}.register li,.ticket-list li,.register p{font-size:13px;line-height:1.5}.ticket-list{margin:4px 0;padding-left:20px}.ticket-list a{margin:0;padding:0}.detail .ticket-list a{display:inline}
 </style>
 </head>
 <body>
 <header><div class="wrap">
 <nav aria-label="Roadmap navigation"><span class="brand"><b>HOLIEN</b> Milestones</span><a href="{{archive}}index.html">September portfolio ↗</a></nav>
-<div class="hero"><div><div class="eyebrow">SenditGo · Proposed plan</div><h1>Delivery roadmap</h1><p>Fleet Web, Driver App and AU operations</p></div><div class="period">23 Nov 2026 — 31 Mar 2027</div></div>
+<div class="hero"><div><div class="eyebrow">SenditGo · Proposed plan</div><h1>Delivery roadmap</h1><p>Fleet Web V2, Driver App V2 and ongoing AU feedback</p></div><div class="period">23 Nov 2026 — 31 Mar 2027</div></div>
 </div></header>
 <main class="wrap">
-<section aria-labelledby="milestones"><div class="section-title"><h2 id="milestones">Delivery milestones</h2></div><div class="gates">{{gates}}</div>
+<div class="jump"><a href="#weekly">Weekly slots</a><a href="#ticket-register">Open tickets and gaps</a><a href="#schedule">Feature schedule</a></div>
+<section aria-labelledby="milestones"><div class="section-title"><h2 id="milestones">Monthly delivery plan</h2></div><p class="intro">November planning began on 18 November. Weekly delivery capacity starts Monday, 23 November and runs through Wednesday, 31 March.</p><div class="gates">{{gates}}</div>
 <div class="notes"><p><strong>Capacity decision by 18 December.</strong> Protect urgent AU fixes, GA4 and Insight in Grey’s queue. The March target assumes separate Web and native implementation capacity, API support and shared QA. Validate driver interactions before implementing each layout on Android and iOS. Reserve March for pilot feedback, fixes and independently approved rollouts.</p></div></section>
+<section id="weekly" aria-labelledby="weekly-title"><div class="section-title"><h2 id="weekly-title">Weekly capacity and AU intake</h2></div>
+<p class="intro">Four team slots each week. Reserve one for bugs and use a second when urgency and operational impact justify it. Protect at least one V2 UX slot and one feature slot. In a one-bug week the fourth slot goes to the oldest ready UX improvement or feature request of comparable priority.</p>
+<div class="notes"><p><strong>AU intake stays open every week through 31 March.</strong> Record submission date, affected operation, urgency, impact, workaround, dependencies and the next realistic review or delivery window. A critical production issue can interrupt immediately. Record the work displaced, its revised date and the milestone impact for Yi and Ben. For comparable work, finish the scheduled V2 slice and take ready requests in submission order. If an older request is blocked, retain its place and record what will unblock it.</p></div>
+<p class="intro table-note">The table proposes weekly priorities. A slot covers a bounded slice of work, including its QA, analytics or manual updates. Larger packages span weeks. Size holiday weeks and the three-day final week to actual staffing. Keep incident capacity available until the weekly review.</p>
+<div class="table-scroll" role="region" aria-label="Nineteen-week allocation" tabindex="0"><table class="weeks"><thead><tr><th scope="col">Week</th><th scope="col">Bug reserve</th><th scope="col">Flexible slot</th><th scope="col">Protected V2 UX</th><th scope="col">Protected feature</th></tr></thead><tbody>{{weeks}}</tbody></table></div></section>
+<section id="ticket-register" aria-labelledby="tickets"><div class="section-title"><h2 id="tickets">Notion ticket coverage</h2></div>
+<p class="intro">Checked 19 November 2026 against 1,669 Tasks rows and 124 AU feedback records. Direct matches cover an executable part of the package. Related work covers an adjacent flow, test or dependency. Verified and Released items appear for follow-up only. These are board statuses as of the check date.</p>
+<p class="intro">Fleet Create Order (AU #118), map multi-select (AU #125) and AM1 shift change (AU #122) have approved feedback records. Dedicated build tickets for those exact requests still need confirmation. Sender and Official Web Create Order have separate scopes.</p>
+{{tickets}}</section>
 <section aria-labelledby="schedule"><div class="section-title"><h2 id="schedule">Feature schedule</h2><a href="jira-milestones.svg">Open full Gantt chart ↗</a></div>
 <p class="intro">63 inventory packages and 4 QA milestones. Expand a stream, then a package, for the planned outcome, dependencies and source. Dates include design, implementation and verification where applicable.</p>
 {{groups}}</section>
@@ -54,5 +65,5 @@ footer{margin-top:23px;font-size:12px;color:#536777}footer a{margin-left:4px}
 <li><strong>4 Jan – 19 Mar</strong> · Invoice scanning and advanced driver self-booking. Agree document handling and booking rules in January, then pilot each flow.</li>
 <li><strong>4 Jan – 24 Mar</strong> · Routing intelligence/ML and broader reporting. Agree data access, scope and evaluation criteria in January. Review routing results and reconcile reporting outputs before the release decision.</li></ul>
 <p>At the December review, record an owner and acceptance criteria for each approved addition. Any item outside the funded scope gets an explicit deferral at the March closeout.</p></section>
-<footer>Holien milestones · v1.6 · Based on the November SenditGo work inventory. <a href="{{archive}}index.html">Previous portfolio and product lanes</a></footer>
+<footer>Holien milestones · v1.7 · Based on the November SenditGo work inventory. <a href="{{archive}}index.html">Previous portfolio and product lanes</a></footer>
 </main></body></html>

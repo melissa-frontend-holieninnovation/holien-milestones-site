@@ -1,0 +1,120 @@
+package	match	ticket	status	page	scope
+F03	direct	2774	To do	41b89adbb34d81f691f5d60f46fe081d	Reporting scope
+F03	direct	2775	In progress	41b89adbb34d8159b666f49fa737a088	API storage
+F03	direct	2776	In progress	41b89adbb34d81f595bdcef8eaadc631	App reporting
+F02	related	2667	Reviewing	3ff89adbb34d81629a9fe950edeab0b8	Map selection and popover
+W02	related	2660	To do	3ff89adbb34d8199ad8df138b40c09bd	Fleet QA
+W04	related	2464	To do	3cf89adbb34d80beb5b0c3b30d5dc104	Roster attributes
+W04	related	2202	Waiting	276dc09f86b949089065d6c6d5ee24e2	Roster priority
+W04	related	2524	Testing	792e8b31429d4e2b8dd4d5c942190dc3	Availability lock
+W05	related	2653	To do	3fe89adbb34d813fb6a6e364f3ebe62b	Registration QA
+W06	related	2768	In progress	41989adbb34d81f7bea3f251c56b78d4	Permissions refactor
+W06	related	2770	Waiting	41989adbb34d817a94d3d85c932e147c	API authorization
+W06	related	2764	In progress	41689adbb34d81ca91a5eefbe8ce814f	Roles and groups
+W07	prior	2441	Released	09c096f9ba4f47ea975fdac2253d0c4e	Run Sheet generation context
+W08	related	2662	To do	3ff89adbb34d816aa23bf73084c461b2	Order Management QA
+W08	related	2675	Reviewing	40089adbb34d8168970ff61348a751af	Order actions in Run Sheet detail
+W09	direct	2594	In progress	3f989adbb34d81b5866cda8206b2e80c	List and Map UX
+W09	direct	2667	Reviewing	3ff89adbb34d81629a9fe950edeab0b8	Map selection and popover
+W09	direct	2668	Reviewing	3ff89adbb34d81f09a16cfe41aa445f7	Map rail and drag continuity
+W09	direct	2564	Reviewing	dcf7fc8b20fc44bfa5150c92530ddbae	Map/List search
+W10	related	2426	Testing	58ac188b58e54bc7a92ffd86436193b4	Partial-batch regression
+W10	prior	2571	Released	3ed89adbb34d81f49d13e6d0f578bdc0	Scheduled-order Reassign
+W11	related	2539	To do	33aa03cfc59c48fa97f1ef0b2123512c	Simulation results recovery
+W11	related	2581	To do	0b4f6e50a1f74123b3b95ecc4f2aafc2	Re-plan eligibility
+W13	related	2580	To do	1fe63b2730ac4c33983b2f39245147cf	Pre-Apply preview
+W13	related	2587	Testing	3f889adbb34d818f9498c8bdb52a93cd	Concurrent driver lock
+W14	prior	2717	Verified	41289adbb34d811fb003eab86f879bc8	Return versus Cancel Orders
+W15	direct	2671	In progress	40089adbb34d8103a2e5fcbb990f1afd	Transfer scope
+W15	direct	2672	Testing	40089adbb34d8193bfc6d5acb0fa4c4a	Transfer API
+W15	direct	2673	Reviewing	40089adbb34d81dfa17afd603079cc92	Fleet Web transfer
+W16	direct	2771	In progress	41a89adbb34d81d49087ce2c742b80cf	Completion and POD accuracy
+W16	direct	2760	To do	41689adbb34d816b9fe9f4da7a4fbbd6	Planned arrival metric
+W16	direct	2759	Reviewing	41689adbb34d81fdb5c0e4290f1ec5fa	Fleet time zones
+W17	prior	2565	Released	3ec89adbb34d81c386adf91e16fe5dd2	Shift-swap notification
+B01	prior	2777	Released	41b89adbb34d81e59945da35609b0a02	Android depot upload fix
+B03	prior	2681	Released	40689adbb34d81b2951af5f9446023e7	Order and Run Sheet status divergence
+B03	prior	2239	Released	3c289adbb34d8187b55add724acfb2e7	Unlock before upload confirmation
+B05	related	2783	In progress	41c89adbb34d81a8a9e2d84395151ff2	Stop-skipping investigation
+B05	related	2784	In progress	41c89adbb34d8127b9cbd5b683de2482	Android stop sequence
+B05	prior	2719	Released	41389adbb34d81bea338f0377450026a	Android reorder parameters
+B06	prior	2715	Released	40f89adbb34d815ea9c6c13e9cb60729	Android signature rotation
+B07	direct	2762	Reviewing	41689adbb34d80e89985d4892a391f53	Roster edit error
+B08	related	2718	Reviewing	41289adbb34d8105a1ccf7e1974d51cc	Target-shift field evidence
+B08	related	2201	Waiting	6fb97f857ce94caba4e12d3ab40ebdfc	Roster overlap rules
+B09	prior	2772	Verified	41b89adbb34d80d6b924ce5eb06226d7	Batch Reassign fix
+B10	prior	2773	Verified	41b89adbb34d8108b4e0cfce5f89a56a	Time-zone fix
+B11	direct	2750	In progress	41489adbb34d81158793e2774c569461	Fleet session renewal
+G02	direct	2739	Reviewing	41389adbb34d812bbb29cd9f5cb78f68	OM Assign and Reassign
+G02	direct	2736	To do	41389adbb34d81948d16f6f3403f756f	Idle driver and target shift
+G02	direct	2724	To do	41389adbb34d81e7a445ec2497e2e37e	Fleet transfer
+G02	direct	2747	To do	41389adbb34d819dbfc7d4d2d034ea55	Same-day roster
+G03	direct	2740	To do	41389adbb34d8176ad3ee58d06d7c283	Scan and No Label
+G03	direct	2723	To do	41389adbb34d8152ade3d26fac95bbde	POD
+G03	direct	2751	To do	41489adbb34d81a99cf0e257a41c855c	Final-stop upload
+G03	direct	2737	To do	41389adbb34d8141bd60f0bf67e5ee8b	Offline restart
+G03	direct	2729	To do	41389adbb34d8195894ddb83da0188ba	Driver reporting
+G03	direct	2725	To do	41389adbb34d819481c6efbbc775cc2d	Permission onboarding
+G04	related	2749	To do	41389adbb34d81e8b31dc4e5270807b9	Message Center measurement
+G04	related	2730	To do	41389adbb34d817d8153dc58e285e7fb	Run Sheet and unallocated order measurement
+G05	related	2497	To do	c259daaaa3754da880a5e81b4c429b98	App BigQuery lifecycle
+G06	direct	2685	In progress	3db89adbb34d814b8707f2f8e0f1e60a	Insight refresh scope
+G06	direct	2686	Testing	40789adbb34d81b5bf9fe44e1d4088cb	Fleet refresh settings
+G06	direct	2734	To do	41389adbb34d817cbd1ef078c5ea7682	Refresh schedule events
+D01	prior	2481	Released	6a6a1b2e61b448cca6293436c4dc2537	Earlier manual-flow test coverage
+D02	prior	2482	Released	d38bbccb8a554b04818d6bcc3858053f	Earlier Web manual-flow tests
+D03	prior	2483	Released	8acf648a3cbf4e779ebe6ba811d45f30	Earlier App manual-flow tests
+Q02	related	2657	To do	3ff89adbb34d8137b2dcf8bfa6cefa77	Fleet Web regression
+Q02	related	2553	In progress	3ea89adbb34d81d480b8fbdb2eb8cacf	App scan-to-completion regression
+Q03	related	2548	In progress	3ea89adbb34d8167988bcc3fb8fb6672	Weekly regression overview
+M00	direct	2600	To do	3fe89adbb34d8151afcbcbce873d8b40	Module scope
+M00	direct	2617	To do	3fe89adbb34d8112808bcc670b7ae399	UX design
+M00	direct	2634	To do	3fe89adbb34d815b9fe9d83bfb60ccc9	iOS and Android implementation
+M01	direct	2601	To do	3fe89adbb34d81168d2cdedae047254d	Module scope
+M01	direct	2618	To do	3fe89adbb34d81be83e5cc877deaa936	UX design
+M01	direct	2635	To do	3fe89adbb34d81f688d0f114e4ec03e3	iOS and Android implementation
+M02	direct	2602	To do	3fe89adbb34d8147b669e42794b03bb4	Module scope
+M02	direct	2619	To do	3fe89adbb34d81a08fd5cbd7b9aa006e	UX design
+M02	direct	2636	To do	3fe89adbb34d8195adbaf49e74347741	iOS and Android implementation
+M03	direct	2603	To do	3fe89adbb34d81ea9948d897d3e38844	Module scope
+M03	direct	2620	To do	3fe89adbb34d8114ac5dc810a8e77f76	UX design
+M03	direct	2637	To do	3fe89adbb34d816dbc77e1e69127bcd7	iOS and Android implementation
+M04	direct	2604	To do	3fe89adbb34d81fb910afd003116677e	Module scope
+M04	direct	2621	To do	3fe89adbb34d8153b6d7d714d82d89ea	UX design
+M04	direct	2638	In progress	3fe89adbb34d815fb20fd217dbad73f3	iOS and Android implementation
+M05	direct	2605	To do	3fe89adbb34d817eae42d859a5ae4a26	Module scope
+M05	direct	2622	To do	3fe89adbb34d81f9ae4cd20c8c7947ea	UX design
+M05	direct	2639	To do	3fe89adbb34d810ab125df417953a089	iOS and Android implementation
+M06	direct	2606	To do	3fe89adbb34d814a8156fe3237fabfeb	Module scope
+M06	direct	2623	To do	3fe89adbb34d81d99482fb3bc350141a	UX design
+M06	direct	2640	To do	3fe89adbb34d8195af71de0089ee6d4b	iOS and Android implementation
+M07	direct	2607	To do	3fe89adbb34d8124928dccdcd56de624	Module scope
+M07	direct	2624	To do	3fe89adbb34d8162a76cc08c66c8c746	UX design
+M07	direct	2641	To do	3fe89adbb34d81acae2ef2ef4be901b7	iOS and Android implementation
+M08	direct	2608	To do	3fe89adbb34d8160b3d2f6c29a7db55a	Module scope
+M08	direct	2625	To do	3fe89adbb34d81b59dfaf192494366be	UX design
+M08	direct	2642	To do	3fe89adbb34d81b28118d217c0062ab1	iOS and Android implementation
+M09	direct	2609	To do	3fe89adbb34d8183b063de4348d0451d	Module scope
+M09	direct	2626	To do	3fe89adbb34d81248a81f699536804da	UX design
+M09	direct	2643	Waiting	3fe89adbb34d81d0bf19edd9bb93a8b1	iOS and Android implementation
+M10	direct	2610	To do	3fe89adbb34d811393ddd1064d2d5f80	Module scope
+M10	direct	2627	To do	3fe89adbb34d81f282d1dab440d380b5	UX design
+M10	direct	2644	To do	3fe89adbb34d81fb8213dec74733bfe0	iOS and Android implementation
+M11	direct	2611	To do	3fe89adbb34d8198b821d5f0e5df7c82	Module scope
+M11	direct	2628	To do	3fe89adbb34d81c7ae34c5656c68c543	UX design
+M11	direct	2645	To do	3fe89adbb34d8134955cf8ee29337f64	iOS and Android implementation
+M12	direct	2612	To do	3fe89adbb34d8122ae43ea122e3a4ccc	Module scope
+M12	direct	2629	To do	3fe89adbb34d81239609c06979f98224	UX design
+M12	direct	2646	To do	3fe89adbb34d81c9b0f5c9f4202bde9c	iOS and Android implementation
+M13	direct	2613	To do	3fe89adbb34d81d09401c42446fbac3a	Module scope
+M13	direct	2630	To do	3fe89adbb34d8134b142d4f011312865	UX design
+M13	direct	2647	To do	3fe89adbb34d81e9a74dca0d30699a6a	iOS and Android implementation
+M14	direct	2614	To do	3fe89adbb34d815a8b47f34685c199ec	Module scope
+M14	direct	2631	To do	3fe89adbb34d8195bd6eeb9bf7e619b0	UX design
+M14	direct	2648	To do	3fe89adbb34d818e83cac9ed9773992e	iOS and Android implementation
+M15	direct	2615	To do	3fe89adbb34d81f99adcf2668e976126	Module scope
+M15	direct	2632	To do	3fe89adbb34d81c7b349ca574a7a19a2	UX design
+M15	direct	2649	To do	3fe89adbb34d816e8511e642cb7be59b	iOS and Android implementation
+M16	direct	2616	To do	3fe89adbb34d81a99df3d7a642fb608f	Module scope
+M16	direct	2633	To do	3fe89adbb34d810ea048f995cb33b0cf	UX design
+M16	direct	2650	To do	3fe89adbb34d812abd19ef00265a4661	iOS and Android implementation

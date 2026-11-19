@@ -1,0 +1,20 @@
+monday	bug reserve	second slot	ux	feature
+2026-11-23	Android stop skipping · #2784	Bug · Fleet session renewal #2750	Rank AU feedback and agree V2 priorities	Reconcile GA4 gaps and approve the first backlog
+2026-11-30	Review roster edits · #2762	Feature · confirm device reporting contracts #2775 / #2776	Map Web IA and the driver’s core journey	Close November dependencies and scope Fleet Create Order
+2026-12-07	Triage AU issues against available workarounds	UX · validate Home and Run Sheet prototypes	Review Web IA with AU operators	Agree order eligibility, shift rules and API acceptance criteria
+2026-12-14	Retest the highest-impact ready defect	Feature · device/version readback	Validate scan, POD and recovery prototypes	Freeze the first release slice and confirm parallel staffing
+2026-12-21	Keep AU holiday incident coverage available	UX · document accepted interaction states	Prepare design-system and navigation handoff	Review approved dispatch contract examples
+2026-12-28	Keep AU holiday incident coverage available	Feature · confirm test fixtures and API readback	Resolve remaining prototype feedback	Prepare the first January dispatch increment
+2027-01-04	Recheck AU operational blockers	Bug · reserve for a second eligible incident	Build shared App components and Home	Implement the approved Web dispatch increment
+2027-01-11	Investigate the highest-impact ready defect	Feature · instrument critical Web actions	Build the Run Sheet hierarchy and driver navigation	Implement approved Fleet Create Order validation
+2027-01-18	Retest priority fixes on target builds	UX · refine assignment and recovery feedback	Exercise Home → Run Sheet → Navigation	Wire Create Order to eligible assignment and API readback
+2027-01-25	Review AU field regressions	Bug · reserve for a second eligible incident	Validate core Web and App journeys with operators	Demonstrate dispatch, order creation and GA4 event readback
+2027-02-01	Triage scan and upload regressions	Feature · integrate App critical events	Test scan, No Label and manual-entry recovery	Integrate POD and offline upload receipts
+2027-02-08	Hold incident coverage at holiday staffing levels	UX · review pending-upload copy and screenshots	Review exceptions on available builds	Reconcile existing event and API evidence
+2027-02-15	Retest priority integration defects	Bug · reserve for a second eligible incident	Exercise the AU operator UAT scripts on target builds	Harden Web assignment and integrate released-flow manual updates
+2027-02-22	Resolve severe cross-platform regressions	Bug · reserve for a second eligible incident	Validate scan → POD → recovery with AU	Prove Web and native outcomes by E2E, API and telemetry
+2027-03-01	Triage high-severity AU pilot findings	Bug · reserve for a second eligible incident	Observe pilot users completing core journeys	Check release-candidate telemetry and bilingual guidance
+2027-03-08	Fix the highest-severity pilot regression	UX · address the oldest ready pilot friction	Retest changed interactions with AU	Validate BigQuery export and operational KPI readback
+2027-03-15	Retest severe regressions with AU	Bug · reserve for a second eligible incident	Confirm operator acceptance and remaining UX exceptions	Verify approved native additions and manual coverage
+2027-03-22	Close or escalate remaining release blockers	Bug · reserve for a second eligible incident	Check the final Web and App guidance against actual builds	Review each track’s evidence and staged rollout conditions
+2027-03-29	Hold incident cover through 31 March	Feature · verify telemetry after an approved stage	Confirm AU pilot disposition and published manuals	Record go or hold independently for Web and App

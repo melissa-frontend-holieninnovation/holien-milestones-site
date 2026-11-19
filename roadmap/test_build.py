@@ -14,12 +14,17 @@ class RoadmapPublicationTest(unittest.TestCase):
             output = Path(directory)
             with patch.object(build, 'ROOT', output):
                 build.build()
-            for path in ('index.html', 'v1.6/index.html', 'jira-milestones.svg', 'v1.6/jira-milestones.svg'):
+            for path in ('index.html', 'v1.7/index.html', 'jira-milestones.svg', 'v1.7/jira-milestones.svg'):
                 self.assertEqual((output / path).read_bytes(), (build.ROOT / path).read_bytes(), path)
-            for folder, archive in [(output, 'v1.5'), (output / 'v1.6', '../v1.5')]:
+            for folder, archive in [(output, 'v1.5'), (output / 'v1.7', '../v1.5')]:
                 page = (folder / 'index.html').read_text()
                 self.assertIn(f'href="{archive}/index.html"', page)
                 self.assertNotIn('{{', page)
+                self.assertEqual(page.count('<th scope="row">'), 19)
+                self.assertIn('AU feedback intake and weekly triage', (folder / 'jira-milestones.svg').read_text())
+                for ticket in build.read_rows('tickets.tsv'):
+                    self.assertIn(f'#{ticket["ticket"]} ', page)
+                    self.assertIn(ticket['status'], page)
                 chart = ElementTree.parse(folder / 'jira-milestones.svg')
                 bars = chart.findall('{http://www.w3.org/2000/svg}g')
                 self.assertEqual(len(bars), 67)

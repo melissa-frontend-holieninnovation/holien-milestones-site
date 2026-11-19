@@ -1,8 +1,8 @@
 """Build the static SenditGo roadmap and its versioned, offline-readable snapshot."""
 
 import csv
-from collections import Counter
-from datetime import date
+from collections import Counter, defaultdict
+from datetime import date, timedelta
 from html import escape
 from pathlib import Path
 
@@ -25,16 +25,17 @@ STREAMS = {
     'qa': ('AU validation and release', 'Acceptance criteria, integration, field pilot and rollout', '#356b50'),
 }
 GATES = [
-    ('30 Nov', 'Triage and staff', 'Confirm owners for priority fixes and reconcile the feature backlog.'),
-    ('18 Dec', 'Approve the baseline', 'Review Web IA and driver prototypes with AU. Set API rules and staff both tracks.'),
-    ('29 Jan', 'Demonstrate core flows', 'Create and assign an order on Web. Walk from Home to an accepted route on App.'),
-    ('26 Feb', 'Verify the full journey', 'Test dispatch, scanning, proof and offline recovery across Web, API and native builds.'),
-    ('31 Mar', 'Decide and roll out', 'Use AU pilot results, telemetry and manuals to decide each track’s release.'),
+    ('18–30 Nov 2026', 'Planning and prioritisation', 'Triage AU feedback, confirm feature priorities, reconcile the GA4 backlog and investigate critical App and Web bugs. Lock the executable backlog and dependencies.'),
+    ('December 2026', 'UX and requirements', 'Approve Fleet Web IA and UX, validate core App prototypes with AU operators and agree API contracts and acceptance criteria. Freeze the first release slice before development.'),
+    ('January 2027', 'Core development', 'Deliver Web dispatch and Create Order increments, the App design system, Home, Run Sheet and navigation, and critical GA4 events. Demonstrate usable slices with API readback.'),
+    ('February 2027', 'Integration and testing', 'Integrate scan, POD and offline recovery. Complete and harden Web features, run cross-platform E2E and AU UAT, and update manuals. Verify outcomes on actual builds.'),
+    ('March 2027', 'Release readiness', 'Close severe regressions, validate telemetry and manuals, and run the AU pilot. Decide go or hold for each track and stage approved rollouts.'),
 ]
 CONDITIONAL = {'M02', 'M03', 'M09', 'M11', 'M12', 'M13', 'M15', 'W18'}
 LINKS = {
     'F01': '41a89adbb34d80ef8429ea19231c9b96', 'F02': '41b89adbb34d80e3814dff6fdf1327f3',
-    'F03': '41b89adbb34d81f691f5d60f46fe081d', 'W09': '3fa89adbb34d81719424fc6183ccfaf2',
+    'F04': '41b89adbb34d800ebb6ceab1eeba4540', 'B02': '41789adbb34d805ab99df9a097e55bbd',
+    'B12': '41789adbb34d8023a657ce69d2b98a07', 'F03': '41b89adbb34d81f691f5d60f46fe081d', 'W09': '3fa89adbb34d81719424fc6183ccfaf2',
     'W15': '40089adbb34d81dfa17afd603079cc92', 'W14': '41289adbb34d811fb003eab86f879bc8',
     'W16': '3fc89adbb34d81bdbe0fc60a269ec396', 'B01': '41b89adbb34d805d8830d8f1dfc1af08',
     'B09': '41c89adbb34d8079a2dbcc721b008088', 'B10': '41c89adbb34d807a9227e918596d0824',
@@ -60,16 +61,51 @@ def fraction(day):
     return (day - START).days / DAYS
 
 
+def read_rows(filename):
+    with (SOURCE / filename).open() as handle:
+        return list(csv.DictReader(handle, delimiter='\t'))
+
+
+def weekly_table():
+    weeks = read_rows('weeks.tsv')
+    assert [date.fromisoformat(w['monday']) for w in weeks] == [
+        START + timedelta(weeks=i) for i in range((END - START).days // 7 + 1)]
+    result = []
+    for week in weeks:
+        monday = date.fromisoformat(week['monday'])
+        friday = min(monday + timedelta(days=4), END)
+        flex = week['second slot']
+        assert flex.startswith(('Bug · ', 'UX · ', 'Feature · '))
+        cells = ''.join(f'<td>{escape(week[k])}</td>' for k in ('bug reserve', 'second slot', 'ux', 'feature'))
+        result.append(f'<tr><th scope="row">{label(monday)} – {label(friday)}</th>{cells}</tr>')
+    return ''.join(result)
+
+
+def ticket_info(matches):
+    kinds = {r['match'] for r in matches}
+    category = next((k for k in ('direct', 'related', 'prior') if k in kinds), 'gap')
+    titles = {'direct': 'Open ticket', 'related': 'Related open work', 'prior': 'Earlier ticket', 'gap': 'No direct open match'}
+    parts = []
+    for row in matches:
+        url = notion(row['page'])
+        parts.append(f'<li>{titles[row["match"]]} · <a href="{url}">#{row["ticket"]} {escape(row["scope"])}</a> · {escape(row["status"])}</li>')
+    detail = '<ul class="ticket-list">' + ''.join(parts) + '</ul>' if parts else '<p>No directly matching open delivery ticket confirmed in Tasks. Check the source and agree scope at triage.</p>'
+    return category, detail
+
+
 def build():
-    with (SOURCE / 'packages.tsv').open() as handle:
-        rows = list(csv.DictReader(handle, delimiter='\t'))
+    rows = read_rows('packages.tsv')
+    tickets = defaultdict(list)
+    for ticket in read_rows('tickets.tsv'):
+        tickets[ticket['package']].append(ticket)
+    register = defaultdict(list)
     expected = {f'{prefix}{i:02}' for prefix, first, last in (
         ('F', 1, 4), ('W', 1, 18), ('M', 0, 16), ('B', 1, 12),
         ('G', 1, 6), ('D', 1, 6), ('Q', 1, 4)) for i in range(first, last + 1)}
     assert Counter(row['id'] for row in rows) == Counter(expected)
     groups = []
     svg = []
-    y = 106
+    y = 142
     sx, sw = 524, 720
     axis = ''.join(f'<span style="left:{fraction(day):.3%}">{name}</span>' for day, name in MONTHS)
     for key, (title, subtitle, color) in STREAMS.items():
@@ -87,10 +123,12 @@ def build():
             conditional = code in CONDITIONAL
             marker = '<small class="conditional">Conditional</small>' if conditional else ''
             page = notion(LINKS.get(code, GROUP_LINKS[key]))
+            category, ticket_detail = ticket_info(tickets[code])
+            register[category].append(f'<li><a href="#{code}">{code} · {name}</a>{ticket_detail}</li>')
             body.append(f'''<details class="package" id="{code}"><summary>
               <span class="code">{code}</span><span class="work">{name} {marker}</span>
               <span class="dates">{dates}</span><span class="track" aria-hidden="true"><i style="left:{left:.3%};width:{width:.3%}"></i></span></summary>
-              <div class="detail"><p>{escape(item['planned outcome'])}</p><p><b>Dependency or decision</b> {escape(item['dependency or decision'])}</p><a href="{page}">Inventory source ↗</a></div></details>''')
+              <div class="detail"><p>{escape(item['planned outcome'])}</p><p><b>Dependency or decision</b> {escape(item['dependency or decision'])}</p><a href="{page}">Inventory source ↗</a>{ticket_detail}</div></details>''')
             svg.append(f'<g><title>{code} · {name} · {dates}</title><text x="22" y="{y}" font-size="12">{code}　{name}</text><text x="393" y="{y}" font-size="11">{dates}</text><rect x="{sx+sw*left:.1f}" y="{y-9}" width="{sw*width:.1f}" height="8" rx="4" fill="{color}" opacity="{0.58 if conditional else 1}"/></g>')
             y += 23
         groups.append(f'''<details class="stream" style="--ink:{color}" {'open' if key == 'au' else ''}>
@@ -101,12 +139,17 @@ def build():
         y += 14
     assert sum(r['stream'] in STREAMS for r in rows) == len(rows)
     lines = ''.join(f'<path d="M {sx+sw*fraction(d):.1f} 78 V {y}" stroke="#d7e0e8"/><text x="{sx+sw*fraction(d)+3:.1f}" y="72" font-size="12">{m}</text>' for d, m in MONTHS)
-    graphic = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1270 {y+10}" width="1270" height="{y+10}" font-family="Arial,sans-serif" fill="#162b40" role="img" aria-labelledby="title desc"><title id="title">SenditGo delivery roadmap</title><desc id="desc">23 November 2026 to 31 March 2027. Seven streams. Lighter bars indicate conditional packages. All dates are planning targets.</desc><rect width="100%" height="100%" fill="white"/><text x="22" y="32" font-size="24" font-weight="700">SenditGo delivery roadmap</text><text x="22" y="55" font-size="13">23 Nov 2026 – 31 Mar 2027 · Proposed windows · Lighter bars require approval or extra capacity</text>{lines}{''.join(svg)}</svg>'''
+    graphic = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1270 {y+10}" width="1270" height="{y+10}" font-family="Arial,sans-serif" fill="#162b40" role="img" aria-labelledby="title desc"><title id="title">SenditGo delivery roadmap</title><desc id="desc">23 November 2026 to 31 March 2027. Seven streams. Lighter bars indicate conditional packages. All dates are planning targets.</desc><rect width="100%" height="100%" fill="white"/><text x="22" y="32" font-size="24" font-weight="700">SenditGo delivery roadmap</text><text x="22" y="55" font-size="13">23 Nov 2026 – 31 Mar 2027 · Proposed windows · Lighter bars require approval or extra capacity</text>{lines}<text x="22" y="100" font-size="14" font-weight="700">AU feedback intake and weekly triage</text><rect x="{sx}" y="91" width="{sw}" height="9" rx="4" fill="#1464a5"/>{''.join(svg)}</svg>'''
     gates = ''.join(f'<article><time>{dt}</time><h3>{title}</h3><p>{detail}</p></article>' for dt, title, detail in GATES)
+    names = {'direct': 'Direct open tickets', 'related': 'Related open tickets only', 'prior': 'Verified or earlier work only', 'gap': 'No direct ticket confirmed'}
+    ticket_register = ''.join(
+        f'<details class="register"><summary>{name} · {len(register[kind])} packages</summary><ul>{"".join(register[kind])}</ul></details>'
+        for kind, name in names.items())
+    weeks = weekly_table()
     template = (SOURCE / 'template.html').read_text()
-    for out, archive in [(ROOT, 'v1.5/'), (ROOT / 'v1.6', '../v1.5/')]:
+    for out, archive in [(ROOT, 'v1.5/'), (ROOT / 'v1.7', '../v1.5/')]:
         out.mkdir(exist_ok=True)
-        html = template.replace('{{archive}}', archive).replace('{{gates}}', gates).replace('{{groups}}', '\n'.join(groups))
+        html = template.replace('{{archive}}', archive).replace('{{weeks}}', weeks).replace('{{tickets}}', ticket_register).replace('{{gates}}', gates).replace('{{groups}}', '\n'.join(groups))
         (out / 'index.html').write_text(html)
         (out / 'jira-milestones.svg').write_text(graphic + '\n')
 
