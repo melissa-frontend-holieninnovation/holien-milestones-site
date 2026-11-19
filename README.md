@@ -1,26 +1,28 @@
 # Holien milestones
 
-Public visual of the Holien product gantt (SenditGo · SenditSell · Sterling).
-
-**Source of truth is Notion** — the Milestones collection `d6f0799e-109a-42c6-baad-16665813a951`.
-This HTML is a hoverable snapshot of weekly trains, Review/Test splits, Taiwan holidays skipped:
-行憲, 元旦, 春節, 228. Click a bar to open the Notion Feature.
+The current view is the proposed SenditGo roadmap for 23 November 2026 through 31 March 2027. It schedules the supplied November work inventory, with feature-level windows, dependencies, conditional scope and AU acceptance milestones. The Notion links give the background for the work. The proposed dates are maintained here.
 
 ## Live
 
-- **Current — v1.5:** https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/
-  (also at `/v1.5/`)
-- `/v3/` — legacy alias, kept so existing links do not 404. Frozen at the pre-v1.4 build.
+- [Current SenditGo roadmap](https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/)
+- [Version 1.6](https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/v1.6/)
+- [September portfolio](https://melissa-frontend-holieninnovation.github.io/holien-milestones-site/v1.5/) covering SenditGo, SenditSell and Sterling
+- `/v3/` is the legacy pre-v1.4 alias.
+
+## Updating this plan
+
+Edit `roadmap/packages.tsv` for package dates and outcomes, `roadmap/build.py` for milestone and stream definitions, or `roadmap/template.html` for the page. Run `python3 roadmap/build.py` to render both the HTML and standalone SVG. The generator validates the complete package ID set and planning bounds. For a new release, advance the version before regenerating to retain the previous snapshot.
 
 ## Version archive
 
-Each directory is a frozen snapshot of what was actually published, byte for byte. Their
+The September and August directories preserve the earlier publications byte for byte. Their
 `Today` markers are baked at generation time and are **not** refreshed — that is the point of
 an archive.
 
 | Version | Built from | Header reads | Today marker | Notes |
 |---|---|---|---|---|
-| `v1.5` | this publish | `v1.5` | 3 Sep 2026 | pulls `Algo / route optimization` from the 10/13 train to **09/22**, so Algorithm and Paperless share the 09/07 start week |
+| `v1.6` | November work inventory | SenditGo delivery roadmap | — | 63 inventory packages and 4 QA milestones |
+| `v1.5` | September snapshot | `v1.5` | 3 Sep 2026 | pulls `Algo / route optimization` from the 10/13 train to **09/22**, so Algorithm and Paperless share the 09/07 start week |
 | `v1.4` | earlier today | `v1.4` | 3 Sep 2026 | adds QR auto-print · paperless, Delivery run sheet, Roster attribute |
 | `v1.3` | commit `1eb0047` | `v3` | 27 Aug 2026 | the chart that was live until v1.4 |
 | `v1.2` | commit `8cc4a12` | `live` | 27 Aug 2026 | ⚠ the `holien-gantt-publish` skill records this deploy as the **stale v2-old amber chart**. Kept as honest history, not as a good prior state. |
@@ -28,8 +30,4 @@ an archive.
 Headers on v1.2 and v1.3 were **not** rewritten to match their directory names — rewriting
 published bytes would falsify the archive.
 
-## Files
-
-- `index.html` — current chart (= `v1.4/index.html`)
-- `jira-milestones.svg` — same chart as SVG
-- `v1.5/` `v1.4/` `v1.3/` `v1.2/` `v3/` — frozen snapshots
+The current root and `v1.6/` include the HTML roadmap and its full, standalone `jira-milestones.svg` chart.

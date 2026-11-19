@@ -1,690 +1,293 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Holien milestones · v1.5</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12324b">
+<title>SenditGo delivery roadmap · Holien milestones v1.6</title>
 <style>
-  html,body { margin:0; padding:16px; background:#fff; }
-  svg { display:block; }
-  a.feat-link { cursor: pointer; text-decoration: none; }
-  .feat { cursor: pointer; }
-  .feat:hover .work { filter: brightness(1.12); }
-  .feat:hover .rev, .feat:hover .tst { filter: brightness(1.05); }
-  #tip {
-    position: fixed;
-    display: none;
-    min-width: 220px;
-    max-width: 320px;
-    background: #111827;
-    color: #F9FAFB;
-    padding: 10px 12px 12px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.22);
-    font: 12px/1.45 ui-sans-serif, Inter, Helvetica, Arial, sans-serif;
-    z-index: 20;
-    pointer-events: none;
-  }
-  #tip h4 { margin:0 0 6px; font-size:13px; font-weight:700; }
-  #tip .meta { color:#9CA3AF; font-size:11px; margin-bottom:8px; }
-  #tip .row { display:flex; justify-content:space-between; gap:16px; padding:2px 0; border-top:1px solid #374151; }
-  #tip .row:first-of-type { border-top:0; }
-  #tip .k { color:#D1D5DB; }
-  #tip .v { font-variant-numeric: tabular-nums; font-weight:600; }
-  #tip .sell { color:#FDBA74; font-size:11px; margin-top:6px; }
-  #tip .open { color:#93C5FD; font-size:11px; margin-top:8px; }
+*{box-sizing:border-box}
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172f45;background:#f6f8fa;font-variant-numeric:tabular-nums}
+body{margin:0}a{color:#155b86;text-underline-offset:3px}a:hover{text-decoration:underline}a:focus-visible,summary:focus-visible{outline:3px solid #14829a;outline-offset:-3px}
+.wrap{width:min(1220px,calc(100% - 72px));margin:auto}
+header{background:#12324b;color:white;border-bottom:5px solid #65c9ce}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 0;border-bottom:1px solid #476074;font-size:14px}
+.brand{font-weight:700;letter-spacing:.02em}.brand b{color:#88d9db;margin-right:10px}nav a{color:#e3eff4;text-decoration:none}
+.hero{display:flex;align-items:end;justify-content:space-between;gap:24px;padding:37px 0 35px}
+h1,h2,h3,p{margin:0}.eyebrow{font-size:12px;font-weight:650;color:#a6e1df;letter-spacing:.11em;text-transform:uppercase;margin-bottom:9px}h1{font-size:clamp(32px,4vw,54px);letter-spacing:-.048em;line-height:1.05}
+.hero p{margin-top:11px;color:#d3e2eb;font-size:16px}.period{white-space:nowrap;font-size:17px;font-weight:600}
+main{padding-bottom:40px}section{margin-top:31px}h2{font-size:24px;letter-spacing:-.036em}h3{font-size:16px;line-height:1.35}
+.section-title{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin-bottom:13px}
+.gates{display:grid;grid-template-columns:repeat(5,1fr);background:white;border:1px solid #ced9e2;border-radius:12px;overflow:hidden}
+.gates article{padding:19px 16px 20px;border-left:1px solid #dce4eb}.gates article:first-child{border:0}.gates time{font-size:12px;color:#21737a;font-weight:750}.gates h3{margin:8px 0 5px}.gates p,.notes p,.intro,.detail p,.expansion p{font-size:14px;line-height:1.55;color:#475d6c}
+.notes{background:#e8f2f3;border-left:3px solid #39878c;padding:15px 18px;margin-top:14px}.notes strong{color:#183c4a}
+.intro{margin:-4px 0 13px}.section-title a{font-size:14px;white-space:nowrap}
+details>summary{list-style:none;cursor:pointer}summary::-webkit-details-marker{display:none}
+.stream{border:1px solid #cfdbe3;border-radius:10px;background:#fff;margin-bottom:9px;overflow:hidden}
+.stream>summary{display:grid;grid-template-columns:5px 1fr auto 16px;align-items:center;gap:15px;padding:15px 18px}.stream>summary:hover,.package>summary:hover{background:#f3f7fa}.swatch{height:30px;border-radius:3px;background:var(--ink)}
+.stream strong{font-size:17px}.subtitle{display:block;font-size:13px;color:#526776;margin-top:3px}.count,.code,.dates,.head{font-size:12px}.count,.dates{color:#445c6d}.arrow{font-size:19px;line-height:1;text-align:center}.stream[open]>summary .arrow{transform:rotate(180deg)}
+.head,.package>summary{display:grid;grid-template-columns:44px minmax(215px,1fr) 134px minmax(180px,1fr);align-items:center;column-gap:12px;padding:10px 18px}
+.head{background:#edf2f6;color:#42586b;font-weight:650}.head>span:first-child{grid-column:span 2}
+.axis,.track{position:relative;display:block;height:14px}.axis span{position:absolute;font-size:10px}.track{background:#edf2f6;border-radius:4px;height:8px}.track i{position:absolute;height:100%;background:var(--ink);border-radius:4px}
+.package{border-top:1px solid #e1e8ed}.package>summary{min-height:44px}.code{color:var(--ink);font-weight:700}.work{font-size:14px;line-height:1.4}.package[open] .work{font-weight:650}.package[open]{background:#f8fafc}.conditional{display:inline-block;font-size:10px;font-weight:600;color:#785021;background:#f8efdc;padding:1px 4px;border-radius:3px}
+.detail{padding:0 20px 15px 74px;max-width:900px}.detail p+p{margin-top:4px}.detail a{display:inline-block;margin-top:6px;font-size:13px}
+.expansion{padding:20px 22px;background:#fff;border:1px solid #cfdbe3;border-radius:10px}.expansion h2{font-size:20px}.expansion p{margin-top:8px}.expansion ul{padding-left:18px;margin:10px 0 0}.expansion li{font-size:14px;line-height:1.65;margin:4px 0}
+footer{margin-top:23px;font-size:12px;color:#536777}footer a{margin-left:4px}
+@media(max-width:870px){.wrap{width:calc(100% - 36px)}.hero{align-items:start;flex-direction:column}.gates{grid-template-columns:repeat(2,1fr)}.gates article,.gates article:first-child{border:1px solid #e1e8ed}.head,.package>summary{grid-template-columns:36px minmax(160px,1fr) 108px minmax(120px,.8fr);gap:8px}.period{font-size:15px}}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}nav{font-size:12px}.hero{padding:25px 0;gap:16px}.gates{display:block}.gates article,.gates article:first-child{display:grid;grid-template-columns:55px 1fr;column-gap:8px;padding:12px;border:0;border-bottom:1px solid #e1e8ed}.gates h3{margin:0}.gates p{grid-column:2;font-size:13px}.gates time{padding-top:3px}.section-title{align-items:center}h2{font-size:21px}.section-title a{font-size:12px}.head{display:none}.package>summary{grid-template-columns:30px 1fr;gap:3px 8px;padding:9px 12px}.dates{grid-column:2}.track{display:none}.stream>summary{grid-template-columns:4px 1fr auto 13px;gap:8px;padding:12px}.subtitle{font-size:12px}.count{font-size:11px}.detail{padding:2px 14px 13px}.notes,.expansion{padding:14px}.period{white-space:normal}}
 </style>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" width="2837" height="1260" viewBox="0 0 2837 1260" font-family="ui-sans-serif, Inter, Helvetica, Arial, sans-serif">
-<rect width="100%" height="100%" fill="#FFFFFF"/>
-<text x="24" y="36" font-size="22" font-weight="700" fill="#111827">Holien milestones · v1.5</text>
-<text x="24" y="58" font-size="12" fill="#6B7280">Click a product bar to open Notion · hover: reviewing flow (OEM/SO-PO) · mocks · UI/API · ticket Status Reviewing/Testing · Magento UI/API bars have no ticket yet</text>
-<text x="2813" y="36" font-size="11" fill="#9CA3AF" text-anchor="end">SoT: Notion · week as unit · v1.5</text>
-<rect x="1774" y="128" width="33" height="1052" fill="#F3F4F6"/>
-<text x="1790.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">行憲</text>
-<rect x="1851" y="128" width="33" height="1052" fill="#F3F4F6"/>
-<text x="1867.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">元旦</text>
-<rect x="2225" y="128" width="77" height="1052" fill="#F3F4F6"/>
-<text x="2263.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">春節</text>
-<rect x="2478" y="128" width="33" height="1052" fill="#F3F4F6"/>
-<text x="2494.5" y="176" font-size="9" fill="#9CA3AF" text-anchor="middle">228</text>
-<rect x="168" y="128" width="2645" height="56" fill="#F8FAFC"/>
-<line x1="168" y1="128" x2="168" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="176" y="150" font-size="12" font-weight="600" fill="#374151">Aug 2026</text>
-<line x1="509" y1="128" x2="509" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="517" y="150" font-size="12" font-weight="600" fill="#374151">Sep 2026</text>
-<line x1="839" y1="128" x2="839" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="847" y="150" font-size="12" font-weight="600" fill="#374151">Oct 2026</text>
-<line x1="1180" y1="128" x2="1180" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="1188" y="150" font-size="12" font-weight="600" fill="#374151">Nov 2026</text>
-<line x1="1510" y1="128" x2="1510" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="1518" y="150" font-size="12" font-weight="600" fill="#374151">Dec 2026</text>
-<line x1="1851" y1="128" x2="1851" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="1859" y="150" font-size="12" font-weight="600" fill="#374151">Jan 2027</text>
-<line x1="2192" y1="128" x2="2192" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="2200" y="150" font-size="12" font-weight="600" fill="#374151">Feb 2027</text>
-<line x1="2500" y1="128" x2="2500" y2="1180" stroke="#E5E7EB" stroke-width="1"/>
-<text x="2508" y="150" font-size="12" font-weight="600" fill="#374151">Mar 2027</text>
-<line x1="531" y1="128" x2="531" y2="1180" stroke="#F97316" stroke-width="2"/>
-<circle cx="531" cy="136" r="5" fill="#F97316"/>
-<text x="539" y="140" font-size="10" font-weight="600" fill="#EA580C">Today 3 Sep</text>
-<rect x="0" y="184" width="2837" height="44" fill="#F9FAFB"/>
-<rect x="0" y="184" width="8" height="44" fill="#111827"/>
-<text x="20" y="210.0" font-size="12" font-weight="700" fill="#111827">◆ Releases</text>
-<line x1="0" y1="228" x2="2837" y2="228" stroke="#E5E7EB" stroke-width="1"/>
-<rect x="0" y="228" width="2837" height="290" fill="#DCECFF"/>
-<rect x="0" y="228" width="8" height="290" fill="#007FFF"/>
-<text x="20" y="377.0" font-size="12" font-weight="700" fill="#007FFF">Carrier</text>
-<line x1="0" y1="518" x2="2837" y2="518" stroke="#E5E7EB" stroke-width="1"/>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8124ac5bc50d648f7fb2" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Roster public holidays · web&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/12–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/12&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/12–08/14&quot;], [&quot;UI&quot;, &quot;08/19–08/21&quot;], [&quot;API&quot;, &quot;08/19–08/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8124ac5bc50d648f7fb2&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8124ac5bc50d648f7fb2">
-<rect class="hit" x="287" y="238" width="158" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="289" y="240" width="154" height="28" rx="8" fill="#007FFF"/>
-<text x="299" y="258" font-size="11" font-weight="600" fill="#FFFFFF">Roster public holida…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81a9b875e1b97f31a15e" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Plan unlock code&quot;, &quot;ver&quot;: &quot;09/01&quot;, &quot;span&quot;: &quot;08/26–09/02&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/26–08/28&quot;], [&quot;UI&quot;, &quot;08/27–08/28&quot;], [&quot;API&quot;, &quot;08/27–08/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/31–09/01&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81a9b875e1b97f31a15e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81a9b875e1b97f31a15e">
-<rect class="hit" x="441" y="238" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="240" width="88" height="28" rx="8" fill="#007FFF"/>
-<text x="453" y="258" font-size="11" font-weight="600" fill="#FFFFFF">Plan unlock…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d815aad38f0872c4d1c23" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Action Required fields&quot;, &quot;ver&quot;: &quot;09/15&quot;, &quot;span&quot;: &quot;09/07–09/16&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/07&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/07&quot;], [&quot;UI&quot;, &quot;09/07–09/09&quot;], [&quot;API&quot;, &quot;09/07–09/09&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/14–09/15&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d815aad38f0872c4d1c23&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d815aad38f0872c4d1c23">
-<rect class="hit" x="573" y="238" width="114" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="575" y="240" width="110" height="28" rx="8" fill="#007FFF"/>
-<text x="585" y="258" font-size="11" font-weight="600" fill="#FFFFFF">Action Require…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d814b98a7c0accfabd3e3" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Fleet logo upload · web&quot;, &quot;ver&quot;: &quot;10/06&quot;, &quot;span&quot;: &quot;09/21–10/07&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/21&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/21–09/23&quot;], [&quot;UI&quot;, &quot;09/28–09/30&quot;], [&quot;API&quot;, &quot;09/28–09/30&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/05–10/06&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d814b98a7c0accfabd3e3&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d814b98a7c0accfabd3e3">
-<rect class="hit" x="727" y="238" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="729" y="240" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="739" y="258" font-size="11" font-weight="600" fill="#FFFFFF">Fleet logo upload · web</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d811d9d31f9102f0bd2de" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Macquarie polish&quot;, &quot;ver&quot;: &quot;10/27&quot;, &quot;span&quot;: &quot;10/12–10/28&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/12&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/19–10/21&quot;], [&quot;API&quot;, &quot;10/19–10/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/26–10/27&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d811d9d31f9102f0bd2de&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d811d9d31f9102f0bd2de">
-<rect class="hit" x="958" y="238" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="960" y="240" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="970" y="258" font-size="11" font-weight="600" fill="#FFFFFF">Macquarie polish</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d812cb59ed119589f182d" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Own or company vehicle&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/18–09/02&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/18&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/18–08/20&quot;], [&quot;UI&quot;, &quot;08/19–08/20&quot;], [&quot;API&quot;, &quot;08/19–08/20&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–09/01&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812cb59ed119589f182d&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812cb59ed119589f182d">
-<rect class="hit" x="353" y="272" width="180" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="355" y="274" width="176" height="28" rx="8" fill="#007FFF"/>
-<text x="365" y="292" font-size="11" font-weight="600" fill="#FFFFFF">Own or company vehicle</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8127850ed27a70023a2e" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Algo / route optimization&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/07–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/07&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/07–09/09&quot;], [&quot;UI&quot;, &quot;09/14–09/16&quot;], [&quot;API&quot;, &quot;09/14–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8127850ed27a70023a2e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8127850ed27a70023a2e">
-<rect class="hit" x="573" y="272" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="575" y="274" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="585" y="292" font-size="11" font-weight="600" fill="#FFFFFF">Algo / route optimization</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8115b665d680a3315a31" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Driver reporting · app&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8115b665d680a3315a31&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8115b665d680a3315a31">
-<rect class="hit" x="881" y="272" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="883" y="274" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="893" y="292" font-size="11" font-weight="600" fill="#FFFFFF">Driver reporting · app</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d810a8b83f09c12f35769" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;OM Simulate groupId · web&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/19–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/19&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/19–08/21&quot;], [&quot;UI&quot;, &quot;08/20–08/21&quot;], [&quot;API&quot;, &quot;08/20–08/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d810a8b83f09c12f35769&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d810a8b83f09c12f35769">
-<rect class="hit" x="364" y="306" width="81" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="366" y="308" width="77" height="28" rx="8" fill="#007FFF"/>
-<text x="376" y="326" font-size="11" font-weight="600" fill="#FFFFFF">OM Simula…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81bdbeb7ded346309812" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Driver scan UX&quot;, &quot;ver&quot;: &quot;09/15&quot;, &quot;span&quot;: &quot;08/26–09/16&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/26–08/28&quot;], [&quot;UI&quot;, &quot;09/07–09/09&quot;], [&quot;API&quot;, &quot;09/07–09/09&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/14–09/15&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81bdbeb7ded346309812&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81bdbeb7ded346309812">
-<rect class="hit" x="441" y="306" width="246" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="308" width="242" height="28" rx="8" fill="#007FFF"/>
-<text x="453" y="326" font-size="11" font-weight="600" fill="#FFFFFF">Driver scan UX</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/83631c4dcc9c4497823eb3eb1c97bec1" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Roster attribute&quot;, &quot;ver&quot;: &quot;10/06&quot;, &quot;span&quot;: &quot;09/21–10/07&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/21&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/21–09/23&quot;], [&quot;UI&quot;, &quot;09/28–09/30&quot;], [&quot;API&quot;, &quot;09/28–09/30&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/05–10/06&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/83631c4dcc9c4497823eb3eb1c97bec1&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/83631c4dcc9c4497823eb3eb1c97bec1">
-<rect class="hit" x="727" y="306" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="729" y="308" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="739" y="326" font-size="11" font-weight="600" fill="#FFFFFF">Roster attribute</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81989759e9e91aa5224a" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;S3 file-token cutover&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/19–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/19&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/19–08/21&quot;], [&quot;UI&quot;, &quot;08/20–08/21&quot;], [&quot;API&quot;, &quot;08/20–08/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81989759e9e91aa5224a&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81989759e9e91aa5224a">
-<rect class="hit" x="364" y="340" width="81" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="366" y="342" width="77" height="28" rx="8" fill="#007FFF"/>
-<text x="376" y="360" font-size="11" font-weight="600" fill="#FFFFFF">S3 file-t…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d812b8893c00482437934" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Vehicle register WEB&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;08/31–09/09&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/31&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/31&quot;], [&quot;UI&quot;, &quot;08/31–09/02&quot;], [&quot;API&quot;, &quot;08/31–09/02&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/07–09/08&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812b8893c00482437934&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812b8893c00482437934">
-<rect class="hit" x="496" y="340" width="114" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="498" y="342" width="110" height="28" rx="8" fill="#007FFF"/>
-<text x="508" y="360" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle regist…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/c6d2c619be594ee1b50d90beb47d92fb" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Delivery run sheet&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/14&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/21–09/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/29&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/c6d2c619be594ee1b50d90beb47d92fb&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/c6d2c619be594ee1b50d90beb47d92fb">
-<rect class="hit" x="650" y="340" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="652" y="342" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="662" y="360" font-size="11" font-weight="600" fill="#FFFFFF">Delivery run sheet</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81669921dd9685626fa8" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;WEB Insight · Customer Review&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81669921dd9685626fa8&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81669921dd9685626fa8">
-<rect class="hit" x="881" y="340" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="883" y="342" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="893" y="360" font-size="11" font-weight="600" fill="#FFFFFF">WEB Insight · Customer R…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81239a7bf7f0975c48ed" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Notification · web+app&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;09/02–09/09&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/02&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/02–09/04&quot;], [&quot;UI&quot;, &quot;09/03–09/04&quot;], [&quot;API&quot;, &quot;09/03–09/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/07–09/08&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81239a7bf7f0975c48ed&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81239a7bf7f0975c48ed">
-<rect class="hit" x="518" y="374" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="520" y="376" width="88" height="28" rx="8" fill="#007FFF"/>
-<text x="530" y="394" font-size="11" font-weight="600" fill="#FFFFFF">Notificatio…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Vehicle insurance dashboard&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/14&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/21–09/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/29&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8122bf1cd4539b49d891">
-<rect class="hit" x="650" y="374" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="652" y="376" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="662" y="394" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle insurance dashbo…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d814d9418c9097cce23e1" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;GA4 Partial Complete&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/07–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/07&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/07–09/09&quot;], [&quot;UI&quot;, &quot;09/14–09/16&quot;], [&quot;API&quot;, &quot;09/14–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d814d9418c9097cce23e1&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d814d9418c9097cce23e1">
-<rect class="hit" x="573" y="408" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="575" y="410" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="585" y="428" font-size="11" font-weight="600" fill="#FFFFFF">GA4 Partial Complete</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/c9aed4839cb64b6da7953f7ad9cfdd0d" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;QR auto-print · paperless&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/07–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/07&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/07–09/09&quot;], [&quot;UI&quot;, &quot;09/14–09/16&quot;], [&quot;API&quot;, &quot;09/14–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/c9aed4839cb64b6da7953f7ad9cfdd0d&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/c9aed4839cb64b6da7953f7ad9cfdd0d">
-<rect class="hit" x="573" y="442" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="575" y="444" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="585" y="462" font-size="11" font-weight="600" fill="#FFFFFF">QR auto-print · paperless</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81d89ef5f2d9c14e602d" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Report comment gate · app&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/07–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/07&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/07–09/09&quot;], [&quot;UI&quot;, &quot;09/14–09/16&quot;], [&quot;API&quot;, &quot;09/14–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d89ef5f2d9c14e602d&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d89ef5f2d9c14e602d">
-<rect class="hit" x="573" y="476" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="575" y="478" width="187" height="28" rx="8" fill="#007FFF"/>
-<text x="585" y="496" font-size="11" font-weight="600" fill="#FFFFFF">Report comment gate · app</text>
-</g>
-</a>
-<rect x="0" y="518" width="2837" height="86" fill="#E8F4FF"/>
-<rect x="0" y="518" width="8" height="86" fill="#1A8CFF"/>
-<text x="20" y="565.0" font-size="12" font-weight="700" fill="#1A8CFF">Consignee</text>
-<line x1="0" y1="604" x2="2837" y2="604" stroke="#E5E7EB" stroke-width="1"/>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d819fb73ff59802472aaf" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Login · WEB&quot;, &quot;ver&quot;: &quot;09/15&quot;, &quot;span&quot;: &quot;08/26–09/16&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26–08/28&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/27–09/01&quot;], [&quot;UI&quot;, &quot;09/09–09/11&quot;], [&quot;API&quot;, &quot;09/03–09/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/07–09/15&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d819fb73ff59802472aaf&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d819fb73ff59802472aaf">
-<rect class="hit" x="441" y="528" width="246" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="530" width="242" height="28" rx="8" fill="#1A8CFF"/>
-<text x="453" y="548" font-size="11" font-weight="600" fill="#FFFFFF">Login · WEB</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81acb9bbd5d75f842971" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Receiver MVP · WEB&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;09/16–10/21&quot;, &quot;rows&quot;: [], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81acb9bbd5d75f842971&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81acb9bbd5d75f842971">
-<rect class="hit" x="672" y="562" width="400" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="674" y="564" width="396" height="28" rx="8" fill="#1A8CFF"/>
-<text x="684" y="582" font-size="11" font-weight="600" fill="#FFFFFF">Receiver MVP · WEB</text>
-</g>
-</a>
-<rect x="0" y="604" width="2837" height="154" fill="#D6E4FF"/>
-<rect x="0" y="604" width="8" height="154" fill="#003DF2"/>
-<text x="20" y="685.0" font-size="12" font-weight="700" fill="#003DF2">Official website</text>
-<line x1="0" y1="758" x2="2837" y2="758" stroke="#E5E7EB" stroke-width="1"/>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81a9bd1fd3aaf97377a5" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Portal login&quot;, &quot;ver&quot;: &quot;09/22&quot;, &quot;span&quot;: &quot;09/16–09/23&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/16&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/16–09/18&quot;], [&quot;UI&quot;, &quot;09/17–09/18&quot;], [&quot;API&quot;, &quot;09/17–09/18&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/21–09/22&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81a9bd1fd3aaf97377a5&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81a9bd1fd3aaf97377a5">
-<rect class="hit" x="672" y="614" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="674" y="616" width="88" height="28" rx="8" fill="#003DF2"/>
-<text x="684" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Portal login</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8132bbb0da41d1c3c84f" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Orders list tabs&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/28–09/30&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8132bbb0da41d1c3c84f&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8132bbb0da41d1c3c84f">
-<rect class="hit" x="804" y="614" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="616" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="816" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Orders list tabs</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d812486e9e10a320770b2" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Claim to my orders&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;10/19–11/04&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/19&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/19–10/21&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/02–11/03&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812486e9e10a320770b2&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812486e9e10a320770b2">
-<rect class="hit" x="1035" y="614" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1037" y="616" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1047" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Claim to my orders</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d814e9128f4fc1d054a80" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Role presets&quot;, &quot;ver&quot;: &quot;11/24&quot;, &quot;span&quot;: &quot;11/09–11/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/09&quot;], [&quot;UX userflows + mocks&quot;, &quot;11/09–11/11&quot;], [&quot;UI&quot;, &quot;11/16–11/18&quot;], [&quot;API&quot;, &quot;11/16–11/18&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/23–11/24&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d814e9128f4fc1d054a80&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d814e9128f4fc1d054a80">
-<rect class="hit" x="1266" y="614" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1268" y="616" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1278" y="634" font-size="11" font-weight="600" fill="#FFFFFF">Role presets</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81d58f45e070c83dbfcd" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Official /track · lookup T1 not-found&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;09/16–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/16&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/16–09/23&quot;], [&quot;UI&quot;, &quot;09/28–10/14&quot;], [&quot;API&quot;, &quot;09/28–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d58f45e070c83dbfcd&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d58f45e070c83dbfcd">
-<rect class="hit" x="672" y="648" width="400" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="674" y="650" width="396" height="28" rx="8" fill="#003DF2"/>
-<text x="684" y="668" font-size="11" font-weight="600" fill="#FFFFFF">Official /track · lookup T1 not-found</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8193911ccaf82bf885e9" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Order detail shared view&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/26–11/11&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/26–10/28&quot;], [&quot;UI&quot;, &quot;11/02–11/04&quot;], [&quot;API&quot;, &quot;11/02–11/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/10&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8193911ccaf82bf885e9&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8193911ccaf82bf885e9">
-<rect class="hit" x="1112" y="648" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1114" y="650" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1124" y="668" font-size="11" font-weight="600" fill="#FFFFFF">Order detail shared view</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81d1b0a3e2d50532e40c" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Custom role builder&quot;, &quot;ver&quot;: &quot;12/01&quot;, &quot;span&quot;: &quot;11/16–12/02&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/16&quot;], [&quot;UX userflows + mocks&quot;, &quot;11/16–11/18&quot;], [&quot;UI&quot;, &quot;11/23–11/25&quot;], [&quot;API&quot;, &quot;11/23–11/25&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/30–12/01&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d1b0a3e2d50532e40c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d1b0a3e2d50532e40c">
-<rect class="hit" x="1343" y="648" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1345" y="650" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1355" y="668" font-size="11" font-weight="600" fill="#FFFFFF">Custom role builder</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8104bd78c2e1d376cb37" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Create order&quot;, &quot;ver&quot;: &quot;10/27&quot;, &quot;span&quot;: &quot;10/12–10/28&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/12&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/19–10/21&quot;], [&quot;API&quot;, &quot;10/19–10/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/26–10/27&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8104bd78c2e1d376cb37&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8104bd78c2e1d376cb37">
-<rect class="hit" x="958" y="682" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="960" y="684" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="970" y="702" font-size="11" font-weight="600" fill="#FFFFFF">Create order</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d812d8d0fd41de7d24041" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Billing&quot;, &quot;ver&quot;: &quot;11/17&quot;, &quot;span&quot;: &quot;11/02–11/18&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/02&quot;], [&quot;UX userflows + mocks&quot;, &quot;11/02–11/04&quot;], [&quot;UI&quot;, &quot;11/09–11/11&quot;], [&quot;API&quot;, &quot;11/09–11/11&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/16–11/17&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812d8d0fd41de7d24041&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812d8d0fd41de7d24041">
-<rect class="hit" x="1189" y="682" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1191" y="684" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1201" y="702" font-size="11" font-weight="600" fill="#FFFFFF">Billing</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81fa930cfa5c1d672197" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Import orders CSV&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;10/19–11/04&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/19&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/19–10/21&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/02–11/03&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81fa930cfa5c1d672197&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81fa930cfa5c1d672197">
-<rect class="hit" x="1035" y="716" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1037" y="718" width="187" height="28" rx="8" fill="#003DF2"/>
-<text x="1047" y="736" font-size="11" font-weight="600" fill="#FFFFFF">Import orders CSV</text>
-</g>
-</a>
-<rect x="0" y="758" width="2837" height="154" fill="#F3EEFA"/>
-<rect x="0" y="758" width="8" height="154" fill="#6A4FA3"/>
-<text x="20" y="839.0" font-size="12" font-weight="700" fill="#6A4FA3">SenditSell</text>
-<line x1="0" y1="912" x2="2837" y2="912" stroke="#E5E7EB" stroke-width="1"/>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81b79aecf9e84f153f5e" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Sales + purchase&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/18–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/18&quot;], [&quot;Review userflows&quot;, &quot;08/18–08/20&quot;], [&quot;UI&quot;, &quot;08/19–08/20&quot;], [&quot;API&quot;, &quot;08/19–08/20&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81b79aecf9e84f153f5e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81b79aecf9e84f153f5e">
-<rect class="hit" x="353" y="768" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="355" y="770" width="88" height="28" rx="8" fill="#6A4FA3"/>
-<text x="365" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Sales + pur…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/9117500426fc433598798630cf606560" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Master data move · 主檔遷移&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;08/27–09/09&quot;, &quot;rows&quot;: [[&quot;API&quot;, &quot;08/27–09/09&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/9117500426fc433598798630cf606560&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/9117500426fc433598798630cf606560">
-<rect class="hit" x="452" y="768" width="158" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="454" y="770" width="154" height="28" rx="8" fill="#6A4FA3"/>
-<text x="464" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Master data move · 主…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d810381b6c9024a8af581" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Product master fields&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/14–09/16&quot;], [&quot;Review fields plan&quot;, &quot;09/14–09/16&quot;], [&quot;UX mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/09–09/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/30&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d810381b6c9024a8af581&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d810381b6c9024a8af581">
-<rect class="hit" x="650" y="768" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="652" y="770" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="662" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Product master fields</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81a39beaee82fed2680e" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Pricing &amp; costing&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;10/07–11/04&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/05–10/07&quot;], [&quot;Review fields plan&quot;, &quot;10/05–10/07&quot;], [&quot;UX mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;11/02–11/04&quot;], [&quot;API&quot;, &quot;10/19–10/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/02–11/04&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81a39beaee82fed2680e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81a39beaee82fed2680e">
-<rect class="hit" x="903" y="768" width="323" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="905" y="770" width="319" height="28" rx="8" fill="#6A4FA3"/>
-<text x="915" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Pricing &amp; costing</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81459971fb57e83562eb" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Shipping notice + execution&quot;, &quot;ver&quot;: &quot;12/01&quot;, &quot;span&quot;: &quot;11/16–12/02&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/16–11/18&quot;], [&quot;Review fields plan&quot;, &quot;11/16–11/18&quot;], [&quot;UX mocks&quot;, &quot;11/16–11/18&quot;], [&quot;UI&quot;, &quot;11/23–11/25&quot;], [&quot;API&quot;, &quot;11/23–11/25&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/30–12/02&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81459971fb57e83562eb&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81459971fb57e83562eb">
-<rect class="hit" x="1343" y="768" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1345" y="770" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1355" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Shipping notice + execut…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d814facc8fbf297d74f79" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Order status + exceptions&quot;, &quot;ver&quot;: &quot;12/22&quot;, &quot;span&quot;: &quot;12/07–12/23&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;12/07–12/09&quot;], [&quot;Review fields plan&quot;, &quot;12/07–12/09&quot;], [&quot;UX mocks&quot;, &quot;12/07–12/09&quot;], [&quot;UI&quot;, &quot;12/14–12/16&quot;], [&quot;API&quot;, &quot;12/14–12/16&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/21–12/23&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d814facc8fbf297d74f79&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d814facc8fbf297d74f79">
-<rect class="hit" x="1574" y="768" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1576" y="770" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1586" y="788" font-size="11" font-weight="600" fill="#FFFFFF">Order status + exceptions</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81c4b681d96a4751e0a7" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;SO to PO review&quot;, &quot;ver&quot;: &quot;09/01&quot;, &quot;span&quot;: &quot;08/31–09/02&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;08/31–09/02&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81c4b681d96a4751e0a7&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81c4b681d96a4751e0a7">
-<rect class="hit" x="496" y="802" width="40" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="498" y="804" width="36" height="28" rx="8" fill="#6A4FA3"/>
-<text x="508" y="822" font-size="11" font-weight="600" fill="#FFFFFF">SO to…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81cd8ffac7d52f2da08c" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Kit and combo&quot;, &quot;ver&quot;: &quot;10/06&quot;, &quot;span&quot;: &quot;09/21–10/07&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/21–09/23&quot;], [&quot;Review fields plan&quot;, &quot;09/21–09/23&quot;], [&quot;UX mocks&quot;, &quot;09/21–09/23&quot;], [&quot;UI&quot;, &quot;09/28–09/30&quot;], [&quot;API&quot;, &quot;09/28–09/30&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/05–10/07&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81cd8ffac7d52f2da08c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81cd8ffac7d52f2da08c">
-<rect class="hit" x="727" y="802" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="729" y="804" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="739" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Kit and combo</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81bb81fbd7f255202b28" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Sales orders + claims&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/12–11/11&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/12–10/14&quot;], [&quot;Review fields plan&quot;, &quot;10/12–10/14&quot;], [&quot;UX mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/26–10/28&quot;], [&quot;API&quot;, &quot;10/26–10/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/11&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81bb81fbd7f255202b28&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81bb81fbd7f255202b28">
-<rect class="hit" x="958" y="802" width="345" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="960" y="804" width="341" height="28" rx="8" fill="#6A4FA3"/>
-<text x="970" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Sales orders + claims</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81cdaefcd7956a27460a" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;System FX + permissions&quot;, &quot;ver&quot;: &quot;12/08&quot;, &quot;span&quot;: &quot;11/23–12/09&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/23–11/25&quot;], [&quot;Review fields plan&quot;, &quot;11/23–11/25&quot;], [&quot;UX mocks&quot;, &quot;11/23–11/25&quot;], [&quot;UI&quot;, &quot;11/30–12/02&quot;], [&quot;API&quot;, &quot;11/30–12/02&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/07–12/09&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81cdaefcd7956a27460a&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81cdaefcd7956a27460a">
-<rect class="hit" x="1420" y="802" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1422" y="804" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1432" y="822" font-size="11" font-weight="600" fill="#FFFFFF">System FX + permissions</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d810a925edc87c6884992" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Ops reports&quot;, &quot;ver&quot;: &quot;12/29&quot;, &quot;span&quot;: &quot;12/14–12/30&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;12/14–12/16&quot;], [&quot;Review fields plan&quot;, &quot;12/14–12/16&quot;], [&quot;UX mocks&quot;, &quot;12/14–12/16&quot;], [&quot;UI&quot;, &quot;12/21–12/23&quot;], [&quot;API&quot;, &quot;12/21–12/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/28–12/30&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d810a925edc87c6884992&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d810a925edc87c6884992">
-<rect class="hit" x="1651" y="802" width="125" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1653" y="804" width="121" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1663" y="822" font-size="11" font-weight="600" fill="#FFFFFF">Ops reports</text>
-<rect class="hit" x="1805" y="802" width="40" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1807" y="804" width="36" height="28" rx="8" fill="#6A4FA3"/>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81b59faaf3475f8d0f4e" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Pricing engine UX&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;09/02–09/09&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/07–09/09&quot;], [&quot;UX mocks&quot;, &quot;09/07–09/09&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81b59faaf3475f8d0f4e&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81b59faaf3475f8d0f4e">
-<rect class="hit" x="518" y="836" width="92" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="520" y="838" width="88" height="28" rx="8" fill="#6A4FA3"/>
-<text x="530" y="856" font-size="11" font-weight="600" fill="#FFFFFF">Pricing eng…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d812faae0fa6f8cc6aa7b" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Product category&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;09/28–09/30&quot;], [&quot;Review fields plan&quot;, &quot;09/28–09/30&quot;], [&quot;UX mocks&quot;, &quot;09/28–09/30&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/14&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d812faae0fa6f8cc6aa7b&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d812faae0fa6f8cc6aa7b">
-<rect class="hit" x="804" y="836" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="838" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="816" y="856" font-size="11" font-weight="600" fill="#FFFFFF">Product category</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d810ea29dd58687dd4146" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Purchase orders&quot;, &quot;ver&quot;: &quot;11/17&quot;, &quot;span&quot;: &quot;10/19–11/18&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;10/19–10/21&quot;], [&quot;Review fields plan&quot;, &quot;10/19–10/21&quot;], [&quot;UX mocks&quot;, &quot;10/19–10/21&quot;], [&quot;UI&quot;, &quot;11/09–11/11&quot;], [&quot;API&quot;, &quot;11/09–11/11&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/16–11/18&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d810ea29dd58687dd4146&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d810ea29dd58687dd4146">
-<rect class="hit" x="1035" y="836" width="345" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1037" y="838" width="341" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1047" y="856" font-size="11" font-weight="600" fill="#FFFFFF">Purchase orders</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81a1b10cd7512b999918" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Accounting AR AP GL&quot;, &quot;ver&quot;: &quot;12/15&quot;, &quot;span&quot;: &quot;11/30–12/16&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/30–12/02&quot;], [&quot;Review fields plan&quot;, &quot;11/30–12/02&quot;], [&quot;UX mocks&quot;, &quot;11/30–12/02&quot;], [&quot;UI&quot;, &quot;12/07–12/09&quot;], [&quot;API&quot;, &quot;12/07–12/09&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/14–12/16&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81a1b10cd7512b999918&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81a1b10cd7512b999918">
-<rect class="hit" x="1497" y="836" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1499" y="838" width="187" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1509" y="856" font-size="11" font-weight="600" fill="#FFFFFF">Accounting AR AP GL</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8102983dcbdb5ad751a5" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Order Control Center · 訂單控管中心&quot;, &quot;ver&quot;: &quot;11/24&quot;, &quot;span&quot;: &quot;11/02–11/25&quot;, &quot;rows&quot;: [[&quot;Review userflows&quot;, &quot;11/02–11/04&quot;], [&quot;Review fields plan&quot;, &quot;11/02–11/04&quot;], [&quot;UX mocks&quot;, &quot;11/02–11/04&quot;], [&quot;UI&quot;, &quot;11/16–11/18&quot;], [&quot;API&quot;, &quot;11/16–11/18&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/23–11/25&quot;]], &quot;sell&quot;: true, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8102983dcbdb5ad751a5&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8102983dcbdb5ad751a5">
-<rect class="hit" x="1189" y="870" width="268" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1191" y="872" width="264" height="28" rx="8" fill="#6A4FA3"/>
-<text x="1201" y="890" font-size="11" font-weight="600" fill="#FFFFFF">Order Control Center · 訂單控管中心</text>
-</g>
-</a>
-<rect x="0" y="912" width="2837" height="154" fill="#FFEDD5"/>
-<rect x="0" y="912" width="8" height="154" fill="#E74725"/>
-<text x="20" y="993.0" font-size="12" font-weight="700" fill="#E74725">Sterling</text>
-<line x1="0" y1="1066" x2="2837" y2="1066" stroke="#E5E7EB" stroke-width="1"/>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81b29926e00f7811d172" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Checkout redesign&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/11–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/11&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/11–08/13&quot;], [&quot;UI&quot;, &quot;08/18–08/20&quot;], [&quot;API&quot;, &quot;08/18–08/20&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81b29926e00f7811d172&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81b29926e00f7811d172">
-<rect class="hit" x="276" y="922" width="169" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="278" y="924" width="165" height="28" rx="8" fill="#E74725"/>
-<text x="288" y="942" font-size="11" font-weight="600" fill="#FFFFFF">Checkout redesign</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8145a149ce26630ad2ed" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Shop banner&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;08/26–09/09&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/26–08/28&quot;], [&quot;UI&quot;, &quot;09/02–09/04&quot;], [&quot;API&quot;, &quot;09/02–09/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/08–09/09&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8145a149ce26630ad2ed&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8145a149ce26630ad2ed">
-<rect class="hit" x="441" y="922" width="169" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="924" width="165" height="28" rx="8" fill="#E74725"/>
-<text x="453" y="942" font-size="11" font-weight="600" fill="#FFFFFF">Shop banner</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81018b0af7318bb0258b" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;GA4 / store sales tracking&quot;, &quot;ver&quot;: &quot;09/29&quot;, &quot;span&quot;: &quot;09/14–09/30&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/14&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/14–09/16&quot;], [&quot;UI&quot;, &quot;09/21–09/23&quot;], [&quot;API&quot;, &quot;09/21–09/23&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/28–09/29&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81018b0af7318bb0258b&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81018b0af7318bb0258b">
-<rect class="hit" x="650" y="922" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="652" y="924" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="662" y="942" font-size="11" font-weight="600" fill="#FFFFFF">GA4 / store sales tracki…</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d817d906ae3a4ff54798f" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Vehicle rego lookup&quot;, &quot;ver&quot;: &quot;10/20&quot;, &quot;span&quot;: &quot;10/05–10/21&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/05&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/05–10/07&quot;], [&quot;UI&quot;, &quot;10/12–10/14&quot;], [&quot;API&quot;, &quot;10/12–10/14&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/19–10/20&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d817d906ae3a4ff54798f&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d817d906ae3a4ff54798f">
-<rect class="hit" x="881" y="922" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="883" y="924" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="893" y="942" font-size="11" font-weight="600" fill="#FFFFFF">Vehicle rego lookup</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d816d979cc9486f7b0e9c" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Pay on account&quot;, &quot;ver&quot;: &quot;11/10&quot;, &quot;span&quot;: &quot;10/26–11/11&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/26–10/28&quot;], [&quot;UI&quot;, &quot;11/02–11/04&quot;], [&quot;API&quot;, &quot;11/02–11/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;11/09–11/10&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d816d979cc9486f7b0e9c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d816d979cc9486f7b0e9c">
-<rect class="hit" x="1112" y="922" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1114" y="924" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="1124" y="942" font-size="11" font-weight="600" fill="#FFFFFF">Pay on account</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8149b835dad26087214c" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Adobe security&quot;, &quot;ver&quot;: &quot;11/03&quot;, &quot;span&quot;: &quot;08/19–11/03&quot;, &quot;rows&quot;: [], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8149b835dad26087214c&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8149b835dad26087214c">
-<rect class="hit" x="364" y="956" width="851" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="366" y="958" width="847" height="28" rx="8" fill="#E74725"/>
-<text x="376" y="976" font-size="11" font-weight="600" fill="#FFFFFF">Adobe security</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d811fa31beaafb22ed608" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Track with SenditGo&quot;, &quot;ver&quot;: &quot;09/15&quot;, &quot;span&quot;: &quot;08/26–09/16&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;UX userflows + mocks&quot;, &quot;08/26–09/01&quot;], [&quot;UI&quot;, &quot;09/02–09/08&quot;], [&quot;API&quot;, &quot;09/02–09/08&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/15–09/16&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d811fa31beaafb22ed608&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d811fa31beaafb22ed608">
-<rect class="hit" x="441" y="990" width="246" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="992" width="242" height="28" rx="8" fill="#E74725"/>
-<text x="453" y="1010" font-size="11" font-weight="600" fill="#FFFFFF">Track with SenditGo</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d81d598f7d1675303b6a2" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Trade price match&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;UX userflows + mocks&quot;, &quot;09/28–09/30&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d81d598f7d1675303b6a2&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d81d598f7d1675303b6a2">
-<rect class="hit" x="804" y="990" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="992" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="816" y="1010" font-size="11" font-weight="600" fill="#FFFFFF">Trade price match</text>
-</g>
-</a>
-<a class="feat-link" href="https://www.notion.so/3c489adbb34d8142a48bc3ca03c6cda3" target="_blank" rel="noopener">
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Find My Garage&quot;, &quot;ver&quot;: &quot;10/27&quot;, &quot;span&quot;: &quot;10/12–10/28&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;10/12&quot;], [&quot;UX userflows + mocks&quot;, &quot;10/12–10/14&quot;], [&quot;UI&quot;, &quot;10/19–10/21&quot;], [&quot;API&quot;, &quot;10/19–10/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/26–10/27&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;https://www.notion.so/3c489adbb34d8142a48bc3ca03c6cda3&quot;, &quot;note&quot;: &quot;&quot;}" data-url="https://www.notion.so/3c489adbb34d8142a48bc3ca03c6cda3">
-<rect class="hit" x="958" y="1024" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="960" y="1026" width="187" height="28" rx="8" fill="#E74725"/>
-<text x="970" y="1044" font-size="11" font-weight="600" fill="#FFFFFF">Find My Garage</text>
-</g>
-</a>
-<rect x="0" y="1066" width="2837" height="52" fill="#FFF1EC"/>
-<rect x="0" y="1066" width="8" height="52" fill="#F05A3A"/>
-<text x="20" y="1096.0" font-size="12" font-weight="700" fill="#F05A3A">Sterling UI</text>
-<line x1="0" y1="1118" x2="2837" y2="1118" stroke="#E5E7EB" stroke-width="1"/>
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Homepage weight + SEO&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;UI&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;LV-01 h1 · LV-03 8.1MB · LV-05 mobile hero · LV-09 extra h1 · LV-13 OG · same week as Homepage SEO config API · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="804" y="1076" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="1078" width="187" height="28" rx="8" fill="#F05A3A"/>
-<text x="816" y="1096" font-size="11" font-weight="600" fill="#FFFFFF">Homepage weight + SEO</text>
-</g>
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Theme hygiene&quot;, &quot;ver&quot;: &quot;12/01&quot;, &quot;span&quot;: &quot;11/16–12/02&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;11/16&quot;], [&quot;UI&quot;, &quot;11/23–11/25&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;12/01–12/02&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;FE-01 escape · FE-02 inline script · FE-03 onclick · FE-06 href# · FE-08 !important · LV-04 CSS bundles · LV-10 jQuery UI · garage stays on Find My Garage · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="1343" y="1076" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="1345" y="1078" width="187" height="28" rx="8" fill="#F05A3A"/>
-<text x="1355" y="1096" font-size="11" font-weight="600" fill="#FFFFFF">Theme hygiene</text>
-</g>
-<rect x="0" y="1118" width="2837" height="52" fill="#FFE8E1"/>
-<rect x="0" y="1118" width="8" height="52" fill="#C43C1F"/>
-<text x="20" y="1148.0" font-size="12" font-weight="700" fill="#C43C1F">Sterling API</text>
-<line x1="0" y1="1170" x2="2837" y2="1170" stroke="#E5E7EB" stroke-width="1"/>
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Credential rotate&quot;, &quot;ver&quot;: &quot;08/25&quot;, &quot;span&quot;: &quot;08/19–08/25&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/19&quot;], [&quot;API&quot;, &quot;08/19–08/21&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;08/24–08/25&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;F-01 rotate Adobe + Amasty keys · git untrack is not enough · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="364" y="1128" width="81" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="366" y="1130" width="77" height="28" rx="8" fill="#C43C1F"/>
-<text x="376" y="1148" font-size="11" font-weight="600" fill="#FFFFFF">Credentia…</text>
-</g>
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Admin trust&quot;, &quot;ver&quot;: &quot;09/08&quot;, &quot;span&quot;: &quot;08/26–09/09&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;08/26&quot;], [&quot;API&quot;, &quot;09/02–09/04&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;09/08–09/09&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;F-02 anonymous webapi · F-04 2FA · F-06 F-07 zombie modules · LV-06 CSP · LV-11 autocomplete · LV-12 security.txt · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="441" y="1128" width="169" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="443" y="1130" width="165" height="28" rx="8" fill="#C43C1F"/>
-<text x="453" y="1148" font-size="11" font-weight="600" fill="#FFFFFF">Admin trust</text>
-</g>
-<g class="feat" data-tip="{&quot;name&quot;: &quot;Homepage SEO config&quot;, &quot;ver&quot;: &quot;10/13&quot;, &quot;span&quot;: &quot;09/28–10/14&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;09/28&quot;], [&quot;API&quot;, &quot;10/05–10/07&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;10/12–10/13&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;LV-02 canonical · LV-07 JSON-LD later · Magento admin / API · same week as Homepage weight UI · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="804" y="1128" width="191" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="806" y="1130" width="187" height="28" rx="8" fill="#C43C1F"/>
-<text x="816" y="1148" font-size="11" font-weight="600" fill="#FFFFFF">Homepage SEO config</text>
-</g>
-<g class="feat" data-tip="{&quot;name&quot;: &quot;NetSuite rewrite&quot;, &quot;ver&quot;: &quot;02/02&quot;, &quot;span&quot;: &quot;01/19–02/03&quot;, &quot;rows&quot;: [[&quot;Planning&quot;, &quot;01/19&quot;], [&quot;API&quot;, &quot;01/26–01/28&quot;], [&quot;Status Reviewing / Testing&quot;, &quot;02/02–02/03&quot;]], &quot;sell&quot;: false, &quot;url&quot;: &quot;&quot;, &quot;note&quot;: &quot;F-03 R1–R4 R6 R11 · do not module:enable until qty is real and SQL is bound · no Notion yet&quot;}" data-url="">
-<rect class="hit" x="2047" y="1128" width="180" height="32" rx="8" fill="transparent"/>
-<rect class="work" x="2049" y="1130" width="176" height="28" rx="8" fill="#C43C1F"/>
-<text x="2059" y="1148" font-size="11" font-weight="600" fill="#FFFFFF">NetSuite rewrite</text>
-</g>
-<line x1="432" y1="206.0" x2="432" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="432,199.0 439,206.0 432,213.0 425,206.0" fill="#F43F5E"/>
-<text x="432" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">08/25</text>
-<line x1="520" y1="206.0" x2="520" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="520,199.0 527,206.0 520,213.0 513,206.0" fill="#F43F5E"/>
-<text x="520" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/01</text>
-<line x1="597" y1="206.0" x2="597" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="597,199.0 604,206.0 597,213.0 590,206.0" fill="#F43F5E"/>
-<text x="597" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/08</text>
-<line x1="674" y1="206.0" x2="674" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="674,199.0 681,206.0 674,213.0 667,206.0" fill="#F43F5E"/>
-<text x="674" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/15</text>
-<line x1="751" y1="206.0" x2="751" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="751,199.0 758,206.0 751,213.0 744,206.0" fill="#F43F5E"/>
-<text x="751" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/22</text>
-<line x1="828" y1="206.0" x2="828" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="828,199.0 835,206.0 828,213.0 821,206.0" fill="#F43F5E"/>
-<text x="828" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">09/29</text>
-<line x1="905" y1="206.0" x2="905" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="905,199.0 912,206.0 905,213.0 898,206.0" fill="#F43F5E"/>
-<text x="905" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/06</text>
-<line x1="982" y1="206.0" x2="982" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="982,199.0 989,206.0 982,213.0 975,206.0" fill="#F43F5E"/>
-<text x="982" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/13</text>
-<line x1="1059" y1="206.0" x2="1059" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1059,199.0 1066,206.0 1059,213.0 1052,206.0" fill="#F43F5E"/>
-<text x="1059" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/20</text>
-<line x1="1136" y1="206.0" x2="1136" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1136,199.0 1143,206.0 1136,213.0 1129,206.0" fill="#F43F5E"/>
-<text x="1136" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">10/27</text>
-<line x1="1213" y1="206.0" x2="1213" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1213,199.0 1220,206.0 1213,213.0 1206,206.0" fill="#F43F5E"/>
-<text x="1213" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/03</text>
-<line x1="1290" y1="206.0" x2="1290" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1290,199.0 1297,206.0 1290,213.0 1283,206.0" fill="#F43F5E"/>
-<text x="1290" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/10</text>
-<line x1="1367" y1="206.0" x2="1367" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1367,199.0 1374,206.0 1367,213.0 1360,206.0" fill="#F43F5E"/>
-<text x="1367" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/17</text>
-<line x1="1444" y1="206.0" x2="1444" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1444,199.0 1451,206.0 1444,213.0 1437,206.0" fill="#F43F5E"/>
-<text x="1444" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">11/24</text>
-<line x1="1521" y1="206.0" x2="1521" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1521,199.0 1528,206.0 1521,213.0 1514,206.0" fill="#F43F5E"/>
-<text x="1521" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/01</text>
-<line x1="1598" y1="206.0" x2="1598" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1598,199.0 1605,206.0 1598,213.0 1591,206.0" fill="#F43F5E"/>
-<text x="1598" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/08</text>
-<line x1="1675" y1="206.0" x2="1675" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1675,199.0 1682,206.0 1675,213.0 1668,206.0" fill="#F43F5E"/>
-<text x="1675" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/15</text>
-<line x1="1752" y1="206.0" x2="1752" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1752,199.0 1759,206.0 1752,213.0 1745,206.0" fill="#F43F5E"/>
-<text x="1752" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/22</text>
-<line x1="1829" y1="206.0" x2="1829" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1829,199.0 1836,206.0 1829,213.0 1822,206.0" fill="#F43F5E"/>
-<text x="1829" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">12/29</text>
-<line x1="1906" y1="206.0" x2="1906" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1906,199.0 1913,206.0 1906,213.0 1899,206.0" fill="#F43F5E"/>
-<text x="1906" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/05</text>
-<line x1="1983" y1="206.0" x2="1983" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="1983,199.0 1990,206.0 1983,213.0 1976,206.0" fill="#F43F5E"/>
-<text x="1983" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/12</text>
-<line x1="2060" y1="206.0" x2="2060" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2060,199.0 2067,206.0 2060,213.0 2053,206.0" fill="#F43F5E"/>
-<text x="2060" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/19</text>
-<line x1="2137" y1="206.0" x2="2137" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2137,199.0 2144,206.0 2137,213.0 2130,206.0" fill="#F43F5E"/>
-<text x="2137" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">01/26</text>
-<line x1="2214" y1="206.0" x2="2214" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2214,199.0 2221,206.0 2214,213.0 2207,206.0" fill="#F43F5E"/>
-<text x="2214" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/02</text>
-<line x1="2291" y1="206.0" x2="2291" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2291,199.0 2298,206.0 2291,213.0 2284,206.0" fill="#F43F5E"/>
-<text x="2291" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/09</text>
-<line x1="2368" y1="206.0" x2="2368" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2368,199.0 2375,206.0 2368,213.0 2361,206.0" fill="#F43F5E"/>
-<text x="2368" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/16</text>
-<line x1="2445" y1="206.0" x2="2445" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2445,199.0 2452,206.0 2445,213.0 2438,206.0" fill="#F43F5E"/>
-<text x="2445" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">02/23</text>
-<line x1="2522" y1="206.0" x2="2522" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2522,199.0 2529,206.0 2522,213.0 2515,206.0" fill="#F43F5E"/>
-<text x="2522" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/02</text>
-<line x1="2599" y1="206.0" x2="2599" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2599,199.0 2606,206.0 2599,213.0 2592,206.0" fill="#F43F5E"/>
-<text x="2599" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/09</text>
-<line x1="2676" y1="206.0" x2="2676" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2676,199.0 2683,206.0 2676,213.0 2669,206.0" fill="#F43F5E"/>
-<text x="2676" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/16</text>
-<line x1="2753" y1="206.0" x2="2753" y2="1180" stroke="#F43F5E" stroke-width="1" stroke-dasharray="0" opacity="0.85"/>
-<polygon points="2753,199.0 2760,206.0 2753,213.0 2746,206.0" fill="#F43F5E"/>
-<text x="2753" y="194.0" font-size="10" font-weight="700" fill="#BE123C" text-anchor="middle">03/23</text>
-<text x="24" y="1202" font-size="11" font-weight="700" fill="#111827">Click a product block → Notion ticket</text>
-<text x="24" y="1220" font-size="11" fill="#4B5563">Reviewing flow = UX audit like OEM / SO-PO. Code review and test = ticket Status Reviewing then Testing — not extra tickets. Sterling UI / API = Magento audit overlay (disk), no Notion yet.</text>
-<rect x="24" y="1230" width="14" height="14" rx="3" fill="#007FFF"/>
-<text x="44" y="1241" font-size="11" fill="#111827">Carrier</text>
-<rect x="194" y="1230" width="14" height="14" rx="3" fill="#1A8CFF"/>
-<text x="214" y="1241" font-size="11" fill="#111827">Consignee</text>
-<rect x="364" y="1230" width="14" height="14" rx="3" fill="#003DF2"/>
-<text x="384" y="1241" font-size="11" fill="#111827">Official website</text>
-<rect x="534" y="1230" width="14" height="14" rx="3" fill="#6A4FA3"/>
-<text x="554" y="1241" font-size="11" fill="#111827">SenditSell</text>
-<rect x="704" y="1230" width="14" height="14" rx="3" fill="#E74725"/>
-<text x="724" y="1241" font-size="11" fill="#111827">Sterling</text>
-<rect x="874" y="1230" width="14" height="14" rx="3" fill="#F05A3A"/>
-<text x="894" y="1241" font-size="11" fill="#111827">Sterling UI</text>
-<rect x="1044" y="1230" width="14" height="14" rx="3" fill="#C43C1F"/>
-<text x="1064" y="1241" font-size="11" fill="#111827">Sterling API</text>
-</svg>
-<div id="tip"></div>
-<script>
-const tip = document.getElementById('tip');
-function show(ev, raw) {
-  let d;
-  try { d = JSON.parse(raw); } catch (e) { return; }
-  const rows = (d.rows || []).map(r =>
-    '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' + r[1] + '</span></div>'
-  ).join('');
-  const sell = d.sell ? '<div class="sell">Reviewing flow = OEM / SO-PO UX audit · code review/test = ticket Status</div>' : '';
-  const note = d.note ? '<div class="sell">' + d.note + '</div>' : '';
-  const open = d.url ? '<div class="open">Click to open Notion ticket</div>' : '<div class="open">No Notion ticket yet</div>';
-  tip.innerHTML = '<h4>' + (d.name || '') + '</h4>'
-    + '<div class="meta">check ' + (d.ver || '') + ' · ' + (d.span || '') + '</div>'
-    + (rows || '<div class="meta">No stage days on this bar</div>')
-    + sell
-    + note
-    + open;
-  tip.style.display = 'block';
-  move(ev);
-}
-function move(ev) {
-  const pad = 14;
-  let x = ev.clientX + pad;
-  let y = ev.clientY + pad;
-  const r = tip.getBoundingClientRect();
-  if (x + r.width > window.innerWidth - 8) x = ev.clientX - r.width - pad;
-  if (y + r.height > window.innerHeight - 8) y = ev.clientY - r.height - pad;
-  tip.style.left = Math.max(8, x) + 'px';
-  tip.style.top = Math.max(8, y) + 'px';
-}
-function hide() { tip.style.display = 'none'; }
-document.querySelectorAll('.feat').forEach(g => {
-  g.addEventListener('mouseenter', ev => show(ev, g.getAttribute('data-tip')));
-  g.addEventListener('mousemove', move);
-  g.addEventListener('mouseleave', hide);
-  g.addEventListener('click', ev => {
-    const url = g.getAttribute('data-url');
-    if (!url) return;
-    ev.preventDefault();
-    ev.stopPropagation();
-    window.open(url, '_blank', 'noopener');
-  });
-});
-</script>
-</body>
-</html>
+<header><div class="wrap">
+<nav aria-label="Roadmap navigation"><span class="brand"><b>HOLIEN</b> Milestones</span><a href="v1.5/index.html">September portfolio ↗</a></nav>
+<div class="hero"><div><div class="eyebrow">SenditGo · Proposed plan</div><h1>Delivery roadmap</h1><p>Fleet Web, Driver App and AU operations</p></div><div class="period">23 Nov 2026 — 31 Mar 2027</div></div>
+</div></header>
+<main class="wrap">
+<section aria-labelledby="milestones"><div class="section-title"><h2 id="milestones">Delivery milestones</h2></div><div class="gates"><article><time>30 Nov</time><h3>Triage and staff</h3><p>Confirm owners for priority fixes and reconcile the feature backlog.</p></article><article><time>18 Dec</time><h3>Approve the baseline</h3><p>Review Web IA and driver prototypes with AU. Set API rules and staff both tracks.</p></article><article><time>29 Jan</time><h3>Demonstrate core flows</h3><p>Create and assign an order on Web. Walk from Home to an accepted route on App.</p></article><article><time>26 Feb</time><h3>Verify the full journey</h3><p>Test dispatch, scanning, proof and offline recovery across Web, API and native builds.</p></article><article><time>31 Mar</time><h3>Decide and roll out</h3><p>Use AU pilot results, telemetry and manuals to decide each track’s release.</p></article></div>
+<div class="notes"><p><strong>Capacity decision by 18 December.</strong> Protect urgent AU fixes, GA4 and Insight in Grey’s queue. The March target assumes separate Web and native implementation capacity, API support and shared QA. Validate driver interactions before implementing each layout on Android and iOS. Reserve March for pilot feedback, fixes and independently approved rollouts.</p></div></section>
+<section aria-labelledby="schedule"><div class="section-title"><h2 id="schedule">Feature schedule</h2><a href="jira-milestones.svg">Open full Gantt chart ↗</a></div>
+<p class="intro">63 inventory packages and 4 QA milestones. Expand a stream, then a package, for the planned outcome, dependencies and source. Dates include design, implementation and verification where applicable.</p>
+<details class="stream" style="--ink:#1464a5" open>
+            <summary><span class="swatch"></span><span><strong>AU requests and reliability</strong><span class="subtitle">New features, priority fixes and operating rules</span></span>
+            <span class="count">16 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="F01"><summary>
+              <span class="code">F01</span><span class="work">Create Order on Fleet Web </span>
+              <span class="dates">23 Nov – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Create an interstate order or add an unexpected same-day stop, validate it, assign it and read it back on the Run Sheet.</p><p><b>Dependency or decision</b> Yi to approve scope and order eligibility before build.</p><a href="https://app.notion.com/p/41a89adbb34d80ef8429ea19231c9b96">Inventory source ↗</a></div></details><details class="package" id="F02"><summary>
+              <span class="code">F02</span><span class="work">Select several orders for one driver </span>
+              <span class="dates">14 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Ctrl+Click Pending Orders on the map and assign them to one idle driver with a recoverable partial-failure path.</p><p><b>Dependency or decision</b> Agree the transaction boundary with API. W10 covers independent assignments.</p><a href="https://app.notion.com/p/41b89adbb34d80e3814dff6fdf1327f3">Inventory source ↗</a></div></details><details class="package" id="F03"><summary>
+              <span class="code">F03</span><span class="work">Driver device and version reporting </span>
+              <span class="dates">23 Nov – 11 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:14.729%"></i></span></summary>
+              <div class="detail"><p>Verify Android and iOS reporting against real DEV API records and identify the installed build during support triage.</p><p><b>Dependency or decision</b> Contract and unit evidence exist. Real-device readback is due.</p><a href="https://app.notion.com/p/41b89adbb34d81f691f5d60f46fe081d">Inventory source ↗</a></div></details><details class="package" id="F04"><summary>
+              <span class="code">F04</span><span class="work">Shift change and AM1 overrun </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Exercise shift swapping and overrun on a valid replacement shift, including operator feedback.</p><p><b>Dependency or decision</b> Decide automatic selection versus explicit operator choice with AU.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B01"><summary>
+              <span class="code">B01</span><span class="work">Pending upload after warehouse return </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Reproduce the upload failure and verify App, API and Web reach the correct final state.</p><p><b>Dependency or decision</b> P1 investigation. Capture actual build and server readback.</p><a href="https://app.notion.com/p/41b89adbb34d805d8830d8f1dfc1af08">Inventory source ↗</a></div></details><details class="package" id="B02"><summary>
+              <span class="code">B02</span><span class="work">Completed Run Sheet sync </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Trace completion through App, API and Fleet Web and retest on affected builds.</p><p><b>Dependency or decision</b> Verify the expected propagation behavior.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B03"><summary>
+              <span class="code">B03</span><span class="work">Manual Complete during pending uploads </span>
+              <span class="dates">23 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Exercise Web Manual Complete while local data is pending and verify ordering through restart.</p><p><b>Dependency or decision</b> Agree conflict and recovery behavior with API.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B04"><summary>
+              <span class="code">B04</span><span class="work">Navigation exit before warehouse arrival </span>
+              <span class="dates">30 Nov – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Verify GPS and arrival handling when a driver exits navigation early.</p><p><b>Dependency or decision</b> AU to confirm the operational arrival rule.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B05"><summary>
+              <span class="code">B05</span><span class="work">Unexpected movement after Reorder Stops </span>
+              <span class="dates">30 Nov – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Reproduce invalid parameters, stale routes and unexpected movement, then retest accepted order.</p><p><b>Dependency or decision</b> Requires App and API readback.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B06"><summary>
+              <span class="code">B06</span><span class="work">Android signature orientation </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Reproduce on affected device and orientation combinations and verify captured proof.</p><p><b>Dependency or decision</b> Record model and build alongside M10.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B07"><summary>
+              <span class="code">B07</span><span class="work">Roster edits retaining priority or shift </span>
+              <span class="dates">30 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Replay actual edits, compare API responses and verify the saved roster.</p><p><b>Dependency or decision</b> Needs a reproducible example.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B08"><summary>
+              <span class="code">B08</span><span class="work">Idle driver and target-shift eligibility </span>
+              <span class="dates">7 Dec – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Test overlapping shifts and eligible drivers against the agreed rule.</p><p><b>Dependency or decision</b> Confirm expected overlaps with AU.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B09"><summary>
+              <span class="code">B09</span><span class="work">Cleared Reassign operation group </span>
+              <span class="dates">23 Nov – 11 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:14.729%"></i></span></summary>
+              <div class="detail"><p>Confirm release scope and repeat the field workflow with AU.</p><p><b>Dependency or decision</b> 18 Nov retest passed in its tested scenario.</p><a href="https://app.notion.com/p/41c89adbb34d8079a2dbcc721b008088">Inventory source ↗</a></div></details><details class="package" id="B10"><summary>
+              <span class="code">B10</span><span class="work">Shift Overrun time zones </span>
+              <span class="dates">23 Nov – 11 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:14.729%"></i></span></summary>
+              <div class="detail"><p>Verify deployed scope and AU behavior across affected time zones.</p><p><b>Dependency or decision</b> 18 Nov retest passed in its tested scenario.</p><a href="https://app.notion.com/p/41c89adbb34d807a9227e918596d0824">Inventory source ↗</a></div></details><details class="package" id="B11"><summary>
+              <span class="code">B11</span><span class="work">Forced logout on Fleet Web </span>
+              <span class="dates">23 Nov – 4 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:9.302%"></i></span></summary>
+              <div class="detail"><p>Verify the P1 refresh-token hotfix through session refresh on the target build.</p><p><b>Dependency or decision</b> Protected Web hotfix capacity.</p><a href="https://app.notion.com/p/41489adbb34d81158793e2774c569461">Inventory source ↗</a></div></details><details class="package" id="B12"><summary>
+              <span class="code">B12</span><span class="work">Actions by order status </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Agree the AU #116 action matrix for In Transit and exceptional states in Orders and Run Sheet Details.</p><p><b>Dependency or decision</b> Business-rule decision feeds W08 and W14.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#365bb4" >
+            <summary><span class="swatch"></span><span><strong>Fleet Web V2</strong><span class="subtitle">Navigation, setup, order lookup and Insight</span></span>
+            <span class="count">8 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="W01"><summary>
+              <span class="code">W01</span><span class="work">Company, Warehouse and Fleet navigation </span>
+              <span class="dates">30 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Approve the hierarchy in December, then verify settings navigation in the Web build.</p><p><b>Dependency or decision</b> Review detailed screens with dispatchers.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W02"><summary>
+              <span class="code">W02</span><span class="work">Fleet Management </span>
+              <span class="dates">7 Dec – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Let dispatchers find vehicles and the drivers assigned to them.</p><p><b>Dependency or decision</b> Use W01 hierarchy.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W03"><summary>
+              <span class="code">W03</span><span class="work">Recurring Runs and route planning </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Configure service areas, operating windows and coverage for a recurring Run.</p><p><b>Dependency or decision</b> Freeze the planning rules in December.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W05"><summary>
+              <span class="code">W05</span><span class="work">Assisted driver registration </span>
+              <span class="dates">14 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Prove a dispatcher can onboard an eligible driver within their permissions.</p><p><b>Dependency or decision</b> Confirm workflow and align with W06 and M02–M03.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W06"><summary>
+              <span class="code">W06</span><span class="work">Roles, permissions and first-time setup </span>
+              <span class="dates">30 Nov – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Verify role templates, visibility and first-time setup across the new hierarchy.</p><p><b>Dependency or decision</b> Approve an authorization matrix before implementation.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W08"><summary>
+              <span class="code">W08</span><span class="work">Orders, tracking, history and QR printing </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Bring order lookup, tracking, history, QR printing and eligible batch actions into one workflow.</p><p><b>Dependency or decision</b> Confirm status-based actions with B12.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W16"><summary>
+              <span class="code">W16</span><span class="work">Insight V2 accuracy </span>
+              <span class="dates">23 Nov – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:74.419%"></i></span></summary>
+              <div class="detail"><p>Reconcile completion, manual completion, planned and actual routes, and missing data against operational records.</p><p><b>Dependency or decision</b> Resolve metric definitions with API and G06.</p><a href="https://app.notion.com/p/3fc89adbb34d81bdbe0fc60a269ec396">Inventory source ↗</a></div></details><details class="package" id="W18"><summary>
+              <span class="code">W18</span><span class="work">Guided practice for dispatchers <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Test first-use guidance for recurring Run setup and daily dispatch with operators.</p><p><b>Dependency or decision</b> Prototype candidate. Production guidance requires the usability review and capacity.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#285d90" >
+            <summary><span class="swatch"></span><span><strong>Driver App V2</strong><span class="subtitle">Shared foundation, core journey and later native modules</span></span>
+            <span class="count">17 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="M00"><summary>
+              <span class="code">M00</span><span class="work">Shared native design system </span>
+              <span class="dates">30 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Validate responsive components, typography, color and state semantics on both platforms.</p><p><b>Dependency or decision</b> Approve interaction patterns before native layout.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M01"><summary>
+              <span class="code">M01</span><span class="work">Sign-in, OTP and recovery </span>
+              <span class="dates">7 Dec – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Validate the interaction, then exercise sign-in, OTP and recovery on Android and iOS.</p><p><b>Dependency or decision</b> Requires M00 foundation.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M02"><summary>
+              <span class="code">M02</span><span class="work">Registration and document capture <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Deliver approved registration and document capture flows on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and the W05 onboarding contract.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M03"><summary>
+              <span class="code">M03</span><span class="work">Approval, audit and amendments <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Recover an incomplete or rejected submission and verify amended status on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and M02.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M04"><summary>
+              <span class="code">M04</span><span class="work">Today, Home and Workday </span>
+              <span class="dates">30 Nov – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Show the next action, current Run, work status and current or next-week roster in native builds.</p><p><b>Dependency or decision</b> Validate the prototype with drivers before native layout.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M05"><summary>
+              <span class="code">M05</span><span class="work">Run Sheet, Stop, Order and SKU </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Complete a task through the Run Sheet hierarchy with clear Stop, Order and SKU context.</p><p><b>Dependency or decision</b> Use the M04 entry and validate navigation depth.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M06"><summary>
+              <span class="code">M06</span><span class="work">Navigation, arrival and Reorder Stops </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Verify route preview, accepted reorder, driving restrictions, Google Maps and return to warehouse.</p><p><b>Dependency or decision</b> Resolve B04 and B05 behavior with API.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M07"><summary>
+              <span class="code">M07</span><span class="work">Warehouse pickup and scanning </span>
+              <span class="dates">14 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Keep the relevant Order and SKU visible through barcode, keyboard, RA, Can’t Find and No Label recovery.</p><p><b>Dependency or decision</b> Confirm exception paths and event names before native build.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M08"><summary>
+              <span class="code">M08</span><span class="work">Delivery exceptions </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify missing, damaged and wrong-delivery paths and resulting order status.</p><p><b>Dependency or decision</b> Requires M07 scanning and an agreed API response.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M09"><summary>
+              <span class="code">M09</span><span class="work">Route issue and driver reporting <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Submit a route issue on both platforms and verify receipt by the receiving system.</p><p><b>Dependency or decision</b> API-dependent module and additional native capacity.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M10"><summary>
+              <span class="code">M10</span><span class="work">Proof of delivery </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify signature orientation, No Contact, photo retake, upload receipt and historical proof.</p><p><b>Dependency or decision</b> Use B06 device coverage and M16 upload states.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M11"><summary>
+              <span class="code">M11</span><span class="work">Roster, calendar and shifts <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Verify current and upcoming shifts and calendar changes on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and W04 roster rules.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M12"><summary>
+              <span class="code">M12</span><span class="work">Leave requests and cancellation <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Submit and cancel leave, then verify the roster reflects the outcome.</p><p><b>Dependency or decision</b> Additional native capacity and M11.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M13"><summary>
+              <span class="code">M13</span><span class="work">Delivery History and read-only proof <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Open completed delivery history and verify read-only proof on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and M10.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M14"><summary>
+              <span class="code">M14</span><span class="work">Notifications and Route Updated </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Surface changed or cancelled Stops in Message Center and refresh stale Run information.</p><p><b>Dependency or decision</b> Requires W17 trigger contract.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M15"><summary>
+              <span class="code">M15</span><span class="work">Account, vehicle and compliance <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Verify account, vehicle, compliance and account deletion flows on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and agreed account rules.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M16"><summary>
+              <span class="code">M16</span><span class="work">Offline and interrupted tasks </span>
+              <span class="dates">23 Nov – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:74.419%"></i></span></summary>
+              <div class="detail"><p>Recover after reopening navigation or the App, show pending uploads and acknowledge completion after server acceptance.</p><p><b>Dependency or decision</b> Resolve B01–B04 ordering and recovery contracts.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#22746b" >
+            <summary><span class="swatch"></span><span><strong>Dispatch and Roster</strong><span class="subtitle">Daily Run Sheets, assignment and operational changes</span></span>
+            <span class="count">10 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="W04"><summary>
+              <span class="code">W04</span><span class="work">Roster availability and leave </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify working days, leave, temporary drivers and availability in assignment.</p><p><b>Dependency or decision</b> Confirm roster rules with F04, B07 and B08.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W07"><summary>
+              <span class="code">W07</span><span class="work">Daily dispatch after Cut Time </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Open daily dispatch on the generated Run Sheets and handle an empty or delayed generation.</p><p><b>Dependency or decision</b> Confirm Cut Time behavior with API.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W09"><summary>
+              <span class="code">W09</span><span class="work">OM List and Map parity </span>
+              <span class="dates">30 Nov – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Carry Pending Orders, Run Sheets, selections, markers and driver context between views.</p><p><b>Dependency or decision</b> Align shared selection state before F02 acceptance.</p><a href="https://app.notion.com/p/3fa89adbb34d81719424fc6183ccfaf2">Inventory source ↗</a></div></details><details class="package" id="W10"><summary>
+              <span class="code">W10</span><span class="work">Independent assignments and linked Reassign </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Apply two independent assignments together, compare alternative drivers and verify linked Reassign results.</p><p><b>Dependency or decision</b> Define recovery per operation. F02 assigns several orders to a single driver.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W11"><summary>
+              <span class="code">W11</span><span class="work">Simulate → Results → Assign </span>
+              <span class="dates">30 Nov – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:63.566%"></i></span></summary>
+              <div class="detail"><p>Retain the current sequence while verifying staged changes, failed assignments and recovery.</p><p><b>Dependency or decision</b> Any replacement needs API and QA approval.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W12"><summary>
+              <span class="code">W12</span><span class="work">Adjustment labels </span>
+              <span class="dates">7 Dec – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:31.008%"></i></span></summary>
+              <div class="detail"><p>Apply Change Driver, Delay Delivery, Cancel Order and More Adjustments, then verify wording in context.</p><p><b>Dependency or decision</b> Use the agreed labels.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W13"><summary>
+              <span class="code">W13</span><span class="work">Concurrent dispatch and route cutoff </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify stale-result handling, review before Apply and changes by two dispatchers.</p><p><b>Dependency or decision</b> The proposed 15-minute cutoff still needs an operational decision.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W14"><summary>
+              <span class="code">W14</span><span class="work">Return Orders and Cancel Orders </span>
+              <span class="dates">30 Nov – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:63.566%"></i></span></summary>
+              <div class="detail"><p>Return an eligible order to Pending and verify permanent cancellation as a separate outcome.</p><p><b>Dependency or decision</b> Approve the Orders versus Run Sheet status policy in B12.</p><a href="https://app.notion.com/p/41289adbb34d811fb003eab86f879bc8">Inventory source ↗</a></div></details><details class="package" id="W15"><summary>
+              <span class="code">W15</span><span class="work">Transfer to Fleet </span>
+              <span class="dates">23 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Verify eligible destinations, validation and the destination fleet’s order readback.</p><p><b>Dependency or decision</b> Existing implementation and QA work require target-build acceptance.</p><a href="https://app.notion.com/p/40089adbb34d81dfa17afd603079cc92">Inventory source ↗</a></div></details><details class="package" id="W17"><summary>
+              <span class="code">W17</span><span class="work">Final-plan notifications and Run Summaries </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Confirm the final plan, deliver driver notifications and reconcile management summaries.</p><p><b>Dependency or decision</b> Agree triggers with API and the M14 notification flow.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#775189" >
+            <summary><span class="swatch"></span><span><strong>Analytics and reporting</strong><span class="subtitle">GA4 events, BigQuery exports and operational metrics</span></span>
+            <span class="count">6 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="G01"><summary>
+              <span class="code">G01</span><span class="work">GA4 coverage reconciliation </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Reconcile tickets, duplicates and exclusions, and resolve the 19 PM measurement decisions from the November audit.</p><p><b>Dependency or decision</b> Audit baseline was 141 features reviewed and 62 needing GA4.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G02"><summary>
+              <span class="code">G02</span><span class="work">Web critical actions </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Instrument OM Assign and Reassign, Run Sheet adjustments, Transfer, Create Order and Roster actions.</p><p><b>Dependency or decision</b> Align event names with G01 and the implemented flows.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G03"><summary>
+              <span class="code">G03</span><span class="work">App critical actions </span>
+              <span class="dates">4 Jan – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:32.558%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Instrument onboarding, navigation, scanning, Can’t Find, No Label, POD, upload recovery and reporting.</p><p><b>Dependency or decision</b> Validate emitted events on both native platforms.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G04"><summary>
+              <span class="code">G04</span><span class="work">V2 usability measurement </span>
+              <span class="dates">11 Jan – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Measure entry, completion, abandonment and errors where each signal answers an agreed UX question.</p><p><b>Dependency or decision</b> Keep established-screen tracking to meaningful clicks.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G05"><summary>
+              <span class="code">G05</span><span class="work">Event and export validation </span>
+              <span class="dates">7 Dec – 31 Mar</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:89.147%"></i></span></summary>
+              <div class="detail"><p>At each release verify Web, Android and iOS parity, DebugView, BigQuery export and duplicate prevention.</p><p><b>Dependency or decision</b> Link emitted events to the feature and ticket evidence.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G06"><summary>
+              <span class="code">G06</span><span class="work">Insight KPI definitions and freshness </span>
+              <span class="dates">7 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:63.566%"></i></span></summary>
+              <div class="detail"><p>Verify operational definitions, refresh timing and data freshness using source records.</p><p><b>Dependency or decision</b> Use W16 operational records for performance and F03 diagnostics for device support.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#9a5d2c" >
+            <summary><span class="swatch"></span><span><strong>User manuals</strong><span class="subtitle">English and Traditional Chinese guidance for released flows</span></span>
+            <span class="count">6 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="D01"><summary>
+              <span class="code">D01</span><span class="work">Bilingual manual inventory </span>
+              <span class="dates">1 Dec – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:6.202%;width:13.953%"></i></span></summary>
+              <div class="detail"><p>Re-enumerate English and Traditional Chinese pages and compare them with approved flows.</p><p><b>Dependency or decision</b> 77 pairs was the historical census.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D02"><summary>
+              <span class="code">D02</span><span class="work">Fleet Web manual updates </span>
+              <span class="dates">4 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:32.558%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Update IA, sidebar, Fleet, Roster, Orders and Run Sheet instructions against the corresponding build.</p><p><b>Dependency or decision</b> Requires Web IA approval and implemented slices.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D03"><summary>
+              <span class="code">D03</span><span class="work">Driver App manual updates </span>
+              <span class="dates">11 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Update Home, Run Sheet, scanning, navigation, POD and recovery as modules reach acceptance.</p><p><b>Dependency or decision</b> Use released behavior in both languages.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D04"><summary>
+              <span class="code">D04</span><span class="work">Version-matched screenshots </span>
+              <span class="dates">18 Jan – 24 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:51.163%"></i></span></summary>
+              <div class="detail"><p>Replace changed images using the matching platform, state and build.</p><p><b>Dependency or decision</b> Capture after implementation.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D05"><summary>
+              <span class="code">D05</span><span class="work">Quick Start and exception guidance </span>
+              <span class="dates">11 Jan – 24 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:56.589%"></i></span></summary>
+              <div class="detail"><p>Update onboarding, first-use instructions, exceptions and terminology in both languages.</p><p><b>Dependency or decision</b> Use approved vocabulary and tested recovery paths.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D06"><summary>
+              <span class="code">D06</span><span class="work">Manual publication checks </span>
+              <span class="dates">18 Jan – 31 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:56.589%"></i></span></summary>
+              <div class="detail"><p>Verify links, images, bilingual parity and published pages on docs.senditgo.com at each release.</p><p><b>Dependency or decision</b> Final pass follows D02–D05.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#356b50" >
+            <summary><span class="swatch"></span><span><strong>AU validation and release</strong><span class="subtitle">Acceptance criteria, integration, field pilot and rollout</span></span>
+            <span class="count">4 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="Q01"><summary>
+              <span class="code">Q01</span><span class="work">AU scope and acceptance review </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Review Web IA and driver prototypes with AU. Decide the March baseline, four features, measurement minimum, bug gates and staffing.</p><p><b>Dependency or decision</b> Planning review with Ben, Evelyn, Yi and engineering.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details><details class="package" id="Q02"><summary>
+              <span class="code">Q02</span><span class="work">Cross-platform integration </span>
+              <span class="dates">4 Jan – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:32.558%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Prove daily dispatch and the driver journey from Home through proof and recovery on actual builds with API readback.</p><p><b>Dependency or decision</b> Use a release candidate for each independent track.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details><details class="package" id="Q03"><summary>
+              <span class="code">Q03</span><span class="work">AU pilot and severe regression closure </span>
+              <span class="dates">2 Mar – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:76.744%;width:13.953%"></i></span></summary>
+              <div class="detail"><p>Exercise dispatcher and driver scenarios with AU, retest severe issues and record operator acceptance.</p><p><b>Dependency or decision</b> Include approved expansion modules when they reach the pilot.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details><details class="package" id="Q04"><summary>
+              <span class="code">Q04</span><span class="work">Release decision and staged rollout </span>
+              <span class="dates">22 Mar – 31 Mar</span><span class="track" aria-hidden="true"><i style="left:92.248%;width:7.752%"></i></span></summary>
+              <div class="detail"><p>Evaluate Web and App separately, record go or hold and stage approved releases with verified telemetry and manuals.</p><p><b>Dependency or decision</b> Requires pilot results, severity review, G05 and D06 checks for each release.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details></details></section>
+<section class="expansion" aria-labelledby="scope"><h2 id="scope">Expansion scope and March targets</h2>
+<p>The seven later native modules and dispatcher guided practice have dated rows above. Full native migration and production guidance depend on approval and additional capacity. For the six broader ideas, use the following provisional windows if separately staffed by 18 December.</p>
+<ul><li><strong>4 Jan – 12 Mar</strong> · Nonessential theme variants and expanded guided tutorials. Validate accessible variants and first-use journeys on the approved screens.</li>
+<li><strong>4 Jan – 19 Mar</strong> · Invoice scanning and advanced driver self-booking. Agree document handling and booking rules in January, then pilot each flow.</li>
+<li><strong>4 Jan – 24 Mar</strong> · Routing intelligence/ML and broader reporting. Agree data access, scope and evaluation criteria in January. Review routing results and reconcile reporting outputs before the release decision.</li></ul>
+<p>At the December review, record an owner and acceptance criteria for each approved addition. Any item outside the funded scope gets an explicit deferral at the March closeout.</p></section>
+<footer>Holien milestones · v1.6 · Based on the November SenditGo work inventory. <a href="v1.5/index.html">Previous portfolio and product lanes</a></footer>
+</main></body></html>

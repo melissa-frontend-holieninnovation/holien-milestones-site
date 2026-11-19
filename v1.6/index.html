@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12324b">
+<title>SenditGo delivery roadmap · Holien milestones v1.6</title>
+<style>
+*{box-sizing:border-box}
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172f45;background:#f6f8fa;font-variant-numeric:tabular-nums}
+body{margin:0}a{color:#155b86;text-underline-offset:3px}a:hover{text-decoration:underline}a:focus-visible,summary:focus-visible{outline:3px solid #14829a;outline-offset:-3px}
+.wrap{width:min(1220px,calc(100% - 72px));margin:auto}
+header{background:#12324b;color:white;border-bottom:5px solid #65c9ce}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 0;border-bottom:1px solid #476074;font-size:14px}
+.brand{font-weight:700;letter-spacing:.02em}.brand b{color:#88d9db;margin-right:10px}nav a{color:#e3eff4;text-decoration:none}
+.hero{display:flex;align-items:end;justify-content:space-between;gap:24px;padding:37px 0 35px}
+h1,h2,h3,p{margin:0}.eyebrow{font-size:12px;font-weight:650;color:#a6e1df;letter-spacing:.11em;text-transform:uppercase;margin-bottom:9px}h1{font-size:clamp(32px,4vw,54px);letter-spacing:-.048em;line-height:1.05}
+.hero p{margin-top:11px;color:#d3e2eb;font-size:16px}.period{white-space:nowrap;font-size:17px;font-weight:600}
+main{padding-bottom:40px}section{margin-top:31px}h2{font-size:24px;letter-spacing:-.036em}h3{font-size:16px;line-height:1.35}
+.section-title{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin-bottom:13px}
+.gates{display:grid;grid-template-columns:repeat(5,1fr);background:white;border:1px solid #ced9e2;border-radius:12px;overflow:hidden}
+.gates article{padding:19px 16px 20px;border-left:1px solid #dce4eb}.gates article:first-child{border:0}.gates time{font-size:12px;color:#21737a;font-weight:750}.gates h3{margin:8px 0 5px}.gates p,.notes p,.intro,.detail p,.expansion p{font-size:14px;line-height:1.55;color:#475d6c}
+.notes{background:#e8f2f3;border-left:3px solid #39878c;padding:15px 18px;margin-top:14px}.notes strong{color:#183c4a}
+.intro{margin:-4px 0 13px}.section-title a{font-size:14px;white-space:nowrap}
+details>summary{list-style:none;cursor:pointer}summary::-webkit-details-marker{display:none}
+.stream{border:1px solid #cfdbe3;border-radius:10px;background:#fff;margin-bottom:9px;overflow:hidden}
+.stream>summary{display:grid;grid-template-columns:5px 1fr auto 16px;align-items:center;gap:15px;padding:15px 18px}.stream>summary:hover,.package>summary:hover{background:#f3f7fa}.swatch{height:30px;border-radius:3px;background:var(--ink)}
+.stream strong{font-size:17px}.subtitle{display:block;font-size:13px;color:#526776;margin-top:3px}.count,.code,.dates,.head{font-size:12px}.count,.dates{color:#445c6d}.arrow{font-size:19px;line-height:1;text-align:center}.stream[open]>summary .arrow{transform:rotate(180deg)}
+.head,.package>summary{display:grid;grid-template-columns:44px minmax(215px,1fr) 134px minmax(180px,1fr);align-items:center;column-gap:12px;padding:10px 18px}
+.head{background:#edf2f6;color:#42586b;font-weight:650}.head>span:first-child{grid-column:span 2}
+.axis,.track{position:relative;display:block;height:14px}.axis span{position:absolute;font-size:10px}.track{background:#edf2f6;border-radius:4px;height:8px}.track i{position:absolute;height:100%;background:var(--ink);border-radius:4px}
+.package{border-top:1px solid #e1e8ed}.package>summary{min-height:44px}.code{color:var(--ink);font-weight:700}.work{font-size:14px;line-height:1.4}.package[open] .work{font-weight:650}.package[open]{background:#f8fafc}.conditional{display:inline-block;font-size:10px;font-weight:600;color:#785021;background:#f8efdc;padding:1px 4px;border-radius:3px}
+.detail{padding:0 20px 15px 74px;max-width:900px}.detail p+p{margin-top:4px}.detail a{display:inline-block;margin-top:6px;font-size:13px}
+.expansion{padding:20px 22px;background:#fff;border:1px solid #cfdbe3;border-radius:10px}.expansion h2{font-size:20px}.expansion p{margin-top:8px}.expansion ul{padding-left:18px;margin:10px 0 0}.expansion li{font-size:14px;line-height:1.65;margin:4px 0}
+footer{margin-top:23px;font-size:12px;color:#536777}footer a{margin-left:4px}
+@media(max-width:870px){.wrap{width:calc(100% - 36px)}.hero{align-items:start;flex-direction:column}.gates{grid-template-columns:repeat(2,1fr)}.gates article,.gates article:first-child{border:1px solid #e1e8ed}.head,.package>summary{grid-template-columns:36px minmax(160px,1fr) 108px minmax(120px,.8fr);gap:8px}.period{font-size:15px}}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}nav{font-size:12px}.hero{padding:25px 0;gap:16px}.gates{display:block}.gates article,.gates article:first-child{display:grid;grid-template-columns:55px 1fr;column-gap:8px;padding:12px;border:0;border-bottom:1px solid #e1e8ed}.gates h3{margin:0}.gates p{grid-column:2;font-size:13px}.gates time{padding-top:3px}.section-title{align-items:center}h2{font-size:21px}.section-title a{font-size:12px}.head{display:none}.package>summary{grid-template-columns:30px 1fr;gap:3px 8px;padding:9px 12px}.dates{grid-column:2}.track{display:none}.stream>summary{grid-template-columns:4px 1fr auto 13px;gap:8px;padding:12px}.subtitle{font-size:12px}.count{font-size:11px}.detail{padding:2px 14px 13px}.notes,.expansion{padding:14px}.period{white-space:normal}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<nav aria-label="Roadmap navigation"><span class="brand"><b>HOLIEN</b> Milestones</span><a href="../v1.5/index.html">September portfolio ↗</a></nav>
+<div class="hero"><div><div class="eyebrow">SenditGo · Proposed plan</div><h1>Delivery roadmap</h1><p>Fleet Web, Driver App and AU operations</p></div><div class="period">23 Nov 2026 — 31 Mar 2027</div></div>
+</div></header>
+<main class="wrap">
+<section aria-labelledby="milestones"><div class="section-title"><h2 id="milestones">Delivery milestones</h2></div><div class="gates"><article><time>30 Nov</time><h3>Triage and staff</h3><p>Confirm owners for priority fixes and reconcile the feature backlog.</p></article><article><time>18 Dec</time><h3>Approve the baseline</h3><p>Review Web IA and driver prototypes with AU. Set API rules and staff both tracks.</p></article><article><time>29 Jan</time><h3>Demonstrate core flows</h3><p>Create and assign an order on Web. Walk from Home to an accepted route on App.</p></article><article><time>26 Feb</time><h3>Verify the full journey</h3><p>Test dispatch, scanning, proof and offline recovery across Web, API and native builds.</p></article><article><time>31 Mar</time><h3>Decide and roll out</h3><p>Use AU pilot results, telemetry and manuals to decide each track’s release.</p></article></div>
+<div class="notes"><p><strong>Capacity decision by 18 December.</strong> Protect urgent AU fixes, GA4 and Insight in Grey’s queue. The March target assumes separate Web and native implementation capacity, API support and shared QA. Validate driver interactions before implementing each layout on Android and iOS. Reserve March for pilot feedback, fixes and independently approved rollouts.</p></div></section>
+<section aria-labelledby="schedule"><div class="section-title"><h2 id="schedule">Feature schedule</h2><a href="jira-milestones.svg">Open full Gantt chart ↗</a></div>
+<p class="intro">63 inventory packages and 4 QA milestones. Expand a stream, then a package, for the planned outcome, dependencies and source. Dates include design, implementation and verification where applicable.</p>
+<details class="stream" style="--ink:#1464a5" open>
+            <summary><span class="swatch"></span><span><strong>AU requests and reliability</strong><span class="subtitle">New features, priority fixes and operating rules</span></span>
+            <span class="count">16 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="F01"><summary>
+              <span class="code">F01</span><span class="work">Create Order on Fleet Web </span>
+              <span class="dates">23 Nov – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Create an interstate order or add an unexpected same-day stop, validate it, assign it and read it back on the Run Sheet.</p><p><b>Dependency or decision</b> Yi to approve scope and order eligibility before build.</p><a href="https://app.notion.com/p/41a89adbb34d80ef8429ea19231c9b96">Inventory source ↗</a></div></details><details class="package" id="F02"><summary>
+              <span class="code">F02</span><span class="work">Select several orders for one driver </span>
+              <span class="dates">14 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Ctrl+Click Pending Orders on the map and assign them to one idle driver with a recoverable partial-failure path.</p><p><b>Dependency or decision</b> Agree the transaction boundary with API. W10 covers independent assignments.</p><a href="https://app.notion.com/p/41b89adbb34d80e3814dff6fdf1327f3">Inventory source ↗</a></div></details><details class="package" id="F03"><summary>
+              <span class="code">F03</span><span class="work">Driver device and version reporting </span>
+              <span class="dates">23 Nov – 11 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:14.729%"></i></span></summary>
+              <div class="detail"><p>Verify Android and iOS reporting against real DEV API records and identify the installed build during support triage.</p><p><b>Dependency or decision</b> Contract and unit evidence exist. Real-device readback is due.</p><a href="https://app.notion.com/p/41b89adbb34d81f691f5d60f46fe081d">Inventory source ↗</a></div></details><details class="package" id="F04"><summary>
+              <span class="code">F04</span><span class="work">Shift change and AM1 overrun </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Exercise shift swapping and overrun on a valid replacement shift, including operator feedback.</p><p><b>Dependency or decision</b> Decide automatic selection versus explicit operator choice with AU.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B01"><summary>
+              <span class="code">B01</span><span class="work">Pending upload after warehouse return </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Reproduce the upload failure and verify App, API and Web reach the correct final state.</p><p><b>Dependency or decision</b> P1 investigation. Capture actual build and server readback.</p><a href="https://app.notion.com/p/41b89adbb34d805d8830d8f1dfc1af08">Inventory source ↗</a></div></details><details class="package" id="B02"><summary>
+              <span class="code">B02</span><span class="work">Completed Run Sheet sync </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Trace completion through App, API and Fleet Web and retest on affected builds.</p><p><b>Dependency or decision</b> Verify the expected propagation behavior.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B03"><summary>
+              <span class="code">B03</span><span class="work">Manual Complete during pending uploads </span>
+              <span class="dates">23 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Exercise Web Manual Complete while local data is pending and verify ordering through restart.</p><p><b>Dependency or decision</b> Agree conflict and recovery behavior with API.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B04"><summary>
+              <span class="code">B04</span><span class="work">Navigation exit before warehouse arrival </span>
+              <span class="dates">30 Nov – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Verify GPS and arrival handling when a driver exits navigation early.</p><p><b>Dependency or decision</b> AU to confirm the operational arrival rule.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B05"><summary>
+              <span class="code">B05</span><span class="work">Unexpected movement after Reorder Stops </span>
+              <span class="dates">30 Nov – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Reproduce invalid parameters, stale routes and unexpected movement, then retest accepted order.</p><p><b>Dependency or decision</b> Requires App and API readback.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B06"><summary>
+              <span class="code">B06</span><span class="work">Android signature orientation </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Reproduce on affected device and orientation combinations and verify captured proof.</p><p><b>Dependency or decision</b> Record model and build alongside M10.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B07"><summary>
+              <span class="code">B07</span><span class="work">Roster edits retaining priority or shift </span>
+              <span class="dates">30 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Replay actual edits, compare API responses and verify the saved roster.</p><p><b>Dependency or decision</b> Needs a reproducible example.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B08"><summary>
+              <span class="code">B08</span><span class="work">Idle driver and target-shift eligibility </span>
+              <span class="dates">7 Dec – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Test overlapping shifts and eligible drivers against the agreed rule.</p><p><b>Dependency or decision</b> Confirm expected overlaps with AU.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details><details class="package" id="B09"><summary>
+              <span class="code">B09</span><span class="work">Cleared Reassign operation group </span>
+              <span class="dates">23 Nov – 11 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:14.729%"></i></span></summary>
+              <div class="detail"><p>Confirm release scope and repeat the field workflow with AU.</p><p><b>Dependency or decision</b> 18 Nov retest passed in its tested scenario.</p><a href="https://app.notion.com/p/41c89adbb34d8079a2dbcc721b008088">Inventory source ↗</a></div></details><details class="package" id="B10"><summary>
+              <span class="code">B10</span><span class="work">Shift Overrun time zones </span>
+              <span class="dates">23 Nov – 11 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:14.729%"></i></span></summary>
+              <div class="detail"><p>Verify deployed scope and AU behavior across affected time zones.</p><p><b>Dependency or decision</b> 18 Nov retest passed in its tested scenario.</p><a href="https://app.notion.com/p/41c89adbb34d807a9227e918596d0824">Inventory source ↗</a></div></details><details class="package" id="B11"><summary>
+              <span class="code">B11</span><span class="work">Forced logout on Fleet Web </span>
+              <span class="dates">23 Nov – 4 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:9.302%"></i></span></summary>
+              <div class="detail"><p>Verify the P1 refresh-token hotfix through session refresh on the target build.</p><p><b>Dependency or decision</b> Protected Web hotfix capacity.</p><a href="https://app.notion.com/p/41489adbb34d81158793e2774c569461">Inventory source ↗</a></div></details><details class="package" id="B12"><summary>
+              <span class="code">B12</span><span class="work">Actions by order status </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Agree the AU #116 action matrix for In Transit and exceptional states in Orders and Run Sheet Details.</p><p><b>Dependency or decision</b> Business-rule decision feeds W08 and W14.</p><a href="https://app.notion.com/p/41289adbb34d8140b908c84c0f8da9d4">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#365bb4" >
+            <summary><span class="swatch"></span><span><strong>Fleet Web V2</strong><span class="subtitle">Navigation, setup, order lookup and Insight</span></span>
+            <span class="count">8 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="W01"><summary>
+              <span class="code">W01</span><span class="work">Company, Warehouse and Fleet navigation </span>
+              <span class="dates">30 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Approve the hierarchy in December, then verify settings navigation in the Web build.</p><p><b>Dependency or decision</b> Review detailed screens with dispatchers.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W02"><summary>
+              <span class="code">W02</span><span class="work">Fleet Management </span>
+              <span class="dates">7 Dec – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Let dispatchers find vehicles and the drivers assigned to them.</p><p><b>Dependency or decision</b> Use W01 hierarchy.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W03"><summary>
+              <span class="code">W03</span><span class="work">Recurring Runs and route planning </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Configure service areas, operating windows and coverage for a recurring Run.</p><p><b>Dependency or decision</b> Freeze the planning rules in December.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W05"><summary>
+              <span class="code">W05</span><span class="work">Assisted driver registration </span>
+              <span class="dates">14 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Prove a dispatcher can onboard an eligible driver within their permissions.</p><p><b>Dependency or decision</b> Confirm workflow and align with W06 and M02–M03.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W06"><summary>
+              <span class="code">W06</span><span class="work">Roles, permissions and first-time setup </span>
+              <span class="dates">30 Nov – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Verify role templates, visibility and first-time setup across the new hierarchy.</p><p><b>Dependency or decision</b> Approve an authorization matrix before implementation.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W08"><summary>
+              <span class="code">W08</span><span class="work">Orders, tracking, history and QR printing </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Bring order lookup, tracking, history, QR printing and eligible batch actions into one workflow.</p><p><b>Dependency or decision</b> Confirm status-based actions with B12.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details><details class="package" id="W16"><summary>
+              <span class="code">W16</span><span class="work">Insight V2 accuracy </span>
+              <span class="dates">23 Nov – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:74.419%"></i></span></summary>
+              <div class="detail"><p>Reconcile completion, manual completion, planned and actual routes, and missing data against operational records.</p><p><b>Dependency or decision</b> Resolve metric definitions with API and G06.</p><a href="https://app.notion.com/p/3fc89adbb34d81bdbe0fc60a269ec396">Inventory source ↗</a></div></details><details class="package" id="W18"><summary>
+              <span class="code">W18</span><span class="work">Guided practice for dispatchers <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Test first-use guidance for recurring Run setup and daily dispatch with operators.</p><p><b>Dependency or decision</b> Prototype candidate. Production guidance requires the usability review and capacity.</p><a href="https://app.notion.com/p/41189adbb34d812e8e40d641a33727a2">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#285d90" >
+            <summary><span class="swatch"></span><span><strong>Driver App V2</strong><span class="subtitle">Shared foundation, core journey and later native modules</span></span>
+            <span class="count">17 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="M00"><summary>
+              <span class="code">M00</span><span class="work">Shared native design system </span>
+              <span class="dates">30 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Validate responsive components, typography, color and state semantics on both platforms.</p><p><b>Dependency or decision</b> Approve interaction patterns before native layout.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M01"><summary>
+              <span class="code">M01</span><span class="work">Sign-in, OTP and recovery </span>
+              <span class="dates">7 Dec – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Validate the interaction, then exercise sign-in, OTP and recovery on Android and iOS.</p><p><b>Dependency or decision</b> Requires M00 foundation.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M02"><summary>
+              <span class="code">M02</span><span class="work">Registration and document capture <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Deliver approved registration and document capture flows on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and the W05 onboarding contract.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M03"><summary>
+              <span class="code">M03</span><span class="work">Approval, audit and amendments <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Recover an incomplete or rejected submission and verify amended status on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and M02.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M04"><summary>
+              <span class="code">M04</span><span class="work">Today, Home and Workday </span>
+              <span class="dates">30 Nov – 22 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Show the next action, current Run, work status and current or next-week roster in native builds.</p><p><b>Dependency or decision</b> Validate the prototype with drivers before native layout.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M05"><summary>
+              <span class="code">M05</span><span class="work">Run Sheet, Stop, Order and SKU </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Complete a task through the Run Sheet hierarchy with clear Stop, Order and SKU context.</p><p><b>Dependency or decision</b> Use the M04 entry and validate navigation depth.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M06"><summary>
+              <span class="code">M06</span><span class="work">Navigation, arrival and Reorder Stops </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Verify route preview, accepted reorder, driving restrictions, Google Maps and return to warehouse.</p><p><b>Dependency or decision</b> Resolve B04 and B05 behavior with API.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M07"><summary>
+              <span class="code">M07</span><span class="work">Warehouse pickup and scanning </span>
+              <span class="dates">14 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Keep the relevant Order and SKU visible through barcode, keyboard, RA, Can’t Find and No Label recovery.</p><p><b>Dependency or decision</b> Confirm exception paths and event names before native build.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M08"><summary>
+              <span class="code">M08</span><span class="work">Delivery exceptions </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify missing, damaged and wrong-delivery paths and resulting order status.</p><p><b>Dependency or decision</b> Requires M07 scanning and an agreed API response.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M09"><summary>
+              <span class="code">M09</span><span class="work">Route issue and driver reporting <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Submit a route issue on both platforms and verify receipt by the receiving system.</p><p><b>Dependency or decision</b> API-dependent module and additional native capacity.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M10"><summary>
+              <span class="code">M10</span><span class="work">Proof of delivery </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify signature orientation, No Contact, photo retake, upload receipt and historical proof.</p><p><b>Dependency or decision</b> Use B06 device coverage and M16 upload states.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M11"><summary>
+              <span class="code">M11</span><span class="work">Roster, calendar and shifts <small class="conditional">Conditional</small></span>
+              <span class="dates">11 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Verify current and upcoming shifts and calendar changes on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and W04 roster rules.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M12"><summary>
+              <span class="code">M12</span><span class="work">Leave requests and cancellation <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Submit and cancel leave, then verify the roster reflects the outcome.</p><p><b>Dependency or decision</b> Additional native capacity and M11.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M13"><summary>
+              <span class="code">M13</span><span class="work">Delivery History and read-only proof <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Open completed delivery history and verify read-only proof on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and M10.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M14"><summary>
+              <span class="code">M14</span><span class="work">Notifications and Route Updated </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Surface changed or cancelled Stops in Message Center and refresh stale Run information.</p><p><b>Dependency or decision</b> Requires W17 trigger contract.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M15"><summary>
+              <span class="code">M15</span><span class="work">Account, vehicle and compliance <small class="conditional">Conditional</small></span>
+              <span class="dates">18 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Verify account, vehicle, compliance and account deletion flows on both platforms.</p><p><b>Dependency or decision</b> Additional native capacity and agreed account rules.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details><details class="package" id="M16"><summary>
+              <span class="code">M16</span><span class="work">Offline and interrupted tasks </span>
+              <span class="dates">23 Nov – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:74.419%"></i></span></summary>
+              <div class="detail"><p>Recover after reopening navigation or the App, show pending uploads and acknowledge completion after server acceptance.</p><p><b>Dependency or decision</b> Resolve B01–B04 ordering and recovery contracts.</p><a href="https://app.notion.com/p/3fe89adbb34d814aa5e7e2140982c8e0">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#22746b" >
+            <summary><span class="swatch"></span><span><strong>Dispatch and Roster</strong><span class="subtitle">Daily Run Sheets, assignment and operational changes</span></span>
+            <span class="count">10 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="W04"><summary>
+              <span class="code">W04</span><span class="work">Roster availability and leave </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify working days, leave, temporary drivers and availability in assignment.</p><p><b>Dependency or decision</b> Confirm roster rules with F04, B07 and B08.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W07"><summary>
+              <span class="code">W07</span><span class="work">Daily dispatch after Cut Time </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Open daily dispatch on the generated Run Sheets and handle an empty or delayed generation.</p><p><b>Dependency or decision</b> Confirm Cut Time behavior with API.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W09"><summary>
+              <span class="code">W09</span><span class="work">OM List and Map parity </span>
+              <span class="dates">30 Nov – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:47.287%"></i></span></summary>
+              <div class="detail"><p>Carry Pending Orders, Run Sheets, selections, markers and driver context between views.</p><p><b>Dependency or decision</b> Align shared selection state before F02 acceptance.</p><a href="https://app.notion.com/p/3fa89adbb34d81719424fc6183ccfaf2">Inventory source ↗</a></div></details><details class="package" id="W10"><summary>
+              <span class="code">W10</span><span class="work">Independent assignments and linked Reassign </span>
+              <span class="dates">7 Dec – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Apply two independent assignments together, compare alternative drivers and verify linked Reassign results.</p><p><b>Dependency or decision</b> Define recovery per operation. F02 assigns several orders to a single driver.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W11"><summary>
+              <span class="code">W11</span><span class="work">Simulate → Results → Assign </span>
+              <span class="dates">30 Nov – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:63.566%"></i></span></summary>
+              <div class="detail"><p>Retain the current sequence while verifying staged changes, failed assignments and recovery.</p><p><b>Dependency or decision</b> Any replacement needs API and QA approval.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W12"><summary>
+              <span class="code">W12</span><span class="work">Adjustment labels </span>
+              <span class="dates">7 Dec – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:31.008%"></i></span></summary>
+              <div class="detail"><p>Apply Change Driver, Delay Delivery, Cancel Order and More Adjustments, then verify wording in context.</p><p><b>Dependency or decision</b> Use the agreed labels.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W13"><summary>
+              <span class="code">W13</span><span class="work">Concurrent dispatch and route cutoff </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Verify stale-result handling, review before Apply and changes by two dispatchers.</p><p><b>Dependency or decision</b> The proposed 15-minute cutoff still needs an operational decision.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details><details class="package" id="W14"><summary>
+              <span class="code">W14</span><span class="work">Return Orders and Cancel Orders </span>
+              <span class="dates">30 Nov – 19 Feb</span><span class="track" aria-hidden="true"><i style="left:5.426%;width:63.566%"></i></span></summary>
+              <div class="detail"><p>Return an eligible order to Pending and verify permanent cancellation as a separate outcome.</p><p><b>Dependency or decision</b> Approve the Orders versus Run Sheet status policy in B12.</p><a href="https://app.notion.com/p/41289adbb34d811fb003eab86f879bc8">Inventory source ↗</a></div></details><details class="package" id="W15"><summary>
+              <span class="code">W15</span><span class="work">Transfer to Fleet </span>
+              <span class="dates">23 Nov – 15 Jan</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Verify eligible destinations, validation and the destination fleet’s order readback.</p><p><b>Dependency or decision</b> Existing implementation and QA work require target-build acceptance.</p><a href="https://app.notion.com/p/40089adbb34d81dfa17afd603079cc92">Inventory source ↗</a></div></details><details class="package" id="W17"><summary>
+              <span class="code">W17</span><span class="work">Final-plan notifications and Run Summaries </span>
+              <span class="dates">14 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:16.279%;width:58.140%"></i></span></summary>
+              <div class="detail"><p>Confirm the final plan, deliver driver notifications and reconcile management summaries.</p><p><b>Dependency or decision</b> Agree triggers with API and the M14 notification flow.</p><a href="https://app.notion.com/p/41989adbb34d81fc81baf83bcfe1f10a">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#775189" >
+            <summary><span class="swatch"></span><span><strong>Analytics and reporting</strong><span class="subtitle">GA4 events, BigQuery exports and operational metrics</span></span>
+            <span class="count">6 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="G01"><summary>
+              <span class="code">G01</span><span class="work">GA4 coverage reconciliation </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Reconcile tickets, duplicates and exclusions, and resolve the 19 PM measurement decisions from the November audit.</p><p><b>Dependency or decision</b> Audit baseline was 141 features reviewed and 62 needing GA4.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G02"><summary>
+              <span class="code">G02</span><span class="work">Web critical actions </span>
+              <span class="dates">7 Dec – 29 Jan</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Instrument OM Assign and Reassign, Run Sheet adjustments, Transfer, Create Order and Roster actions.</p><p><b>Dependency or decision</b> Align event names with G01 and the implemented flows.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G03"><summary>
+              <span class="code">G03</span><span class="work">App critical actions </span>
+              <span class="dates">4 Jan – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:32.558%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Instrument onboarding, navigation, scanning, Can’t Find, No Label, POD, upload recovery and reporting.</p><p><b>Dependency or decision</b> Validate emitted events on both native platforms.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G04"><summary>
+              <span class="code">G04</span><span class="work">V2 usability measurement </span>
+              <span class="dates">11 Jan – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:36.434%"></i></span></summary>
+              <div class="detail"><p>Measure entry, completion, abandonment and errors where each signal answers an agreed UX question.</p><p><b>Dependency or decision</b> Keep established-screen tracking to meaningful clicks.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G05"><summary>
+              <span class="code">G05</span><span class="work">Event and export validation </span>
+              <span class="dates">7 Dec – 31 Mar</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:89.147%"></i></span></summary>
+              <div class="detail"><p>At each release verify Web, Android and iOS parity, DebugView, BigQuery export and duplicate prevention.</p><p><b>Dependency or decision</b> Link emitted events to the feature and ticket evidence.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details><details class="package" id="G06"><summary>
+              <span class="code">G06</span><span class="work">Insight KPI definitions and freshness </span>
+              <span class="dates">7 Dec – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:10.853%;width:63.566%"></i></span></summary>
+              <div class="detail"><p>Verify operational definitions, refresh timing and data freshness using source records.</p><p><b>Dependency or decision</b> Use W16 operational records for performance and F03 diagnostics for device support.</p><a href="https://app.notion.com/p/41389adbb34d81acbef5c58e73bd4dfa">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#9a5d2c" >
+            <summary><span class="swatch"></span><span><strong>User manuals</strong><span class="subtitle">English and Traditional Chinese guidance for released flows</span></span>
+            <span class="count">6 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="D01"><summary>
+              <span class="code">D01</span><span class="work">Bilingual manual inventory </span>
+              <span class="dates">1 Dec – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:6.202%;width:13.953%"></i></span></summary>
+              <div class="detail"><p>Re-enumerate English and Traditional Chinese pages and compare them with approved flows.</p><p><b>Dependency or decision</b> 77 pairs was the historical census.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D02"><summary>
+              <span class="code">D02</span><span class="work">Fleet Web manual updates </span>
+              <span class="dates">4 Jan – 12 Mar</span><span class="track" aria-hidden="true"><i style="left:32.558%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Update IA, sidebar, Fleet, Roster, Orders and Run Sheet instructions against the corresponding build.</p><p><b>Dependency or decision</b> Requires Web IA approval and implemented slices.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D03"><summary>
+              <span class="code">D03</span><span class="work">Driver App manual updates </span>
+              <span class="dates">11 Jan – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:52.713%"></i></span></summary>
+              <div class="detail"><p>Update Home, Run Sheet, scanning, navigation, POD and recovery as modules reach acceptance.</p><p><b>Dependency or decision</b> Use released behavior in both languages.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D04"><summary>
+              <span class="code">D04</span><span class="work">Version-matched screenshots </span>
+              <span class="dates">18 Jan – 24 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:51.163%"></i></span></summary>
+              <div class="detail"><p>Replace changed images using the matching platform, state and build.</p><p><b>Dependency or decision</b> Capture after implementation.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D05"><summary>
+              <span class="code">D05</span><span class="work">Quick Start and exception guidance </span>
+              <span class="dates">11 Jan – 24 Mar</span><span class="track" aria-hidden="true"><i style="left:37.984%;width:56.589%"></i></span></summary>
+              <div class="detail"><p>Update onboarding, first-use instructions, exceptions and terminology in both languages.</p><p><b>Dependency or decision</b> Use approved vocabulary and tested recovery paths.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details><details class="package" id="D06"><summary>
+              <span class="code">D06</span><span class="work">Manual publication checks </span>
+              <span class="dates">18 Jan – 31 Mar</span><span class="track" aria-hidden="true"><i style="left:43.411%;width:56.589%"></i></span></summary>
+              <div class="detail"><p>Verify links, images, bilingual parity and published pages on docs.senditgo.com at each release.</p><p><b>Dependency or decision</b> Final pass follows D02–D05.</p><a href="https://app.notion.com/p/3fa89adbb34d81beab90e8575d17c571">Inventory source ↗</a></div></details></details>
+<details class="stream" style="--ink:#356b50" >
+            <summary><span class="swatch"></span><span><strong>AU validation and release</strong><span class="subtitle">Acceptance criteria, integration, field pilot and rollout</span></span>
+            <span class="count">4 packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+            <div class="head"><span>Package</span><span>Window</span><span class="axis"><span style="left:0.000%">Nov</span><span style="left:6.202%">Dec</span><span style="left:30.233%">Jan</span><span style="left:54.264%">Feb</span><span style="left:75.969%">Mar</span></span></div>
+            <details class="package" id="Q01"><summary>
+              <span class="code">Q01</span><span class="work">AU scope and acceptance review </span>
+              <span class="dates">23 Nov – 18 Dec</span><span class="track" aria-hidden="true"><i style="left:0.000%;width:20.155%"></i></span></summary>
+              <div class="detail"><p>Review Web IA and driver prototypes with AU. Decide the March baseline, four features, measurement minimum, bug gates and staffing.</p><p><b>Dependency or decision</b> Planning review with Ben, Evelyn, Yi and engineering.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details><details class="package" id="Q02"><summary>
+              <span class="code">Q02</span><span class="work">Cross-platform integration </span>
+              <span class="dates">4 Jan – 26 Feb</span><span class="track" aria-hidden="true"><i style="left:32.558%;width:41.860%"></i></span></summary>
+              <div class="detail"><p>Prove daily dispatch and the driver journey from Home through proof and recovery on actual builds with API readback.</p><p><b>Dependency or decision</b> Use a release candidate for each independent track.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details><details class="package" id="Q03"><summary>
+              <span class="code">Q03</span><span class="work">AU pilot and severe regression closure </span>
+              <span class="dates">2 Mar – 19 Mar</span><span class="track" aria-hidden="true"><i style="left:76.744%;width:13.953%"></i></span></summary>
+              <div class="detail"><p>Exercise dispatcher and driver scenarios with AU, retest severe issues and record operator acceptance.</p><p><b>Dependency or decision</b> Include approved expansion modules when they reach the pilot.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details><details class="package" id="Q04"><summary>
+              <span class="code">Q04</span><span class="work">Release decision and staged rollout </span>
+              <span class="dates">22 Mar – 31 Mar</span><span class="track" aria-hidden="true"><i style="left:92.248%;width:7.752%"></i></span></summary>
+              <div class="detail"><p>Evaluate Web and App separately, record go or hold and stage approved releases with verified telemetry and manuals.</p><p><b>Dependency or decision</b> Requires pilot results, severity review, G05 and D06 checks for each release.</p><a href="https://app.notion.com/p/41989adbb34d813f9c33d30ba6eee48d">Inventory source ↗</a></div></details></details></section>
+<section class="expansion" aria-labelledby="scope"><h2 id="scope">Expansion scope and March targets</h2>
+<p>The seven later native modules and dispatcher guided practice have dated rows above. Full native migration and production guidance depend on approval and additional capacity. For the six broader ideas, use the following provisional windows if separately staffed by 18 December.</p>
+<ul><li><strong>4 Jan – 12 Mar</strong> · Nonessential theme variants and expanded guided tutorials. Validate accessible variants and first-use journeys on the approved screens.</li>
+<li><strong>4 Jan – 19 Mar</strong> · Invoice scanning and advanced driver self-booking. Agree document handling and booking rules in January, then pilot each flow.</li>
+<li><strong>4 Jan – 24 Mar</strong> · Routing intelligence/ML and broader reporting. Agree data access, scope and evaluation criteria in January. Review routing results and reconcile reporting outputs before the release decision.</li></ul>
+<p>At the December review, record an owner and acceptance criteria for each approved addition. Any item outside the funded scope gets an explicit deferral at the March closeout.</p></section>
+<footer>Holien milestones · v1.6 · Based on the November SenditGo work inventory. <a href="../v1.5/index.html">Previous portfolio and product lanes</a></footer>
+</main></body></html>

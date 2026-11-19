@@ -1,0 +1,68 @@
+stream	id	start	finish	work	planned outcome	dependency or decision
+au	F01	2026-11-23	2027-01-29	Create Order on Fleet Web	Create an interstate order or add an unexpected same-day stop, validate it, assign it and read it back on the Run Sheet.	Yi to approve scope and order eligibility before build.
+au	F02	2026-12-14	2027-01-29	Select several orders for one driver	Ctrl+Click Pending Orders on the map and assign them to one idle driver with a recoverable partial-failure path.	Agree the transaction boundary with API. W10 covers independent assignments.
+au	F03	2026-11-23	2026-12-11	Driver device and version reporting	Verify Android and iOS reporting against real DEV API records and identify the installed build during support triage.	Contract and unit evidence exist. Real-device readback is due.
+au	F04	2026-12-07	2027-01-29	Shift change and AM1 overrun	Exercise shift swapping and overrun on a valid replacement shift, including operator feedback.	Decide automatic selection versus explicit operator choice with AU.
+fleet	W01	2026-11-30	2027-01-15	Company, Warehouse and Fleet navigation	Approve the hierarchy in December, then verify settings navigation in the Web build.	Review detailed screens with dispatchers.
+fleet	W02	2026-12-07	2027-01-22	Fleet Management	Let dispatchers find vehicles and the drivers assigned to them.	Use W01 hierarchy.
+fleet	W03	2026-12-07	2027-02-19	Recurring Runs and route planning	Configure service areas, operating windows and coverage for a recurring Run.	Freeze the planning rules in December.
+fleet	W05	2026-12-14	2027-02-19	Assisted driver registration	Prove a dispatcher can onboard an eligible driver within their permissions.	Confirm workflow and align with W06 and M02–M03.
+fleet	W06	2026-11-30	2027-01-29	Roles, permissions and first-time setup	Verify role templates, visibility and first-time setup across the new hierarchy.	Approve an authorization matrix before implementation.
+fleet	W08	2026-12-07	2027-02-19	Orders, tracking, history and QR printing	Bring order lookup, tracking, history, QR printing and eligible batch actions into one workflow.	Confirm status-based actions with B12.
+fleet	W16	2026-11-23	2027-02-26	Insight V2 accuracy	Reconcile completion, manual completion, planned and actual routes, and missing data against operational records.	Resolve metric definitions with API and G06.
+fleet	W18	2027-01-11	2027-03-19	Guided practice for dispatchers	Test first-use guidance for recurring Run setup and daily dispatch with operators.	Prototype candidate. Production guidance requires the usability review and capacity.
+ops	W04	2026-12-07	2027-02-19	Roster availability and leave	Verify working days, leave, temporary drivers and availability in assignment.	Confirm roster rules with F04, B07 and B08.
+ops	W07	2026-12-07	2027-01-29	Daily dispatch after Cut Time	Open daily dispatch on the generated Run Sheets and handle an empty or delayed generation.	Confirm Cut Time behavior with API.
+ops	W09	2026-11-30	2027-01-29	OM List and Map parity	Carry Pending Orders, Run Sheets, selections, markers and driver context between views.	Align shared selection state before F02 acceptance.
+ops	W10	2026-12-07	2027-02-19	Independent assignments and linked Reassign	Apply two independent assignments together, compare alternative drivers and verify linked Reassign results.	Define recovery per operation. F02 assigns several orders to a single driver.
+ops	W11	2026-11-30	2027-02-19	Simulate → Results → Assign	Retain the current sequence while verifying staged changes, failed assignments and recovery.	Any replacement needs API and QA approval.
+ops	W12	2026-12-07	2027-01-15	Adjustment labels	Apply Change Driver, Delay Delivery, Cancel Order and More Adjustments, then verify wording in context.	Use the agreed labels.
+ops	W13	2026-12-14	2027-02-26	Concurrent dispatch and route cutoff	Verify stale-result handling, review before Apply and changes by two dispatchers.	The proposed 15-minute cutoff still needs an operational decision.
+ops	W14	2026-11-30	2027-02-19	Return Orders and Cancel Orders	Return an eligible order to Pending and verify permanent cancellation as a separate outcome.	Approve the Orders versus Run Sheet status policy in B12.
+ops	W15	2026-11-23	2027-01-15	Transfer to Fleet	Verify eligible destinations, validation and the destination fleet’s order readback.	Existing implementation and QA work require target-build acceptance.
+ops	W17	2026-12-14	2027-02-26	Final-plan notifications and Run Summaries	Confirm the final plan, deliver driver notifications and reconcile management summaries.	Agree triggers with API and the M14 notification flow.
+app	M00	2026-11-30	2027-01-15	Shared native design system	Validate responsive components, typography, color and state semantics on both platforms.	Approve interaction patterns before native layout.
+app	M01	2026-12-07	2027-01-22	Sign-in, OTP and recovery	Validate the interaction, then exercise sign-in, OTP and recovery on Android and iOS.	Requires M00 foundation.
+app	M02	2027-01-11	2027-03-12	Registration and document capture	Deliver approved registration and document capture flows on both platforms.	Additional native capacity and the W05 onboarding contract.
+app	M03	2027-01-18	2027-03-19	Approval, audit and amendments	Recover an incomplete or rejected submission and verify amended status on both platforms.	Additional native capacity and M02.
+app	M04	2026-11-30	2027-01-22	Today, Home and Workday	Show the next action, current Run, work status and current or next-week roster in native builds.	Validate the prototype with drivers before native layout.
+app	M05	2026-12-07	2027-01-29	Run Sheet, Stop, Order and SKU	Complete a task through the Run Sheet hierarchy with clear Stop, Order and SKU context.	Use the M04 entry and validate navigation depth.
+app	M06	2026-12-07	2027-01-29	Navigation, arrival and Reorder Stops	Verify route preview, accepted reorder, driving restrictions, Google Maps and return to warehouse.	Resolve B04 and B05 behavior with API.
+app	M07	2026-12-14	2027-02-19	Warehouse pickup and scanning	Keep the relevant Order and SKU visible through barcode, keyboard, RA, Can’t Find and No Label recovery.	Confirm exception paths and event names before native build.
+app	M08	2026-12-14	2027-02-26	Delivery exceptions	Verify missing, damaged and wrong-delivery paths and resulting order status.	Requires M07 scanning and an agreed API response.
+app	M09	2027-01-11	2027-03-12	Route issue and driver reporting	Submit a route issue on both platforms and verify receipt by the receiving system.	API-dependent module and additional native capacity.
+app	M10	2026-12-14	2027-02-26	Proof of delivery	Verify signature orientation, No Contact, photo retake, upload receipt and historical proof.	Use B06 device coverage and M16 upload states.
+app	M11	2027-01-11	2027-03-12	Roster, calendar and shifts	Verify current and upcoming shifts and calendar changes on both platforms.	Additional native capacity and W04 roster rules.
+app	M12	2027-01-18	2027-03-19	Leave requests and cancellation	Submit and cancel leave, then verify the roster reflects the outcome.	Additional native capacity and M11.
+app	M13	2027-01-18	2027-03-19	Delivery History and read-only proof	Open completed delivery history and verify read-only proof on both platforms.	Additional native capacity and M10.
+app	M14	2026-12-14	2027-02-26	Notifications and Route Updated	Surface changed or cancelled Stops in Message Center and refresh stale Run information.	Requires W17 trigger contract.
+app	M15	2027-01-18	2027-03-19	Account, vehicle and compliance	Verify account, vehicle, compliance and account deletion flows on both platforms.	Additional native capacity and agreed account rules.
+app	M16	2026-11-23	2027-02-26	Offline and interrupted tasks	Recover after reopening navigation or the App, show pending uploads and acknowledge completion after server acceptance.	Resolve B01–B04 ordering and recovery contracts.
+au	B01	2026-11-23	2026-12-18	Pending upload after warehouse return	Reproduce the upload failure and verify App, API and Web reach the correct final state.	P1 investigation. Capture actual build and server readback.
+au	B02	2026-11-23	2026-12-18	Completed Run Sheet sync	Trace completion through App, API and Fleet Web and retest on affected builds.	Verify the expected propagation behavior.
+au	B03	2026-11-23	2027-01-15	Manual Complete during pending uploads	Exercise Web Manual Complete while local data is pending and verify ordering through restart.	Agree conflict and recovery behavior with API.
+au	B04	2026-11-30	2027-01-22	Navigation exit before warehouse arrival	Verify GPS and arrival handling when a driver exits navigation early.	AU to confirm the operational arrival rule.
+au	B05	2026-11-30	2027-01-22	Unexpected movement after Reorder Stops	Reproduce invalid parameters, stale routes and unexpected movement, then retest accepted order.	Requires App and API readback.
+au	B06	2026-12-07	2027-02-19	Android signature orientation	Reproduce on affected device and orientation combinations and verify captured proof.	Record model and build alongside M10.
+au	B07	2026-11-30	2027-01-15	Roster edits retaining priority or shift	Replay actual edits, compare API responses and verify the saved roster.	Needs a reproducible example.
+au	B08	2026-12-07	2027-01-22	Idle driver and target-shift eligibility	Test overlapping shifts and eligible drivers against the agreed rule.	Confirm expected overlaps with AU.
+au	B09	2026-11-23	2026-12-11	Cleared Reassign operation group	Confirm release scope and repeat the field workflow with AU.	18 Nov retest passed in its tested scenario.
+au	B10	2026-11-23	2026-12-11	Shift Overrun time zones	Verify deployed scope and AU behavior across affected time zones.	18 Nov retest passed in its tested scenario.
+au	B11	2026-11-23	2026-12-04	Forced logout on Fleet Web	Verify the P1 refresh-token hotfix through session refresh on the target build.	Protected Web hotfix capacity.
+au	B12	2026-11-23	2026-12-18	Actions by order status	Agree the AU #116 action matrix for In Transit and exceptional states in Orders and Run Sheet Details.	Business-rule decision feeds W08 and W14.
+data	G01	2026-11-23	2026-12-18	GA4 coverage reconciliation	Reconcile tickets, duplicates and exclusions, and resolve the 19 PM measurement decisions from the November audit.	Audit baseline was 141 features reviewed and 62 needing GA4.
+data	G02	2026-12-07	2027-01-29	Web critical actions	Instrument OM Assign and Reassign, Run Sheet adjustments, Transfer, Create Order and Roster actions.	Align event names with G01 and the implemented flows.
+data	G03	2027-01-04	2027-02-26	App critical actions	Instrument onboarding, navigation, scanning, Can’t Find, No Label, POD, upload recovery and reporting.	Validate emitted events on both native platforms.
+data	G04	2027-01-11	2027-02-26	V2 usability measurement	Measure entry, completion, abandonment and errors where each signal answers an agreed UX question.	Keep established-screen tracking to meaningful clicks.
+data	G05	2026-12-07	2027-03-31	Event and export validation	At each release verify Web, Android and iOS parity, DebugView, BigQuery export and duplicate prevention.	Link emitted events to the feature and ticket evidence.
+data	G06	2026-12-07	2027-02-26	Insight KPI definitions and freshness	Verify operational definitions, refresh timing and data freshness using source records.	Use W16 operational records for performance and F03 diagnostics for device support.
+docs	D01	2026-12-01	2026-12-18	Bilingual manual inventory	Re-enumerate English and Traditional Chinese pages and compare them with approved flows.	77 pairs was the historical census.
+docs	D02	2027-01-04	2027-03-12	Fleet Web manual updates	Update IA, sidebar, Fleet, Roster, Orders and Run Sheet instructions against the corresponding build.	Requires Web IA approval and implemented slices.
+docs	D03	2027-01-11	2027-03-19	Driver App manual updates	Update Home, Run Sheet, scanning, navigation, POD and recovery as modules reach acceptance.	Use released behavior in both languages.
+docs	D04	2027-01-18	2027-03-24	Version-matched screenshots	Replace changed images using the matching platform, state and build.	Capture after implementation.
+docs	D05	2027-01-11	2027-03-24	Quick Start and exception guidance	Update onboarding, first-use instructions, exceptions and terminology in both languages.	Use approved vocabulary and tested recovery paths.
+docs	D06	2027-01-18	2027-03-31	Manual publication checks	Verify links, images, bilingual parity and published pages on docs.senditgo.com at each release.	Final pass follows D02–D05.
+qa	Q01	2026-11-23	2026-12-18	AU scope and acceptance review	Review Web IA and driver prototypes with AU. Decide the March baseline, four features, measurement minimum, bug gates and staffing.	Planning review with Ben, Evelyn, Yi and engineering.
+qa	Q02	2027-01-04	2027-02-26	Cross-platform integration	Prove daily dispatch and the driver journey from Home through proof and recovery on actual builds with API readback.	Use a release candidate for each independent track.
+qa	Q03	2027-03-02	2027-03-19	AU pilot and severe regression closure	Exercise dispatcher and driver scenarios with AU, retest severe issues and record operator acceptance.	Include approved expansion modules when they reach the pilot.
+qa	Q04	2027-03-22	2027-03-31	Release decision and staged rollout	Evaluate Web and App separately, record go or hold and stage approved releases with verified telemetry and manuals.	Requires pilot results, severity review, G05 and D06 checks for each release.
