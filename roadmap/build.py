@@ -6,6 +6,8 @@ from datetime import date, timedelta
 from html import escape
 from pathlib import Path
 
+from timeline import render
+
 SOURCE = Path(__file__).resolve().parent
 ROOT = SOURCE.parent
 START = date(2026, 11, 23)
@@ -104,14 +106,9 @@ def build():
         ('G', 1, 6), ('D', 1, 6), ('Q', 1, 4)) for i in range(first, last + 1)}
     assert Counter(row['id'] for row in rows) == Counter(expected)
     groups = []
-    svg = []
-    y = 142
-    sx, sw = 524, 720
     axis = ''.join(f'<span style="left:{fraction(day):.3%}">{name}</span>' for day, name in MONTHS)
     for key, (title, subtitle, color) in STREAMS.items():
         items = [r for r in rows if r['stream'] == key]
-        svg.append(f'<rect x="0" y="{y-20}" width="1270" height="32" fill="#e9eff5"/><text x="22" y="{y+2}" font-weight="700">{escape(title)}</text>')
-        y += 36
         body = []
         for item in items:
             code = item['id']
@@ -129,17 +126,13 @@ def build():
               <span class="code">{code}</span><span class="work">{name} {marker}</span>
               <span class="dates">{dates}</span><span class="track" aria-hidden="true"><i style="left:{left:.3%};width:{width:.3%}"></i></span></summary>
               <div class="detail"><p>{escape(item['planned outcome'])}</p><p><b>Dependency or decision</b> {escape(item['dependency or decision'])}</p><a href="{page}">Inventory source ↗</a>{ticket_detail}</div></details>''')
-            svg.append(f'<g><title>{code} · {name} · {dates}</title><text x="22" y="{y}" font-size="12">{code}　{name}</text><text x="393" y="{y}" font-size="11">{dates}</text><rect x="{sx+sw*left:.1f}" y="{y-9}" width="{sw*width:.1f}" height="8" rx="4" fill="{color}" opacity="{0.58 if conditional else 1}"/></g>')
-            y += 23
         groups.append(f'''<details class="stream" style="--ink:{color}" {'open' if key == 'au' else ''}>
             <summary><span class="swatch"></span><span><strong>{title}</strong><span class="subtitle">{subtitle}</span></span>
             <span class="count">{len(items)} packages</span><span class="arrow" aria-hidden="true">⌄</span></summary>
             <div class="head"><span>Package</span><span>Window</span><span class="axis">{axis}</span></div>
             {''.join(body)}</details>''')
-        y += 14
     assert sum(r['stream'] in STREAMS for r in rows) == len(rows)
-    lines = ''.join(f'<path d="M {sx+sw*fraction(d):.1f} 78 V {y}" stroke="#d7e0e8"/><text x="{sx+sw*fraction(d)+3:.1f}" y="72" font-size="12">{m}</text>' for d, m in MONTHS)
-    graphic = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1270 {y+10}" width="1270" height="{y+10}" font-family="Arial,sans-serif" fill="#162b40" role="img" aria-labelledby="title desc"><title id="title">SenditGo delivery roadmap</title><desc id="desc">23 November 2026 to 31 March 2027. Seven streams. Lighter bars indicate conditional packages. All dates are planning targets.</desc><rect width="100%" height="100%" fill="white"/><text x="22" y="32" font-size="24" font-weight="700">SenditGo delivery roadmap</text><text x="22" y="55" font-size="13">23 Nov 2026 – 31 Mar 2027 · Proposed windows · Lighter bars require approval or extra capacity</text>{lines}<text x="22" y="100" font-size="14" font-weight="700">AU feedback intake and weekly triage</text><rect x="{sx}" y="91" width="{sw}" height="9" rx="4" fill="#1464a5"/>{''.join(svg)}</svg>'''
+    graphic = render(rows, STREAMS, GATES, START, END, CONDITIONAL)
     gates = ''.join(f'<article><time>{dt}</time><h3>{title}</h3><p>{detail}</p></article>' for dt, title, detail in GATES)
     names = {'direct': 'Direct open tickets', 'related': 'Related open tickets only', 'prior': 'Verified or earlier work only', 'gap': 'No direct ticket confirmed'}
     ticket_register = ''.join(
@@ -147,9 +140,10 @@ def build():
         for kind, name in names.items())
     weeks = weekly_table()
     template = (SOURCE / 'template.html').read_text()
-    for out, archive in [(ROOT, 'v1.5/'), (ROOT / 'v1.7', '../v1.5/')]:
+    for out, archive in [(ROOT, 'v1.5/'), (ROOT / 'v1.8', '../v1.5/')]:
         out.mkdir(exist_ok=True)
-        html = template.replace('{{archive}}', archive).replace('{{weeks}}', weeks).replace('{{tickets}}', ticket_register).replace('{{gates}}', gates).replace('{{groups}}', '\n'.join(groups))
+        inline_chart = graphic.replace('href="index.html#', 'href="#')
+        html = template.replace('{{timeline}}', inline_chart).replace('{{archive}}', archive).replace('{{weeks}}', weeks).replace('{{tickets}}', ticket_register).replace('{{gates}}', gates).replace('{{groups}}', '\n'.join(groups))
         (out / 'index.html').write_text(html)
         (out / 'jira-milestones.svg').write_text(graphic + '\n')
 
